@@ -1,23 +1,36 @@
 #include "push_swap.h"
 
-t_stack *create_stack(int argc, char **argv)
+void create_stack(t_stack **stack, char *content)
 {
-    t_stack *stack_a;
-    int i;
+    int number;
+    t_stack *new_node;
 
-    i = 0;
-    while(argv[i])
+    number = ft_atoi((int)ft_lstnew(number));
+    if(*stack == NULL)
+        *stack = new_node;
+    else
     {
-        stack_a = malloc(sizeof(t_stack));
-        stack_a->number = argv[i];
-        i++;
-    }
-
-    return stack_a;
+        t_stack *current = *stack;
+        while(current -> next != NULL)
+            current = current->next;
+        current->next = new_node;
+    }  
 }
 
 int main(int argc, char **argv)
 {
-    t_stack *stack_a = create_stack(argc, argv);
-    printf("%d\n", stack_a);
+    t_stack *stack_a = NULL;
+    int i;
+
+    i = 1;
+    while(i < argc)
+    {
+        create_stack(stack_a, argv[i]);
+        i++;
+    }
+    while(stack_a != NULL)
+    {
+        stack_a = stack_a;
+        printf("%d \n", stack_a->number);
+    }
 }
