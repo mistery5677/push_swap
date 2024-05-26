@@ -1,5 +1,17 @@
 #include "push_swap.h"
 
+void free_stack(t_stack *stack)
+{
+    t_stack *temp;
+    
+    while (stack != NULL)
+    {
+        temp = stack;
+        stack = stack->next;
+        free(temp);
+    }
+}
+
 t_stack	*ft_lstnew2(int content)
 {
 	t_stack	*new_node;
@@ -13,7 +25,7 @@ t_stack	*ft_lstnew2(int content)
 }
 
 
-void create_stack(t_stack **stack, char *content)
+void create_stack(t_stack **stack, const char *content)
 {
     int number;
     t_stack *new_node;
@@ -36,16 +48,17 @@ int main(int argc, char **argv)
     t_stack *stack_a = NULL;
     int i;
 
-    i = 0;
+    i = 1;
     while(i < argc)
     {
         create_stack(&stack_a, argv[i]);
         i++;
     }
-    while(stack_a != NULL)
+    t_stack *current = stack_a;
+    while (current != NULL)
     {
-        stack_a = stack_a->next;
-        printf("entrou \n");
-            printf("%d \n", stack_a->number);
+        printf("%d \n", current->number);
+        current = current->next;
     }
+    free_stack(stack_a);
 }
