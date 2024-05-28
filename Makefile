@@ -1,5 +1,5 @@
 NAME = lib.a
-SRC = create_stack.c
+SRC = create_stack.c compare.c 
 LIBFTDIR = ./libft
 LIBFT = $(LIBFTDIR)/libft.a
 FLAGS = -Werror -Wall -Wextra

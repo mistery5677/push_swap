@@ -12,5 +12,6 @@ typedef struct s_stack
 void free_stack(t_stack *stack);
 t_stack	*ft_lstnew2(int content);
 void create_stack(t_stack **stack, const char *content);
+int compare_last(t_stack **stack);
 
 #endif
