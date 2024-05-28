@@ -12,7 +12,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 	ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c \
 	ft_printf.c ft_printnbr.c ft_printstr.c ft_print_add.c \
 	get_next_line_bonus.c 
-
+OBJDIR = ./obj
 OBJS = $(SRCS:.c=.o)
 CC = cc
 AR = ar rcs

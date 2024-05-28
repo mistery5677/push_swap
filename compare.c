@@ -6,7 +6,7 @@ int	ft_lstsize2(t_stack *lst)
 	int		count;
 
 	count = 0;
-	temp = (t_stack *)lst;
+	temp = lst;
 	while (temp != NULL)
 	{
 		count++;
@@ -17,12 +17,10 @@ int	ft_lstsize2(t_stack *lst)
 
 int compare_last(t_stack **stack)
 {       
-        int start;
         int len;
         int end;
 
-        len = ft_lstsize2(&stack);
-        start = stack[0]->number;
+        len = ft_lstsize2(*stack);
         end = stack[len]->number;
         return end;
 }

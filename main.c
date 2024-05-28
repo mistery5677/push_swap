@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 /* 
-Este teste server para imprimir a lista com os dados que recebeu
+//Este teste server para imprimir a lista com os dados que recebeu
 int main(int argc, char **argv)
 {
     t_stack *stack_a = NULL;
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
         create_stack(&stack_a, argv[i]);
         i++;
     }
-    int end = (&stack_a);
+    int end = compare_last(&stack_a);
     printf("end: %d", end);
     free_stack(stack_a);
 }

@@ -1,23 +1,34 @@
 NAME = lib.a
-SRC = create_stack.c compare.c 
+SRC = create_stack.c compare.c
 LIBFTDIR = ./libft
 LIBFT = $(LIBFTDIR)/libft.a
+OBJDIR = ./obj
+OBJS = $(SRC:%.c=$(OBJDIR)/%.o)
 FLAGS = -Werror -Wall -Wextra
-OBJS = $(SRC:.c=.o)
 
-all: $(LIBFT) $(NAME)
+all: $(NAME)
 
-$(LIBFT): $(LIBFTDIR) $(OBJS)
+$(LIBFT):
 	@$(MAKE) -C $(LIBFTDIR)
-	mv ./libft/*.o ./obj
-	
+	mv libft/*.o obj/
 
-$(NAME):
-	cp libft/libft.a lib.a
-	ar rc lib.a $(OBJS)
+$(OBJDIR)/%.o: %.c | $(OBJDIR)
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+$(NAME): $(LIBFT) $(OBJS)
+	cp $(LIBFT) $(NAME)
+	ar rc $(NAME) $(OBJS)
 
 clean:
-	rm obj/*.o
+	rm -f $(OBJDIR)/*.o
 
 fclean: clean
-	rm libft/libft.a lib.a
+	rm -f $(NAME)
+	rm -f $(LIBFT)
+
+re: fclean all
+
+.PHONY: all clean fclean re
