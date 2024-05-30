@@ -21,6 +21,7 @@ int compare_last(t_stack **stack)
         int end;
 
         len = ft_lstsize2(*stack);
-        end = stack[len]->number;
+		printf("len: %d", len);
+        end = stack[2]->number;
         return end;
 }

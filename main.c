@@ -28,9 +28,10 @@ int main(int argc, char **argv)
     int i;
 
     i = 1;
+    t_stack *current = stack_a;
     while(i < argc)
     {
-        create_stack(&stack_a, argv[i]);
+        create_stack(&current, argv[i]);
         i++;
     }
     int end = compare_last(&stack_a);
