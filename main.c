@@ -24,17 +24,13 @@ int main(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-    t_stack *stack_a = NULL;
-    int i;
-
-    i = 1;
-    t_stack *current = stack_a;
-    while(i < argc)
-    {
-        create_stack(&current, argv[i]);
-        i++;
-    }
-    int end = compare_last(&stack_a);
+    t_stack *head_a;
+    t_stack *stack_a;
+    
+    head_a = NULL;
+    stack_a = head_a;
+    create_stack(&stack_a, argc, argv);
+    int end = compare_node(&stack_a, 1);
     printf("end: %d", end);
     free_stack(stack_a);
 }

@@ -15,13 +15,22 @@ int	ft_lstsize2(t_stack *lst)
 	return (count);
 }
 
-int compare_last(t_stack **stack)
+int compare_node(t_stack **stack, int n2)
 {       
-        int len;
-        int end;
+        int nbr2;
+		t_stack *copy;
+		int i;
 
-        len = ft_lstsize2(*stack);
-		printf("len: %d", len);
-        end = stack[2]->number;
-        return end;
+		i = 0;
+		copy = *stack;
+		if(copy == NULL)	
+			return 0;
+		nbr2 = 0;
+		while(i < n2)
+		{
+			copy = copy->next;
+			i++;
+		}
+		nbr2 = copy->number;
+        return nbr2;
 }

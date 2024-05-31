@@ -24,7 +24,7 @@ t_stack	*ft_lstnew2(int content)
 	return (new_node);
 }
 
-void create_stack(t_stack **stack, const char *content)
+void create_node(t_stack **stack, const char *content)
 {
     int number;
     t_stack *new_node;
@@ -40,4 +40,16 @@ void create_stack(t_stack **stack, const char *content)
             current = current->next;
         current->next = new_node;
     }  
+}
+
+void create_stack(t_stack **stack, int argc, char **argv)
+{
+    int i;
+
+    i = 0;
+    while(i < argc)
+    {
+        create_node(stack, argv[i]);
+        i++;
+    }
 }
