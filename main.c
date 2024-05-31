@@ -26,11 +26,12 @@ int main(int argc, char **argv)
 {
     t_stack *head_a;
     t_stack *stack_a;
-    
+    int end;
+
     head_a = NULL;
     stack_a = head_a;
     create_stack(&stack_a, argc, argv);
-    int end = compare_node(&stack_a, 1);
+    end = compare_node(&stack_a, 1);
     printf("end: %d", end);
     free_stack(stack_a);
 }
