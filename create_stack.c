@@ -46,7 +46,7 @@ void create_stack(t_stack **stack, int argc, char **argv)
 {
     int i;
 
-    i = 0;
+    i = 1; //Para Linux, devemos de mudar este valor para 0 ... em principio
     while(i < argc)
     {
         create_node(stack, argv[i]);

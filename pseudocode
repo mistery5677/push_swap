@@ -1,0 +1,11 @@
+Logica - Procurar o elemento mais baixo e puxar para o final da lista 1 e calcular a menor 
+    quantidade de movimentos possiveis. Depois de ver os menores movimentos, ver qual é o número
+    mais próximo do menor e calcular quantos movimentos são necessários
+
+----> MOVES <----
+
+SA / SB / SS --> Trocar os dois primeiros elementos de cada lista
+PA --> Envia o primeiro elemento da 'lista b' para a 'lista a'
+PB --> Envia o primeiro elemento da 'lista a' para a 'lista b'
+RA / RB / RR --> Envia o primeiro elemento para o final da lista
+RRA / RRB / RRR --> Envia o último elemento para o inicio da lista

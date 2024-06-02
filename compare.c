@@ -15,7 +15,27 @@ int	ft_lstsize2(t_stack *lst)
 	return (count);
 }
 
-int compare_node(t_stack **stack, int n2)
+int node_number(t_stack **stack, int n2)
+{       
+        int nbr2;
+		t_stack *copy;
+		int i;	
+
+		i = 0;
+		copy = *stack;
+		if(copy == NULL)	
+			return 0;
+		nbr2 = 0;
+		while(i < n2)
+		{
+			copy = copy->next;
+			i++;
+		}
+		nbr2 = copy->number;
+        return nbr2;
+}
+
+int node_temp(t_stack **stack, int n2)
 {       
         int nbr2;
 		t_stack *copy;
@@ -31,6 +51,6 @@ int compare_node(t_stack **stack, int n2)
 			copy = copy->next;
 			i++;
 		}
-		nbr2 = copy->number;
+		nbr2 = copy->temp;
         return nbr2;
 }

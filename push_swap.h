@@ -4,7 +4,7 @@
 
 typedef struct s_stack
 {
-	int		    number;
+	int		number;
 	int 	temp;
 	struct s_stack	*next;
 }					t_stack;
@@ -14,6 +14,8 @@ t_stack	*ft_lstnew2(int content);
 void create_node(t_stack **stack, const char *content);
 void create_stack(t_stack **stack, int argc, char **argv);
 
-int compare_node(t_stack **stack, int n2);
+int node_number(t_stack **stack, int n2);
+int node_temp(t_stack **stack, int n2);
+void move_swap(t_stack **stack);
 
 #endif

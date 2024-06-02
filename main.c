@@ -14,6 +14,7 @@ int main(int argc, char **argv)
         i++;
     }
     t_stack *current = stack_a;
+    t_stack *current2 = stack_a;
     while (current != NULL)
     {
         ft_printf("%d \n", current->number);
@@ -22,16 +23,36 @@ int main(int argc, char **argv)
     free_stack(stack_a);
 } */
 
-int main(int argc, char **argv)
+//Testar Sa
+/* int main(int argc, char **argv)
 {
     t_stack *head_a;
     t_stack *stack_a;
-    int end;
 
     head_a = NULL;
     stack_a = head_a;
     create_stack(&stack_a, argc, argv);
-    end = compare_node(&stack_a, 1);
-    printf("end: %d", end);
+    t_stack *current = stack_a;
+    while (current != NULL)
+    {
+        ft_printf("%d \n", current->number);
+        current = current->next;
+    }
+    current = stack_a;
+    move_swap(&current);
+    ft_printf("depois\n");
+    while(current != NULL)
+    {
+        ft_printf("%d \n", current->number);
+        current = current->next;
+    }
+        current = stack_a;
+    move_swap(&current);
+    ft_printf("depois\n");
+    while(current != NULL)
+    {
+        ft_printf("%d \n", current->number);
+        current = current->next;
+    }
     free_stack(stack_a);
-}
+} */
