@@ -1,5 +1,20 @@
 #include "push_swap.h"
 
+int	ft_stacksize(t_stack *stack)
+{
+	t_stack	*temp;
+	int		count;
+
+	count = 0;
+	temp = stack;
+	while (temp != NULL)
+	{
+		count++;
+		temp = temp->next;
+	}
+	return (count);
+}
+
 void free_stack(t_stack *stack)
 {
     t_stack *temp;

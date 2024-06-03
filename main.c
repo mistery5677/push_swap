@@ -46,8 +46,42 @@ int main(int argc, char **argv)
         ft_printf("%d \n", current->number);
         current = current->next;
     }
-        current = stack_a;
+    current = stack_a;
     move_swap(&current);
+    ft_printf("depois\n");
+    while(current != NULL)
+    {
+        ft_printf("%d \n", current->number);
+        current = current->next;
+    }
+    free_stack(stack_a);
+} */
+
+//Tester ra e rra
+/* int main(int argc, char **argv)
+{
+    t_stack *head_a;
+    t_stack *stack_a;
+
+    head_a = NULL;
+    stack_a = head_a;
+    create_stack(&stack_a, argc, argv);
+    t_stack *current = stack_a;
+    while (current != NULL)
+    {
+        ft_printf("%d \n", current->number);
+        current = current->next;
+    }
+    current = stack_a;
+    move_reverse(&current);
+    ft_printf("depois\n");
+    while(current != NULL)
+    {
+        ft_printf("%d \n", current->number);
+        current = current->next;
+    }
+    current = stack_a;
+    move_rreverse(&current);
     ft_printf("depois\n");
     while(current != NULL)
     {

@@ -4,8 +4,8 @@ Logica - Procurar o elemento mais baixo e puxar para o final da lista 1 e calcul
 
 ----> MOVES <----
 
-SA / SB / SS --> Trocar os dois primeiros elementos de cada lista
+SA / SB / SS --> Trocar os dois primeiros elementos de cada lista (feito)
 PA --> Envia o primeiro elemento da 'lista b' para a 'lista a'
 PB --> Envia o primeiro elemento da 'lista a' para a 'lista b'
-RA / RB / RR --> Envia o primeiro elemento para o final da lista
-RRA / RRB / RRR --> Envia o último elemento para o inicio da lista
+RA / RB / RR --> Envia o primeiro elemento para o final da lista (feito)
+RRA / RRB / RRR --> Envia o último elemento para o inicio da lista (feito)
