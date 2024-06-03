@@ -1,24 +1,26 @@
 #include "push_swap.h"
 
-/* 
-//Este teste server para imprimir a lista com os dados que recebeu
-int main(int argc, char **argv)
+void print_stack(t_stack **stack)
 {
-    t_stack *stack_a = NULL;
-    int i;
+    t_stack *temp_stack;
 
-    i = 1;
-    while(i < argc)
+    temp_stack = *stack;
+    while (temp_stack != NULL)
     {
-        create_stack(&stack_a, argv[i]);
-        i++;
+        ft_printf("%d \n", temp_stack->number);
+        temp_stack = temp_stack->next;
     }
-    t_stack *current = stack_a;
-    t_stack *current2 = stack_a;
-    while (current != NULL)
+}
+//Este teste serve para imprimir a lista com os dados que recebeu
+/* int main(int argc, char **argv)
+{
+    t_stack *head_a = NULL;
+    create_stack(&head_a, argc, argv);
+    t_stack *stack_a = head_a;
+    while (stack_a != NULL)
     {
-        ft_printf("%d \n", current->number);
-        current = current->next;
+        ft_printf("%d \n", stack_a->number);
+        stack_a = stack_a->next;
     }
     free_stack(stack_a);
 } */
@@ -90,3 +92,29 @@ int main(int argc, char **argv)
     }
     free_stack(stack_a);
 } */
+
+int main(int argc, char **argv)
+{
+    t_stack *stack_a;
+    t_stack *stack_b;
+    //t_stack *stack_a = stack_a;
+
+    stack_a = NULL;
+    stack_b = NULL;
+    create_stack(&stack_a, argc, argv);
+    print_stack(&stack_a);
+    
+    move_reverse(&stack_a);
+    printf("depois \n");
+    print_stack(&stack_a);
+    
+    move_rreverse(&stack_a);
+    printf("depois \n");
+    print_stack(&stack_a);
+
+    move_push(&stack_b, &stack_a);
+    printf("stack_a \n");
+    print_stack(&stack_a);
+    printf("stack_b \n");
+    printf("%d\n", stack_b->number);
+}

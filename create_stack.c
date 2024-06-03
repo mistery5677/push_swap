@@ -57,7 +57,7 @@ void create_node(t_stack **stack, const char *content)
     }  
 }
 
-void create_stack(t_stack **stack, int argc, char **argv)
+void   create_stack(t_stack **stack, int argc, char **argv)
 {
     int i;
 

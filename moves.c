@@ -50,10 +50,21 @@ void	move_rreverse(t_stack **stack)
 
 void	move_push(t_stack **dest, t_stack **src)
 {
+	t_stack *cp_src;
+	t_stack *cp_dest;
 
+	cp_src = *src;
+	cp_dest = *dest;
+	if(!cp_dest)
+	{
+		cp_dest = malloc(sizeof(t_stack));
+		cp_dest->number = node_number(src, 0);
+		printf("number %d\n", cp_dest->number);	
+	}
+	(void)cp_src;
 }
 
-/* 4 2
-5 4
-6 5
-2 6 */
+/* 	2  -  | 4  2
+	4  -  | 5  - 
+	5  -  | 6  -
+	6  -  | -  - */
