@@ -97,7 +97,6 @@ int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
-    //t_stack *stack_a = stack_a;
 
     stack_a = NULL;
     stack_b = NULL;
@@ -117,4 +116,7 @@ int main(int argc, char **argv)
     print_stack(&stack_a);
     printf("stack_b \n");
     printf("%d\n", stack_b->number);
+
+    free_stack(stack_a);
+    // free(stack_b);
 }

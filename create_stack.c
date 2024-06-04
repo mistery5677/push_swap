@@ -25,6 +25,7 @@ void free_stack(t_stack *stack)
         stack = stack->next;
         free(temp);
     }
+    free(stack);
 }
 
 t_stack	*ft_lstnew2(int content)
