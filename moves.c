@@ -48,18 +48,18 @@ void	move_rreverse(t_stack **stack)
 	}
 }
 
-void	move_push(t_stack **dest, t_stack **src)
+t_stack	*move_push(t_stack *dest, t_stack **src)
 {
 	t_stack *cp_dest;
+	t_stack *cp_src;
 
-	cp_dest = *dest;
-	if(!cp_dest)
-	{
-		cp_dest = malloc(sizeof(t_stack));
-		cp_dest->number = node_number(src, 0);
-		printf("number %d\n", cp_dest->number);	
-	}
-	
+	cp_src = *src;
+	cp_dest = dest;
+	while(cp_dest != NULL)
+		cp_dest = cp_dest->next;
+	cp_dest = ft_lstnew2(cp_src->number);
+	return cp_dest;
+
 }
 
 /* 	2  -  | 4  2

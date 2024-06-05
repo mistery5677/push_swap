@@ -22,5 +22,5 @@ int node_temp(t_stack **stack, int n2);
 void move_swap(t_stack **stack);
 void move_reverse(t_stack **stack);
 void	move_rreverse(t_stack **stack);
-void	move_push(t_stack **dest, t_stack **src);
+t_stack	*move_push(t_stack *dest, t_stack **src);
 #endif

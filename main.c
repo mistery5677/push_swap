@@ -111,11 +111,17 @@ int main(int argc, char **argv)
     printf("depois \n");
     print_stack(&stack_a);
 
-    move_push(&stack_b, &stack_a);
+    stack_b = move_push(stack_b, &stack_a);
     printf("stack_a \n");
     print_stack(&stack_a);
     printf("stack_b \n");
     printf("%d\n", stack_b->number);
+
+    stack_b = move_push(stack_b, &stack_a);
+    printf("stack_a \n");
+    print_stack(&stack_a);
+    printf("stack_b \n");
+    print_stack(&stack_b);
 
     free_stack(stack_a);
     // free(stack_b);
