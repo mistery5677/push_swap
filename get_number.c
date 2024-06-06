@@ -54,3 +54,11 @@ int node_temp(t_stack **stack, int n2)
 		nbr2 = copy->temp;
         return nbr2;
 }
+
+int lower_number(t_stack *stack)
+{
+	t_stack *tmp_stack;
+
+	tmp_stack = stack;
+
+}

@@ -9,24 +9,22 @@ int sort(t_stack *stack)
 
 	number = 0;
 	tmp_head = stack;
-	tmp_stack = stack;
-	while(tmp_head->next != NULL)
+	while(tmp_head != NULL)
 	{
 		number = tmp_head->number;
+		tmp_stack = tmp_head;
 		while(tmp_stack != NULL)
 		{
-			printf("number %d\n stack_number %d\n", number, tmp_stack->number);
 			if(number > tmp_stack->number)
 			{
 				printf("entrou\n");
-				return 1;
+				return 0;
 			}
 			tmp_stack = tmp_stack->next;
 		}
 		tmp_head = tmp_head->next;
-		printf("number %d\n stack_number %d\n", number, tmp_head->number);
 	}
-	return 0;
+	return 1;
 }
 
 void	move_swap(t_stack **stack)

@@ -133,15 +133,23 @@ void print_stack(t_stack **stack)
     // free(stack_b);
 } */
 
-int main(int argc, char **argv)
+//Test sort function
+/* int main(int argc, char **argv)
 {
     t_stack *stack_a;
 
     stack_a = NULL;
     create_stack(&stack_a, argc, argv);
-    if(sort(stack_a) == 0)
-        printf("OK\n");
-    else
+    if(!sort(stack_a))
         printf("KO\n");
+    else if (sort(stack_a))
+        printf("OK\n");
     free_stack(stack_a);
+} */
+
+int main(int argc, char **argv)
+{
+    t_stack *stack_a;
+
+    create_stack(*stack_a, argc, argv)
 }
