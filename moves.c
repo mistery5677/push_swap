@@ -1,5 +1,34 @@
 #include "push_swap.h"
 
+//Verify if the list is sorted
+int sort(t_stack *stack)
+{
+	t_stack *tmp_stack;
+	t_stack *tmp_head;
+	int number;
+
+	number = 0;
+	tmp_head = stack;
+	tmp_stack = stack;
+	while(tmp_head->next != NULL)
+	{
+		number = tmp_head->number;
+		while(tmp_stack != NULL)
+		{
+			printf("number %d\n stack_number %d\n", number, tmp_stack->number);
+			if(number > tmp_stack->number)
+			{
+				printf("entrou\n");
+				return 1;
+			}
+			tmp_stack = tmp_stack->next;
+		}
+		tmp_head = tmp_head->next;
+		printf("number %d\n stack_number %d\n", number, tmp_head->number);
+	}
+	return 0;
+}
+
 void	move_swap(t_stack **stack)
 {
 	t_stack *copy;
@@ -48,21 +77,19 @@ void	move_rreverse(t_stack **stack)
 	}
 }
 
-t_stack	*move_push(t_stack *dest, t_stack **src)
+void move_push(t_stack **dest, t_stack **src)
 {
-	t_stack *cp_dest;
-	t_stack *cp_src;
+    t_stack *new_node;
+    t_stack *tmp_src;
 
-	cp_src = *src;
-	cp_dest = dest;
-	while(cp_dest != NULL)
-		cp_dest = cp_dest->next;
-	cp_dest = ft_lstnew2(cp_src->number);
-	return cp_dest;
-
+    if (!src || !(*src))
+		return ;
+    new_node = ft_lstnew2((*src)->number); //Vou criar um novo node, para juntar à lista
+    new_node->next = *dest; //Vou  estar a dar a igual o "next node", ao node inicial de dest
+    *dest = new_node;
+    
+	//Limpa o novo node
+	tmp_src = *src;
+    *src = (*src)->next;
+    free(tmp_src);
 }
-
-/* 	2  -  | 4  2
-	4  -  | 5  - 
-	5  -  | 6  -
-	6  -  | -  - */

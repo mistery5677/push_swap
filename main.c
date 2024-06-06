@@ -93,7 +93,8 @@ void print_stack(t_stack **stack)
     free_stack(stack_a);
 } */
 
-int main(int argc, char **argv)
+//Testa o push
+/* int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
@@ -111,18 +112,36 @@ int main(int argc, char **argv)
     printf("depois \n");
     print_stack(&stack_a);
 
-    stack_b = move_push(stack_b, &stack_a);
+    move_push(&stack_b, &stack_a);
     printf("stack_a \n");
     print_stack(&stack_a);
     printf("stack_b \n");
     printf("%d\n", stack_b->number);
 
-    stack_b = move_push(stack_b, &stack_a);
+    move_push(&stack_b, &stack_a);
     printf("stack_a \n");
     print_stack(&stack_a);
     printf("stack_b \n");
     print_stack(&stack_b);
 
+    move_push(&stack_a, &stack_b);
+    printf("stack_a \n");
+    print_stack(&stack_a);
+    printf("stack_b \n");
+    print_stack(&stack_b);
     free_stack(stack_a);
     // free(stack_b);
+} */
+
+int main(int argc, char **argv)
+{
+    t_stack *stack_a;
+
+    stack_a = NULL;
+    create_stack(&stack_a, argc, argv);
+    if(sort(stack_a) == 0)
+        printf("OK\n");
+    else
+        printf("KO\n");
+    free_stack(stack_a);
 }
