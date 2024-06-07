@@ -58,7 +58,25 @@ int node_temp(t_stack **stack, int n2)
 int lower_number(t_stack *stack)
 {
 	t_stack *tmp_stack;
+	static int flag;
+	static int minimum;
 
 	tmp_stack = stack;
+	flag = 0;
+	if(flag == 0)
+	{
+		while(tmp_stack != NULL)
+		{
 
+		}
+		flag = 1;
+	}
+	else
+	{
+		while(tmp_stack != NULL)
+		{
+			
+		}
+	}
+	return minimum;
 }

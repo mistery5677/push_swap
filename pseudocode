@@ -4,8 +4,17 @@ Logica - Procurar o elemento mais baixo e puxar para o final da lista 1 e calcul
 
 ----> MOVES <----
 
+1: Fazer as funções para movimentar na lista
+
 SA / SB / SS --> Trocar os dois primeiros elementos de cada lista (feito)
-PA --> Envia o primeiro elemento da 'lista b' para a 'lista a'
-PB --> Envia o primeiro elemento da 'lista a' para a 'lista b'
+PA --> Envia o primeiro elemento da 'lista b' para a 'lista a' (feito)
+PB --> Envia o primeiro elemento da 'lista a' para a 'lista b' (feito)
 RA / RB / RR --> Envia o primeiro elemento para o final da lista (feito)
 RRA / RRB / RRR --> Envia o último elemento para o inicio da lista (feito)
+
+2: Fazer a função para verificar se a lista já está, ou não ordenada (feito)
+
+3: Encontrar o menor número possivel, sem repetições.
+
+4: Fazer as várias condições do algoritmo:
+
