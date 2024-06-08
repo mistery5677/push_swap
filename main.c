@@ -177,6 +177,7 @@ int main(int argc, char **argv)
     {
         printf("reverse\n");
         print_stack(&stack_a);
-        move_rreverse(&stack_a);
+        move_reverse(&stack_a);
     }
+    // Tenho de corrigir a função sort e reverse
 }
