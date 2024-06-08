@@ -64,11 +64,13 @@ int lower_number(t_stack *stack_a, t_stack *stack_b)
     return 0;
 }
 
-int start_distance(t_stack *stack, int number)
+int distance(t_stack *stack, int number)
 {
     t_stack *tmp_stack;
     int i;
+    int stack_size;
 
+    stack_size = ft_stacksize(stack);
     tmp_stack = stack;
     i = 0;
     while(tmp_stack->number != number)
@@ -76,5 +78,15 @@ int start_distance(t_stack *stack, int number)
         tmp_stack = tmp_stack->next;
         i++;
     }
+    if(i > stack_size / 2)
+    {
+        i = -1;
+        while(tmp_stack != NULL)
+        {
+            tmp_stack = tmp_stack->next;
+            i++;
+        }
+    }
     return i;
 }
+

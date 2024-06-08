@@ -148,7 +148,7 @@ void print_stack(t_stack **stack)
 } */
 
 //Test minimum number
-int main(int argc, char **argv)
+/* int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
@@ -165,4 +165,18 @@ int main(int argc, char **argv)
 
     minimum = lower_number(stack_a, stack_b);
     printf("O valor mais baixo é %d\n", minimum);
+} */
+
+int main(int argc, char **argv)
+{
+    t_stack *stack_a;
+
+    stack_a = NULL;
+    create_stack(&stack_a, argc, argv);
+    while(!sort(stack_a))
+    {
+        printf("reverse\n");
+        print_stack(&stack_a);
+        move_rreverse(&stack_a);
+    }
 }

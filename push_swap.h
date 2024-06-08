@@ -26,7 +26,7 @@ int node_temp(t_stack **stack, int n2);
 //All moves 
 void move_swap(t_stack **stack);
 void move_reverse(t_stack **stack);
-void	move_rreverse(t_stack **stack);
+void move_rreverse(t_stack **stack);
 void move_push(t_stack **dest, t_stack **src);
 
 //Verify if the list is sorted
@@ -37,4 +37,7 @@ void sort_stack(t_stack *stack_a, t_stack *stack_b);
 
 //Gets the lower value
 int lower_number(t_stack *stack_a, t_stack *stack_b);
+
+//Calculate the distances
+int distance(t_stack *stack, int number);
 #endif
