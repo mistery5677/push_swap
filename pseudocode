@@ -14,7 +14,10 @@ RRA / RRB / RRR --> Envia o último elemento para o inicio da lista (feito)
 
 2: Fazer a função para verificar se a lista já está, ou não ordenada (feito)
 
-3: Encontrar o menor número possivel, sem repetições.
+3: Encontrar o menor número possivel.
+
+Verificar o número, mas sem o repetir.
+Verificar entre as duas listas.
 
 4: Fazer as várias condições do algoritmo:
 

@@ -1,20 +1,5 @@
 #include "push_swap.h"
 
-int	ft_lstsize2(t_stack *lst)
-{
-	t_stack *temp;
-	int		count;
-
-	count = 0;
-	temp = lst;
-	while (temp != NULL)
-	{
-		count++;
-		temp = temp->next;
-	}
-	return (count);
-}
-
 int node_number(t_stack **stack, int n2)
 {       
         int nbr2;
@@ -53,30 +38,4 @@ int node_temp(t_stack **stack, int n2)
 		}
 		nbr2 = copy->temp;
         return nbr2;
-}
-
-int lower_number(t_stack *stack)
-{
-	t_stack *tmp_stack;
-	static int flag;
-	static int minimum;
-
-	tmp_stack = stack;
-	flag = 0;
-	if(flag == 0)
-	{
-		while(tmp_stack != NULL)
-		{
-
-		}
-		flag = 1;
-	}
-	else
-	{
-		while(tmp_stack != NULL)
-		{
-			
-		}
-	}
-	return minimum;
 }

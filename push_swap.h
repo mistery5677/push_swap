@@ -23,5 +23,8 @@ void move_swap(t_stack **stack);
 void move_reverse(t_stack **stack);
 void	move_rreverse(t_stack **stack);
 void move_push(t_stack **dest, t_stack **src);
+//Verify if the list is sorted
 int sort(t_stack *stack);
+//Gets the lower value
+int lower_number(t_stack *stack_a, t_stack *stack_b);
 #endif

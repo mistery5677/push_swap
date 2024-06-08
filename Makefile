@@ -1,5 +1,5 @@
 NAME = lib.a
-SRC = create_stack.c get_number.c moves.c
+SRC = create_stack.c get_number.c moves.c lower_number.c
 LIBFTDIR = ./libft
 LIBFT = $(LIBFTDIR)/libft.a
 OBJDIR = ./obj
