@@ -16,8 +16,10 @@ static int first_lower(t_stack *stack)
     return minimum;
 }
 
-static int find_lower(t_stack *stack, int limit)
+static int find_lower(t_stack *stack, int limit, int safe)
 {
+    if(stack == NULL)
+        return safe;
     t_stack *tmp_stack;
     int minimum;
     int size;
@@ -53,13 +55,26 @@ int lower_number(t_stack *stack_a, t_stack *stack_b)
     else 
     {
         flag++;
-        minimuma = find_lower(tmp_stacka, flag);
-        minimumb = find_lower(tmp_stackb, 1);
-        printf("minimuma %d minimum %d", minimuma, minimumb);
-        if(minimuma < minimumb)
+        minimuma = find_lower(tmp_stacka, flag, tmp_stacka->number);
+        minimumb = find_lower(tmp_stackb, 1, minimuma);
+        if(minimuma <= minimumb)
             return minimuma;
-        else
-            return minimumb;
+        return minimumb;
     }
     return 0;
+}
+
+int start_distance(t_stack *stack, int number)
+{
+    t_stack *tmp_stack;
+    int i;
+
+    tmp_stack = stack;
+    i = 0;
+    while(tmp_stack->number != number)
+    {
+        tmp_stack = tmp_stack->next;
+        i++;
+    }
+    return i;
 }

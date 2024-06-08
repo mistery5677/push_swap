@@ -158,16 +158,11 @@ int main(int argc, char **argv)
     stack_a = NULL;
     create_stack(&stack_a, argc, argv);
     minimum = lower_number(stack_a, stack_b);
-    print_stack(&stack_a);
-    printf("O valor mais baixo é %d\n", minimum);
-
-    move_push(&stack_b, &stack_a);
-    print_stack(&stack_b);
-    minimum = lower_number(stack_a, stack_b);
-    print_stack(&stack_a);
     printf("O valor mais baixo é %d\n", minimum);
 
     minimum = lower_number(stack_a, stack_b);
-    print_stack(&stack_a);
+    printf("O valor mais baixo é %d\n", minimum);
+
+    minimum = lower_number(stack_a, stack_b);
     printf("O valor mais baixo é %d\n", minimum);
 }
