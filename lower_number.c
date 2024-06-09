@@ -16,7 +16,7 @@ static int first_lower(t_stack *stack)
     return minimum;
 }
 
-static int find_lower(t_stack *stack, int limit, int safe)
+int find_lower(t_stack *stack, int limit, int safe)
 {
     if(stack == NULL)
         return safe;
@@ -64,7 +64,7 @@ int lower_number(t_stack *stack_a, t_stack *stack_b)
     return 0;
 }
 
-int distance(t_stack *stack, int number)
+int ft_distance(t_stack *stack, int number)
 {
     t_stack *tmp_stack;
     int i;
@@ -90,3 +90,24 @@ int distance(t_stack *stack, int number)
     return i;
 }
 
+int find_stack(t_stack *stack_a, t_stack *stack_b, int minimum)
+{
+    t_stack *tmp_stacka;
+    t_stack *tmp_stackb;
+
+    tmp_stacka = stack_a;
+    tmp_stackb = stack_b;
+    while(tmp_stacka != NULL)
+    {
+        if(tmp_stacka->number == minimum)
+            return 1;
+        tmp_stacka = tmp_stacka->next;
+    }
+    while(tmp_stackb != NULL)
+    {
+        if(tmp_stackb->number == minimum)
+            return 2;
+        tmp_stackb = tmp_stackb->next;
+    }
+    return 0;
+}

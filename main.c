@@ -5,6 +5,7 @@ void print_stack(t_stack **stack)
     t_stack *temp_stack;
 
     temp_stack = *stack;
+    printf("tmp_stack %d", temp_stack->number);
     while (temp_stack != NULL)
     {
         ft_printf("%d \n", temp_stack->number);
@@ -167,15 +168,28 @@ void print_stack(t_stack **stack)
     printf("O valor mais baixo é %d\n", minimum);
 } */
 
-int main(int argc, char **argv)
+/* int main(int argc, char **argv)
 {
     t_stack *stack_a;
+    t_stack *stack_b;
 
     stack_a = NULL;
+    stack_b = NULL;
     create_stack(&stack_a, argc, argv);
     while(!sort(stack_a))
     {
-        move_reverse(&stack_a);
-        print_stack(&stack_a);
+        sort_stack(stack_a, stack_b)
     }
+} */
+
+int main(int argc, char **argv)
+{
+    t_stack *stack_a;
+    t_stack *stack_b;
+
+    stack_a = NULL;
+    stack_b = NULL;
+    create_stack(&stack_a, argc, argv);
+    first_sort(stack_a, stack_b);
+    print_stack(&stack_b);
 }

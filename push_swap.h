@@ -34,10 +34,16 @@ int sort(t_stack *stack);
 
 //Sort the stack
 void sort_stack(t_stack *stack_a, t_stack *stack_b);
+void first_sort(t_stack *stack_a, t_stack *stack_b);
 
 //Gets the lower value
 int lower_number(t_stack *stack_a, t_stack *stack_b);
+int find_stack(t_stack *stack_a, t_stack *stack_b, int minimum);
+int find_lower(t_stack *stack, int limit, int safe);
 
 //Calculate the distances
-int distance(t_stack *stack, int number);
+int ft_distance(t_stack *stack, int number); 
+
+
+void print_stack(t_stack **stack);
 #endif
