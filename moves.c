@@ -16,10 +16,7 @@ int sort(t_stack *stack)
 		while(tmp_stack != NULL)
 		{
 			if(number > tmp_stack->number)
-			{
-				printf("entrou\n");
 				return 0;
-			}
 			tmp_stack = tmp_stack->next;
 		}
 		tmp_head = tmp_head->next;

@@ -181,7 +181,8 @@ void print_stack(t_stack **stack)
     }
 } */
 
-int main(int argc, char **argv)
+//Testar o First sort (3 2 1)
+/* int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
@@ -191,7 +192,21 @@ int main(int argc, char **argv)
     create_stack(&stack_a, argc, argv);
     //print_stack(&stack_a);
     first_sort(&stack_a, &stack_b);
-/*     print_stack(&stack_b);
-    printf("stacka\n");
-    print_stack(&stack_a); */
+    print_stack(&stack_b);
+    printf("\nstacka\n");
+    print_stack(&stack_a);
+} */
+
+int main(int argc, char **argv)
+{
+    t_stack *stack_a;
+    t_stack *stack_b;
+
+    stack_a = NULL;
+    stack_b = NULL;
+    create_stack(&stack_a, argc, argv);
+    if(!sort(stack_a))
+    {
+        
+    }
 }
