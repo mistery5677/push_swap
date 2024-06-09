@@ -34,7 +34,7 @@ int sort(t_stack *stack);
 
 //Sort the stack
 void sort_stack(t_stack *stack_a, t_stack *stack_b);
-void first_sort(t_stack *stack_a, t_stack *stack_b);
+void first_sort(t_stack **stack_a, t_stack **stack_b);
 
 //Gets the lower value
 int lower_number(t_stack *stack_a, t_stack *stack_b);

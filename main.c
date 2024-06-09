@@ -5,7 +5,6 @@ void print_stack(t_stack **stack)
     t_stack *temp_stack;
 
     temp_stack = *stack;
-    printf("tmp_stack %d", temp_stack->number);
     while (temp_stack != NULL)
     {
         ft_printf("%d \n", temp_stack->number);
@@ -190,6 +189,9 @@ int main(int argc, char **argv)
     stack_a = NULL;
     stack_b = NULL;
     create_stack(&stack_a, argc, argv);
-    first_sort(stack_a, stack_b);
-    print_stack(&stack_b);
+    //print_stack(&stack_a);
+    first_sort(&stack_a, &stack_b);
+/*     print_stack(&stack_b);
+    printf("stacka\n");
+    print_stack(&stack_a); */
 }
