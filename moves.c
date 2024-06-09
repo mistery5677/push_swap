@@ -42,18 +42,19 @@ void	move_swap(t_stack **stack)
 void 	move_reverse(t_stack **stack)
 {
 	t_stack *copy;
-	int i;
+	int first_temp;
+	int size;
 
-	i = 0;
+	size = ft_stacksize(*stack);
 	copy = *stack;
-	copy->temp = copy->number;
-	while(i <= ft_stacksize(copy))
+	first_temp = copy->number;
+	while(size > 1)
 	{
-		copy->number = node_number(stack, i + 1);
+		copy->number = copy->next->number;
 		copy = copy->next;
-		i++;
+		size--;
 	}
-	copy->number = node_temp(stack, 0);
+	copy->number = first_temp;
 }
 
 void	move_rreverse(t_stack **stack)

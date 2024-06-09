@@ -175,9 +175,7 @@ int main(int argc, char **argv)
     create_stack(&stack_a, argc, argv);
     while(!sort(stack_a))
     {
-        printf("reverse\n");
-        print_stack(&stack_a);
         move_reverse(&stack_a);
+        print_stack(&stack_a);
     }
-    // Tenho de corrigir a função sort e reverse
 }
