@@ -68,20 +68,35 @@ int lower_number(t_stack *stack_a, t_stack *stack_b)
 int lower_number(t_stack *stack_a, t_stack *stack_b)
 {
     t_stack *tmp_stack_a;
-    t_stack *tmp_stack_b;
     int minimuma;
-    int minimumb;
     int last;
-
+    
     last = node_number(&stack_a, ft_stacksize(stack_a) - 1);
-    tmp_stack_a = stack_a;
-    tmp_stack_b = stack_b;
     minimuma = stack_a->number;
+    tmp_stack_a = stack_a;
+    if(stack_b == NULL)
+    {
+        while(tmp_stack_a != NULL)
+        {
+            if(minimuma > last && minimuma > tmp_stack_a->number)
+                minimuma = tmp_stack_a->number;
+            tmp_stack_a = tmp_stack_a->next;
+        }
+        return minimuma;
+    }
+    t_stack *tmp_stack_b;
+    int minimumb;
+
+    tmp_stack_b = stack_b;
     minimumb = stack_b->number;
     while(tmp_stack_a != NULL)
     {
-        if(minimuma > last && minimuma > tmp_stack_a->number)
+        if(tmp_stack_a->number > last && minimuma > tmp_stack_a->number)
+        {
+            printf("antes %d last %d\n", minimuma, last);
             minimuma = tmp_stack_a->number;
+            printf("depois %d\n", minimuma);
+        }
         tmp_stack_a = tmp_stack_a->next;
     }
     while(tmp_stack_b != NULL)
@@ -90,7 +105,8 @@ int lower_number(t_stack *stack_a, t_stack *stack_b)
             minimumb = tmp_stack_b->number;
         tmp_stack_b = tmp_stack_b->next;
     }
-    if(minimumb > minimuma)
+    printf("minimuma %d minimumb %d\n", minimuma, minimumb);
+    if(minimumb > minimuma && minimuma > last)
         return minimuma;
     return minimumb;
 }

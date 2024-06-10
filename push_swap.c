@@ -71,7 +71,7 @@ void ft_sort_stackb(t_stack **stack_b, t_stack **stack_a, int minimum)
         }
 }
 
-void   first_sort(t_stack **stack_a, t_stack **stack_b)
+/* void   first_sort(t_stack **stack_a, t_stack **stack_b)
 {
         int minimum;
 
@@ -89,7 +89,8 @@ void   first_sort(t_stack **stack_a, t_stack **stack_b)
         move_reverse(stack_a);
         //printf("aqui\n");
         ft_printf("ra\n");
-}
+} */
+
 
 void sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
@@ -98,7 +99,7 @@ void sort_stack(t_stack **stack_a, t_stack **stack_b)
 
         minimum = lower_number(*stack_a, *stack_b);
         found = find_stack(*stack_a, *stack_b, minimum);
-        //printf("minimum: %d    found: %d\n", minimum, found);
+        printf("minimum: %d    found: %d\n", minimum, found);
         if(found == 1)
                 ft_sort_stacka(stack_a, stack_b, minimum);
         else if(found == 2)
@@ -108,22 +109,21 @@ void sort_stack(t_stack **stack_a, t_stack **stack_b)
 
 void push_swap(t_stack *stack_a, t_stack *stack_b)
 {       
-        int i;
+/*         int i;
 
-        i = 0;
-
-
+        i = 0; */
         if(!sort(stack_a))
         {
-                // first_sort(&stack_a, &stack_b);
-                // //printf("saiu do first\n");
-                // while(!sort(stack_a) || stack_b != NULL)        
-                //         sort_stack(&stack_a, &stack_b);
-                while (i < 20 && !sort(stack_a))
+                
+                 //printf("saiu do first\n");
+                while(!sort(stack_a) || stack_b != NULL)        
+                        sort_stack(&stack_a, &stack_b);
+/*                 while (i < 20 && (!sort(stack_a) || stack_b != NULL))
                 {
                         sort_stack(&stack_a, &stack_b);
                         i++;
-                }
+                        print_stack(&stack_a);
+                } */
         }
         free_stack(stack_a);
 }
