@@ -19,8 +19,7 @@ void ft_sort_stacka(t_stack **stack_a, t_stack **stack_b, int minimum)
         {
                 distance--;
                 move_push(stack_b, stack_a);
-                //ft_printf("pb\n");
-                write()
+                ft_printf("pb\n");
         }
         distance = ft_distance(*stack_a, minimum);
         move_reverse(stack_a);
