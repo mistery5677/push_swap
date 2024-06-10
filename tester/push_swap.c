@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void ft_sort_stacka(t_stack **stack_a, t_stack **stack_b, int minimum)
+void ft_sort_stacka(t_stack **stack_a, t_stack **stack_b, int minimum, int fd)
 {
         t_stack *tmp_stack;
         int distance;
@@ -19,16 +19,17 @@ void ft_sort_stacka(t_stack **stack_a, t_stack **stack_b, int minimum)
         {
                 distance--;
                 move_push(stack_b, stack_a);
-                //ft_printf("pb\n");
-                write()
+                ft_printf("pb\n");
+                write(fd, "pb\n", 3);
         }
         distance = ft_distance(*stack_a, minimum);
         move_reverse(stack_a);
         //printf("aqui\n");
         ft_printf("ra\n");
+        write(fd, "ra\n", 3);
 }
 
-void ft_sort_stackb(t_stack **stack_b, t_stack **stack_a, int minimum)
+void ft_sort_stackb(t_stack **stack_b, t_stack **stack_a, int minimum, int fd)
 {
         t_stack *tmp_stack;
         int distance;
@@ -52,10 +53,12 @@ void ft_sort_stackb(t_stack **stack_b, t_stack **stack_a, int minimum)
                         distance--;
                         move_rreverse(stack_b);
                         ft_printf("rrb\n");
+                        write(fd, "rrb\n", 4);
                 }
                 move_push(stack_a, stack_b);
                 move_reverse(stack_a);
                 ft_printf("pa\nra\n");
+                write(fd, "pa\nra\n", 6);
 
         }
         else
@@ -65,10 +68,12 @@ void ft_sort_stackb(t_stack **stack_b, t_stack **stack_a, int minimum)
                         distance--;
                         move_reverse(stack_b);
                         ft_printf("rb\n");
+                        write(fd, "rb\n", 3);
                 }
                 move_push(stack_a, stack_b);
                 move_reverse(stack_a);
                 ft_printf("pa\nra\n");
+                write(fd, "pa\nra\n", 6);
         }
 }
 
@@ -93,32 +98,32 @@ void ft_sort_stackb(t_stack **stack_b, t_stack **stack_a, int minimum)
 } */
 
 
-void sort_stack(t_stack **stack_a, t_stack **stack_b)
+void sort_stack(t_stack **stack_a, t_stack **stack_b, int fd)
 {
         int minimum;
         int found;
 
         minimum = lower_number(*stack_a, *stack_b);
         found = find_stack(*stack_a, *stack_b, minimum);
-        printf("minimum: %d    found: %d\n", minimum, found);
         if(found == 1)
-                ft_sort_stacka(stack_a, stack_b, minimum);
+                ft_sort_stacka(stack_a, stack_b, minimum, fd);
         else if(found == 2)
-                ft_sort_stackb(stack_b, stack_a, minimum);
+                ft_sort_stackb(stack_b, stack_a, minimum, fd);
 
 }
 
 void push_swap(t_stack *stack_a, t_stack *stack_b)
 {       
-/*         int i;
+/*        int i;
 
         i = 0; */
+        int fd = open("results.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
         if(!sort(stack_a))
         {
                 
                  //printf("saiu do first\n");
                 while(!sort(stack_a) || stack_b != NULL)        
-                        sort_stack(&stack_a, &stack_b);
+                        sort_stack(&stack_a, &stack_b, fd);
 /*                 while (i < 20 && (!sort(stack_a) || stack_b != NULL))
                 {
                         sort_stack(&stack_a, &stack_b);
@@ -126,6 +131,7 @@ void push_swap(t_stack *stack_a, t_stack *stack_b)
                         print_stack(&stack_a);
                 } */
         }
+        close(fd);
         free_stack(stack_a);
 }
 
