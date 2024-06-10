@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static int first_lower(t_stack *stack)
+int first_lower(t_stack *stack)
 {
     int minimum;
     t_stack *tmp_stack;
@@ -16,7 +16,7 @@ static int first_lower(t_stack *stack)
     return minimum;
 }
 
-int find_lower(t_stack *stack, int limit, int safe)
+/* int find_lower(t_stack *stack, int limit, int safe)
 {
     if(stack == NULL)
         return safe;
@@ -57,11 +57,42 @@ int lower_number(t_stack *stack_a, t_stack *stack_b)
         flag++;
         minimuma = find_lower(tmp_stacka, flag, tmp_stacka->number);
         minimumb = find_lower(tmp_stackb, 1, minimuma);
-        if(minimuma <= minimumb)
+        printf("flag %d minimumb %d minimuma %d\n", flag, minimuma, minimumb);
+        if(minimuma <= minimumb && flag < ft_stacksize(stack_a))
             return minimuma;
         return minimumb;
     }
     return 0;
+} */
+
+int lower_number(t_stack *stack_a, t_stack *stack_b)
+{
+    t_stack *tmp_stack_a;
+    t_stack *tmp_stack_b;
+    int minimuma;
+    int minimumb;
+    int last;
+
+    last = node_number(&stack_a, ft_stacksize(stack_a) - 1);
+    tmp_stack_a = stack_a;
+    tmp_stack_b = stack_b;
+    minimuma = stack_a->number;
+    minimumb = stack_b->number;
+    while(tmp_stack_a != NULL)
+    {
+        if(minimuma > last && minimuma > tmp_stack_a->number)
+            minimuma = tmp_stack_a->number;
+        tmp_stack_a = tmp_stack_a->next;
+    }
+    while(tmp_stack_b != NULL)
+    {
+        if(minimumb > tmp_stack_b->number)
+            minimumb = tmp_stack_b->number;
+        tmp_stack_b = tmp_stack_b->next;
+    }
+    if(minimumb > minimuma)
+        return minimuma;
+    return minimumb;
 }
 
 int ft_distance(t_stack *stack, int number)
@@ -70,8 +101,8 @@ int ft_distance(t_stack *stack, int number)
     int i;
     int stack_size;
 
-    stack_size = ft_stacksize(stack);
     tmp_stack = stack;
+    stack_size = ft_stacksize(tmp_stack);
     i = 0;
     while(tmp_stack->number != number)
     {

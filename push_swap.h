@@ -10,7 +10,7 @@ typedef struct s_stack
 }					t_stack;
 
 //Main function
-void push_swap(int argc, char **argv);
+void push_swap(t_stack *stack_a, t_stack *stack_b);
 
 //All needed for create stack 
 void free_stack(t_stack *stack);
@@ -43,7 +43,7 @@ void first_sort(t_stack **stack_a, t_stack **stack_b);
 //Gets the lower value
 int lower_number(t_stack *stack_a, t_stack *stack_b);
 int find_stack(t_stack *stack_a, t_stack *stack_b, int minimum);
-int find_lower(t_stack *stack, int limit, int safe);
+int first_lower(t_stack *stack);
 
 //Calculate the distances
 int ft_distance(t_stack *stack, int number);

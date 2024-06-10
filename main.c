@@ -205,8 +205,5 @@ int main(int argc, char **argv)
     stack_a = NULL;
     stack_b = NULL;
     create_stack(&stack_a, argc, argv);
-    if(!sort(stack_a))
-    {
-        
-    }
+    push_swap(stack_a, stack_b);
 }
