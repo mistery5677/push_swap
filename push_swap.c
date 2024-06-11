@@ -17,6 +17,7 @@ void	ft_sort_stacka(t_stack **stack_a, t_stack **stack_b, int minimum, int midiu
 	t_stack	*tmp_stack;
 	int		distance;
 	
+	printf("minimum %d\n", minimum);
 	tmp_stack = *stack_a;
 	distance = 0;
 	while (tmp_stack->number != minimum)
@@ -34,7 +35,7 @@ void	ft_sort_stacka(t_stack **stack_a, t_stack **stack_b, int minimum, int midiu
 			move_reverse(stack_b);	
 			ft_printf("rb\n");
 		}
-		else if((*stack_b)->number > (*stack_b)->next->number)
+		else if((*stack_b)->next != NULL && (*stack_b)->number > (*stack_b)->next->number)
 		{
 			move_swap(stack_b);
 			ft_printf("sb\n");			
@@ -90,8 +91,14 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b, int midium)
 {
 	int	minimum;
 	int	found;
+	static int flag;
 
 	minimum = lower_number(*stack_a, *stack_b);
+	if (flag == 0)
+	{
+		flag ++;
+		minimum = first_lower(*stack_a);
+	}
 	found = find_stack(*stack_a, *stack_b, minimum);
 	if (found == 1)
 		ft_sort_stacka(stack_a, stack_b, minimum, midium);

@@ -12,6 +12,22 @@
 
 #include "push_swap.h"
 
+int first_lower(t_stack *stack)
+{
+	t_stack *tmp_stack;
+	int minimum;
+
+	tmp_stack = stack;
+	minimum = tmp_stack->number;
+	while(tmp_stack != NULL)
+	{
+		if(minimum > tmp_stack->number)
+			minimum = tmp_stack->number;
+		tmp_stack = tmp_stack->next;
+	}
+	return minimum;
+}
+
 int	lower_number(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack	*tmp_stack_a;
