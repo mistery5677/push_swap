@@ -6,7 +6,7 @@
 /*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/11 15:44:38 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/06/11 17:30:00 by miafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ void				move_rreverse(t_stack **stack);
 void				move_push(t_stack **dest, t_stack **src);
 int					sort(t_stack *stack);
 void				ft_sort_stacka(t_stack **stack_a, t_stack **stack_b,
-						int distance);
+						int distance, int midium);
 void				ft_sort_stackb(t_stack **stack_b, t_stack **stack_a,
 						int distance);
-void				sort_stack(t_stack **stack_a, t_stack **stack_b);
+void				sort_stack(t_stack **stack_a, t_stack **stack_b, int midium);
 int					lower_number(t_stack *stack_a, t_stack *stack_b);
 int					find_stack(t_stack *stack_a, t_stack *stack_b, int minimum);
 int					ft_distance(t_stack *stack, int number);

@@ -6,7 +6,7 @@
 /*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:57:04 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/11 16:11:20 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/06/11 17:41:48 by miafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,7 @@ int	lower_number(t_stack *stack_a, t_stack *stack_b)
 	while (tmp_stack_a != NULL)
 	{
 		if (tmp_stack_a->number > last && minimuma > tmp_stack_a->number)
-		{
-			printf("antes %d last %d\n", minimuma, last);
 			minimuma = tmp_stack_a->number;
-			printf("depois %d\n", minimuma);
-		}
 		tmp_stack_a = tmp_stack_a->next;
 	}
 	while (tmp_stack_b != NULL)
@@ -51,7 +47,6 @@ int	lower_number(t_stack *stack_a, t_stack *stack_b)
 			minimumb = tmp_stack_b->number;
 		tmp_stack_b = tmp_stack_b->next;
 	}
-	printf("minimuma %d minimumb %d\n", minimuma, minimumb);
 	if (minimumb > minimuma && minimuma > last)
 		return (minimuma);
 	return (minimumb);
