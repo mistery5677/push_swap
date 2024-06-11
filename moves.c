@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:58:37 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/11 12:00:02 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/06/12 00:01:00 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	move_swap(t_stack **stack)
 	copy->number = node_number(stack, 1);
 	copy = copy->next;
 	copy->number = node_temp(stack, 0);
-	printf("number %d\n", copy->number);
 }
 
 void	move_reverse(t_stack **stack)

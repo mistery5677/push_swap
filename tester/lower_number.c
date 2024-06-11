@@ -105,7 +105,6 @@ int lower_number(t_stack *stack_a, t_stack *stack_b)
             minimumb = tmp_stack_b->number;
         tmp_stack_b = tmp_stack_b->next;
     }
-    printf("minimuma %d minimumb %d\n", minimuma, minimumb);
     if(minimumb > minimuma && minimuma > last)
         return minimuma;
     return minimumb;

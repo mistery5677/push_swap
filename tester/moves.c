@@ -33,7 +33,6 @@ void	move_swap(t_stack **stack)
 	copy->number = node_number(stack, 1);
 	copy = copy->next;
 	copy->number = node_temp(stack, 0);
-	printf("number %d\n", copy->number);
 }
 
 void 	move_reverse(t_stack **stack)

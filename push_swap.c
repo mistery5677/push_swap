@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/11 17:41:10 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/06/12 00:03:27 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_sort_stacka(t_stack **stack_a, t_stack **stack_b, int minimum, int midiu
 	t_stack	*tmp_stack;
 	int		distance;
 	
-	printf("minimum %d\n", minimum);
 	tmp_stack = *stack_a;
 	distance = 0;
 	while (tmp_stack->number != minimum)
@@ -68,6 +67,11 @@ void	ft_sort_stackb(t_stack **stack_b, t_stack **stack_a, int minimum)
 			distance--;
 			move_rreverse(stack_b);
 			ft_printf("rrb\n");
+			if((*stack_b)->number > (*stack_b)->next->number && (*stack_b)->next != NULL && distance > 1)
+			{
+				move_swap(stack_b);
+				ft_printf("sb\n");
+			}
 		}
 		move_push(stack_a, stack_b);
 		move_reverse(stack_a);
@@ -80,6 +84,11 @@ void	ft_sort_stackb(t_stack **stack_b, t_stack **stack_a, int minimum)
 			distance--;
 			move_reverse(stack_b);
 			ft_printf("rb\n");
+			if((*stack_b)->number > (*stack_b)->next->number && (*stack_b)->next != NULL && distance > 1)
+			{
+				move_swap(stack_b);
+				ft_printf("sb\n");
+			}
 		}
 		move_push(stack_a, stack_b);
 		move_reverse(stack_a);
