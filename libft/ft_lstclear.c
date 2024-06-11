@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 09:38:06 by miafonso          #+#    #+#             */
-/*   Updated: 2024/05/25 18:25:17 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/04/09 09:38:07 by miafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 }
 
-/*
-void delete_lst(void *content)
+/*void delete_lst(void *content)
 {
 	free(content);
 }

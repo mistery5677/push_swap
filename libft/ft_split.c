@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 14:08:34 by miafonso          #+#    #+#             */
-/*   Updated: 2024/04/08 14:08:34 by miafonso         ###   ########.fr       */
+/*   Created: 2024/04/13 13:24:43 by miafonso          #+#    #+#             */
+/*   Updated: 2024/04/13 13:24:43 by miafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	count_words(char const *s, char c)
 {
@@ -20,16 +19,14 @@ static int	count_words(char const *s, char c)
 
 	i = 0;
 	start = 0;
-	if(s == NULL)
-		return (0);
-	while(*s)
+	while (*s)
 	{
-		if(*s != c && start == 0)
+		if (*s != c && start == 0)
 		{
 			i++;
 			start = 1;
 		}
-		else if(*s == c)
+		else if (*s == c)
 			start = 0;
 		s++;
 	}
@@ -65,29 +62,18 @@ static char	*build_str(char const *s, unsigned int start, unsigned int end)
 	return (word);
 }
 
-void free_all(char **split, int end)
-{
-	while(end)
-	{
-		free(split[end]);
-		end--;
-	}
-	free(split);
-	return ;
-}
-
 char	**ft_split(char const *s, char c)
 {
+	int		word;
 	char	**str_split;
 	size_t	i;
 	size_t	start;
-	int		word;
 
 	start = 0;
 	word = 0;
 	i = 0;
 	str_split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (s == NULL || !str_split)
+	if (!s || !str_split)
 		return (NULL);
 	while (s[i])
 	{
@@ -98,8 +84,6 @@ char	**ft_split(char const *s, char c)
 			start = i;
 			i += word_size(&s[i], c);
 			str_split[word] = build_str(s, start, i);
-			if(!str_split[word])
-				return (free_all(str_split, word), NULL);
 			word++;
 		}
 	}
@@ -127,21 +111,3 @@ char	**ft_split(char const *s, char c)
 
 		free(str_split);
 }*/
-
-
-/* int main()
-{
-    char **result = ft_split(NULL, ' ');
-    if (result == NULL)
-    {
-        printf("Split failed\n");
-        return 1;
-    }
-    for (int i = 0; result[i] != NULL; i++)
-    {
-        printf("%s\n", result[i]);
-        free(result[i]);
-    }
-    free(result);
-    return 0;
-} */

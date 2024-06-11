@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_stack.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/11 11:51:33 by miafonso          #+#    #+#             */
+/*   Updated: 2024/06/11 11:52:18 by miafonso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_stacksize(t_stack *stack)
@@ -15,17 +27,17 @@ int	ft_stacksize(t_stack *stack)
 	return (count);
 }
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
-    t_stack *temp;
-    
-    while (stack != NULL)
-    {
-        temp = stack;
-        stack = stack->next;
-        free(temp);
-    }
-    free(stack);
+	t_stack	*temp;
+
+	while (stack != NULL)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+	free(stack);
 }
 
 t_stack	*ft_lstnew2(int content)
@@ -40,32 +52,33 @@ t_stack	*ft_lstnew2(int content)
 	return (new_node);
 }
 
-void create_node(t_stack **stack, const char *content)
+void	create_node(t_stack **stack, const char *content)
 {
-    int number;
-    t_stack *new_node;
+	int		number;
+	t_stack	*new_node;
+	t_stack	*current;
 
-    number = ft_atoi(content);
-    new_node = ft_lstnew2(number);
-    if(*stack == NULL)
-        *stack = new_node;
-    else
-    {
-        t_stack *current = *stack;
-        while(current->next != NULL)
-            current = current->next;
-        current->next = new_node;
-    }  
+	number = ft_atoi(content);
+	new_node = ft_lstnew2(number);
+	if (*stack == NULL)
+		*stack = new_node;
+	else
+	{
+		current = *stack;
+		while (current->next != NULL)
+			current = current->next;
+		current->next = new_node;
+	}
 }
 
-void   create_stack(t_stack **stack, int argc, char **argv)
+void	create_stack(t_stack **stack, int argc, char **argv)
 {
-    int i;
+	int	i;
 
-    i = 1; //Para Linux, devemos de mudar este valor para 0 ... em principio
-    while(i < argc)
-    {
-        create_node(stack, argv[i]);
-        i++;
-    }
+	i = 1;
+	while (i < argc)
+	{
+		create_node(stack, argv[i]);
+		i++;
+	}
 }
