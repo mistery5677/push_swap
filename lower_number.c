@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lower_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:57:04 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/11 17:41:48 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/06/12 12:48:53 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int first_lower(t_stack *stack)
 	}
 	return minimum;
 }
-
+	teste teste
 int	lower_number(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack	*tmp_stack_a;
