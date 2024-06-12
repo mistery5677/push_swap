@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/12 15:40:17 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/06/11 17:41:10 by miafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,19 +135,10 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b)
 	free_stack(stack_a);
 }
 
-/* 
-	4
-	3
-	2
-	1
-	0
-	9
-	8
-	7
-	6
+/* 4
+3
+2
+5
+1
 
-
-
-
-
-1  4 6 8 11 16*/
+pb pb ra pa ra pa ra ra */
