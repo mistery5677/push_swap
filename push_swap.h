@@ -39,9 +39,14 @@ void				ft_sort_stacka(t_stack **stack_a, t_stack **stack_b,
 void				ft_sort_stackb(t_stack **stack_b, t_stack **stack_a,
 						int distance);
 void				sort_stack(t_stack **stack_a, t_stack **stack_b, int midium);
-int first_lower(t_stack *stack);
+int 				first_lower(t_stack *stack);
 int					lower_number(t_stack *stack_a, t_stack *stack_b);
 int					find_stack(t_stack *stack_a, t_stack *stack_b, int minimum);
 int					ft_distance(t_stack *stack, int number);
 void				print_stack(t_stack **stack);
+
+//Algorithm
+int ft_near_higher(t_stack *stack, int number);
+int ft_near_lower(t_stack *stack, int number);
+
 #endif

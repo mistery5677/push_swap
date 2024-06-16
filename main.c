@@ -204,6 +204,9 @@ int main(int argc, char **argv)
 
     stack_a = NULL;
     stack_b = NULL;
+    (void)stack_b;
     create_stack(&stack_a, argc, argv);
-    push_swap(stack_a, stack_b);
+    int minimum = ft_near_lower(stack_a, 2);
+    int higher = ft_near_higher(stack_a, 2);
+    printf("higher %d, minimum %d \n", higher, minimum);
 }
