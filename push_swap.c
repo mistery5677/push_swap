@@ -21,18 +21,22 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	size = ft_stacksize(*stack_a);
 	move_higher = worth_up(*stack_a, *stack_b);
 	move_lower = worth_down(*stack_a, *stack_b);
+	if(move_higher > size / 2)
+		move_higher = size - move_higher;
+	if(move_lower > size / 2)
+		move_lower = size - move_lower;
 	if(move_higher < move_lower)
 	{
-		if (move_higher > size / 2)
+		if (move_higher + size > size / 2)
 		{
-			move_higher = size - move_higher;
 			while(move_higher > 0)
 			{
-				move_rreverse(stack_a);
+				move_rreverse(stack_a);	
 				ft_printf("rra\n");
 				move_higher--;
 			}
 			move_push(stack_b, stack_a);
+			ft_printf("pb\n");
 		}
 		else
 		{
@@ -43,13 +47,13 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 				move_higher--;
 			}
 			move_push(stack_b, stack_a);
+			ft_printf("pb\n");
 		}
 	}
 	else
 	{
-		if (move_lower > size / 2)
+		if (move_lower + size > size / 2)
 		{
-			move_lower = size - move_lower;
 			while(move_lower > 0)
 			{
 				move_rreverse(stack_a);
@@ -62,11 +66,11 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 		}
 		else
 		{
-			while(move_lower > 1)
+			while(move_lower > 0)
 			{
 				move_reverse(stack_a);
 				ft_printf("rb\n");
-				move_higher--;
+				move_lower--;
 			}
 			move_push(stack_b, stack_a);
 			move_reverse(stack_b);
@@ -81,18 +85,32 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b)
 	{
 /* 		while (!sort(stack_a) || stack_b != NULL)
 			sort_stack(&stack_a, &stack_b); */
+		move_push(&stack_b, &stack_a);
 		ft_printf("stack a\n");
+		print_stack(&stack_a);
+		ft_printf("stack b\n");
 		print_stack(&stack_b);
-		// ft_printf("stack b\n");
-		// print_stack(&stack_b);
-		// sort_stack(&stack_a, &stack_b);
-		// ft_printf("stack a depois\n");
-		// print_stack(&stack_a);
-		// ft_printf("stack b depois\n");
-		// print_stack(&stack_b);
+		sort_stack(&stack_a, &stack_b);
+		ft_printf("stack a depois\n");
+		print_stack(&stack_a);
+		ft_printf("stack b depois\n");
+		print_stack(&stack_b);
+
+		sort_stack(&stack_a, &stack_b);
+		ft_printf("stack a depois\n");
+		print_stack(&stack_a);
+		ft_printf("stack b depois\n");
+		print_stack(&stack_b);
+
+		sort_stack(&stack_a, &stack_b);
+		ft_printf("stack a depois\n");
+		print_stack(&stack_a);
+		ft_printf("stack b depois\n");
+		print_stack(&stack_b);
 	}
 	free_stack(stack_a);
 }
+// Corrigir a parte de se já for o maior numero possivel e o menor numero possivel
 
 /* 
 		4

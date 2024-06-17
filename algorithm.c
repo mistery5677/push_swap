@@ -34,7 +34,7 @@ int worth_up(t_stack *stack_a, t_stack *stack_b)
         number_b = node_number(&stack_b, 0);
         near_higher = ft_near_higher(stack_a, number_b);
         movements = ft_distance(stack_a, near_higher);
-        return movements + 1; 
+        return movements; 
 }
 
 //Vai procurar na 'stack', pelo numero mais baixo, comparativamente com o 'number'
@@ -72,6 +72,6 @@ int worth_down(t_stack *stack_a, t_stack *stack_b)
         near_lower = ft_near_lower(stack_a, number_b);
         movements = ft_distance(stack_a, near_lower);
         //printf("moves %d\n", movements);
-        return movements + 2; 
+        return movements; 
 }
 
