@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/11 17:30:00 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/06/17 02:53:44 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void				ft_sort_stacka(t_stack **stack_a, t_stack **stack_b,
 						int distance, int midium);
 void				ft_sort_stackb(t_stack **stack_b, t_stack **stack_a,
 						int distance);
-void				sort_stack(t_stack **stack_a, t_stack **stack_b, int midium);
+void				sort_stack(t_stack **stack_a, t_stack **stack_b);
 int 				first_lower(t_stack *stack);
 int					lower_number(t_stack *stack_a, t_stack *stack_b);
 int					find_stack(t_stack *stack_a, t_stack *stack_b, int minimum);
@@ -46,6 +46,8 @@ int					ft_distance(t_stack *stack, int number);
 void				print_stack(t_stack **stack);
 
 //Algorithm
+int worth_up(t_stack *stack_a, t_stack *stack_b);
+int worth_down(t_stack *stack_a, t_stack *stack_b);
 int ft_near_higher(t_stack *stack, int number);
 int ft_near_lower(t_stack *stack, int number);
 
