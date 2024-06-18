@@ -68,10 +68,10 @@ int worth_down(t_stack *stack_a, t_stack *stack_b)
         int near_lower;
         int number_b;
 
-        number_b = node_number(&stack_b, 0);
+        number_b = node_number(&stack_b, ft_stacksize(stack_b) - 1);
         near_lower = ft_near_lower(stack_a, number_b);
         movements = ft_distance(stack_a, near_lower);
-        //printf("moves %d\n", movements);
+        printf("moves %d\n", movements);
         return movements; 
 }
 

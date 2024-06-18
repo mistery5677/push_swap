@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/17 03:09:31 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/06/18 01:02:00 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 			while(move_lower > 0)
 			{
 				move_rreverse(stack_a);
-				ft_printf("rrb\n");
+				ft_printf("rra\n");
 				move_lower--;
 			}
 			move_push(stack_b, stack_a);
@@ -69,7 +69,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 			while(move_lower > 0)
 			{
 				move_reverse(stack_a);
-				ft_printf("rb\n");
+				ft_printf("ra\n");
 				move_lower--;
 			}
 			move_push(stack_b, stack_a);
@@ -90,7 +90,14 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b)
 		print_stack(&stack_a);
 		ft_printf("stack b\n");
 		print_stack(&stack_b);
+		
 		sort_stack(&stack_a, &stack_b);
+		ft_printf("stack a depois\n");
+		print_stack(&stack_a);
+		ft_printf("stack b depois\n");
+		print_stack(&stack_b);
+
+/* 		sort_stack(&stack_a, &stack_b);
 		ft_printf("stack a depois\n");
 		print_stack(&stack_a);
 		ft_printf("stack b depois\n");
@@ -100,13 +107,7 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b)
 		ft_printf("stack a depois\n");
 		print_stack(&stack_a);
 		ft_printf("stack b depois\n");
-		print_stack(&stack_b);
-
-		sort_stack(&stack_a, &stack_b);
-		ft_printf("stack a depois\n");
-		print_stack(&stack_a);
-		ft_printf("stack b depois\n");
-		print_stack(&stack_b);
+		print_stack(&stack_b); */
 	}
 	free_stack(stack_a);
 }
