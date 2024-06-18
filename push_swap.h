@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/17 02:53:44 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/06/18 14:26:11 by miafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ int worth_up(t_stack *stack_a, t_stack *stack_b);
 int worth_down(t_stack *stack_a, t_stack *stack_b);
 int ft_near_higher(t_stack *stack, int number);
 int ft_near_lower(t_stack *stack, int number);
-
+int lowest_number(t_stack *stack);
+int biggest_number(t_stack *stack);
 #endif
