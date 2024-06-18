@@ -51,6 +51,7 @@ int worth_up(t_stack *stack_a, t_stack *stack_b)
 
         number_b = node_number(&stack_b, 0);
         near_higher = ft_near_higher(stack_a, number_b);
+        ft_printf("near_higher %d ", near_higher);
         if(near_higher == number_b)
                 movements = ft_distance(stack_a, lowest_number(stack_a));
         else
@@ -109,6 +110,7 @@ int worth_down(t_stack *stack_a, t_stack *stack_b)
 
         number_b = node_number(&stack_b, ft_stacksize(stack_b) - 1);
         near_lower = ft_near_lower(stack_a, number_b);
+        ft_printf("near_higher %d ", near_lower);
         if(near_lower == number_b)
                 movements = ft_distance(stack_a, biggest_number(stack_a));
         else

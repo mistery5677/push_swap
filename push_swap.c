@@ -21,10 +21,6 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	size = ft_stacksize(*stack_a);
 	move_higher = worth_up(*stack_a, *stack_b);
 	move_lower = worth_down(*stack_a, *stack_b);
-	if(move_higher > (size / 2))
-		move_higher = move_higher - (size / 2);
-	if (move_lower > (size / 2))
-		move_lower = move_lower - (size / 2);
 	ft_printf("move_higher %d move_lower %d size %d\n", move_higher, move_lower, size);
 	if(move_higher < move_lower)
 	{
