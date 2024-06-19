@@ -35,7 +35,7 @@ int	sort(t_stack *stack)
 	return (1);
 }
 
-void	move_swap(t_stack **stack)
+void	move_swap(t_stack **stack, char *move)
 {
 	t_stack	*copy;
 
@@ -44,10 +44,10 @@ void	move_swap(t_stack **stack)
 	copy->number = node_number(stack, 1);
 	copy = copy->next;
 	copy->number = node_temp(stack, 0);
-	printf("number %d\n", copy->number);
+	ft_printf("%s", move);
 }
 
-void	move_reverse(t_stack **stack)
+void	move_reverse(t_stack **stack, char *move)
 {
 	t_stack	*copy;
 	int		first_temp;
@@ -63,9 +63,10 @@ void	move_reverse(t_stack **stack)
 		size--;
 	}
 	copy->number = first_temp;
+	ft_printf("%s", move);
 }
 
-void	move_rreverse(t_stack **stack)
+void	move_rreverse(t_stack **stack, char *move)
 {
 	t_stack	*copy;
 	int		i;
@@ -82,9 +83,10 @@ void	move_rreverse(t_stack **stack)
 		copy = copy->next;
 		i++;
 	}
+	ft_printf("%s", move);
 }
 
-void	move_push(t_stack **dest, t_stack **src)
+void	move_push(t_stack **dest, t_stack **src, char *move)
 {
 	t_stack	*new_node;
 	t_stack	*tmp_src;
@@ -96,5 +98,6 @@ void	move_push(t_stack **dest, t_stack **src)
 	*dest = new_node;
 	tmp_src = *src;
 	*src = (*src)->next;
+	ft_printf("%s", move);
 	free(tmp_src);
 }

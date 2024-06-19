@@ -207,5 +207,4 @@ int main(int argc, char **argv)
     create_stack(&stack_a, argc, argv);
     //printf("worth %d\n", worth_down(stack_a, stack_b));
     push_swap(stack_a, stack_b);
-    print_stack(&stack_b);
 }
