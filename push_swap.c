@@ -40,7 +40,3 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b)
 	2
 
 */
-
-
--1 = sa pa
-0 =

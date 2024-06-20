@@ -18,7 +18,8 @@ typedef struct s_stack
 {
 	int				number;
 	int				temp;
-	int moves;
+	int 			moves;
+	int				bf;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -54,9 +55,13 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 //Sort only 3 numbers
 void ft_sort3(t_stack **stack_a, t_stack **stack_b);
 
-//Clear the stack_b
+//Clear the stack_b, and sort stack_a
 void sort_to_a(t_stack **stack_a, t_stack **stack_b);
 
-//Algorithm
-int find_bmv(t_stack *stack_a, t_stack *stack_b);
+//Put how many moves to put the number on top of stack
+void count_moves(t_stack *stack_a);
+
+//Calculate how many moves to move to the top of the stack;
+int	ft_distance(t_stack *stack, int number);
+
 #endif
