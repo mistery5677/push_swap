@@ -18,8 +18,10 @@ typedef struct s_stack
 {
 	int				number;
 	int				temp;
-	int 			moves;
+	int 			r_move;
+	int 			rr_move;
 	int				bf;
+	int move_together;
 	struct s_stack	*next;
 }					t_stack;
 

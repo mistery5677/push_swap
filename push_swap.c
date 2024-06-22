@@ -16,13 +16,19 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b)
 {
 	if (!sort(stack_a))
 	{
-		if(ft_stacksize(stack_a) == 3)
-			ft_sort3(&stack_a, &stack_b);
-		else
 			sort_stack(&stack_a, &stack_b);
 	}
-	free_stack(stack_a);
-	free_stack(stack_b);
+	while(stack_a != NULL)
+	{
+		printf("number %d	ra %d	rra %d\n", stack_a->number, stack_a->ra_move,  stack_a->rra_move);
+		stack_a = stack_a->next;
+	}
+	while(stack_b != NULL)
+	{
+		printf("number %d	ra %d	rra %d\n", stack_b->number, stack_b->ra_move,  stack_b->rra_move);
+		stack_b = stack_b->next;
+	}
+	
 }
 // Corrigir a parte de se já for o maior numero possivel e o menor numero possivel
 
