@@ -66,4 +66,7 @@ void count_moves(t_stack *stack_a);
 //Calculate how many moves to move to the top of the stack;
 int	ft_distance(t_stack *stack, int number);
 
+// Finds the bf and the best moves to do 
+void find_bf(t_stack *stack_a, t_stack *stack_b);
+
 #endif

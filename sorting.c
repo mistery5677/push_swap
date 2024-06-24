@@ -29,4 +29,6 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	ft_sort3(stack_a, stack_b);
 	count_moves(*stack_a);
 	count_moves(*stack_b);
+	find_bf(*stack_a, *stack_b);
+	ft_move(*stack_a, *stack_b);
 }

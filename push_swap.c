@@ -20,12 +20,12 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b)
 	}
 	while(stack_a != NULL)
 	{
-		printf("number %d	ra %d	rra %d\n", stack_a->number, stack_a->ra_move,  stack_a->rra_move);
+		printf("number %d	r %d	rr %d 	together %d 	bf %d\n", stack_a->number, stack_a->r_move,  stack_a->rr_move, stack_a->move_together, stack_a->bf);
 		stack_a = stack_a->next;
 	}
 	while(stack_b != NULL)
 	{
-		printf("number %d	ra %d	rra %d\n", stack_b->number, stack_b->ra_move,  stack_b->rra_move);
+		printf("number %d	r %d	rr %d 	together %d 	bf %d\n", stack_b->number, stack_b->r_move,  stack_b->rr_move, stack_b->move_together, stack_b->bf);
 		stack_b = stack_b->next;
 	}
 	
