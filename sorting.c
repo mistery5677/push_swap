@@ -24,11 +24,11 @@ void ft_sort3(t_stack **stack_a, t_stack **stack_b)
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 
-	while(*stack_a != NULL)
+	while(*stack_a != NULL && stack_a != NULL)
 		move_push(stack_b, stack_a, "pb\n");
 	ft_sort3(stack_a, stack_b);
 	count_moves(*stack_a);
 	count_moves(*stack_b);
 	find_bf(*stack_a, *stack_b);
-	ft_move(*stack_a, *stack_b);
+	//ft_move(*stack_a, *stack_b);
 }

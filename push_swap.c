@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/18 16:09:49 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/06/24 21:55:38 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b)
 		printf("number %d	r %d	rr %d 	together %d 	bf %d\n", stack_b->number, stack_b->r_move,  stack_b->rr_move, stack_b->move_together, stack_b->bf);
 		stack_b = stack_b->next;
 	}
-	
+	free_stack(stack_a);
+	free_stack(stack_b);
 }
 // Corrigir a parte de se já for o maior numero possivel e o menor numero possivel
 
