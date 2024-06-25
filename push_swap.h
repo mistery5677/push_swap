@@ -69,4 +69,7 @@ int	ft_distance(t_stack *stack, int number);
 // Finds the bf and the best moves to do 
 void find_bf(t_stack *stack_a, t_stack *stack_b);
 
+// Applys the best move
+void ft_move(t_stack *stack_a, t_stack *stack_b);
+
 #endif
