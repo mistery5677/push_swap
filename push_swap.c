@@ -14,7 +14,7 @@
 
 void	push_swap(t_stack *stack_a, t_stack *stack_b)
 {
-	if (!sort(stack_a))
+	if (!sort(stack_a) )
 	{
 			sort_stack(&stack_a, &stack_b);
 	}

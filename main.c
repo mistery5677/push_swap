@@ -11,6 +11,18 @@ void print_stack(t_stack **stack)
         temp_stack = temp_stack->next;
     }
 }
+
+void print_all(t_stack **stack_a)
+{
+    t_stack *tmp_stack;
+
+    tmp_stack = *stack_a;
+    while(tmp_stack != NULL)
+    {
+        //printf("number %d   r_moves %d      rr_moves %d     bf %d       move_together %d\n", tmp_stack->number, tmp_stack->r_move, tmp_stack->rr_move, tmp_stack->bf, tmp_stack->move_together);
+        tmp_stack = tmp_stack->next;
+    }
+}
 //Este teste serve para imprimir a lista com os dados que recebeu
 /* int main(int argc, char **argv)
 {
