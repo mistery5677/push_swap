@@ -19,7 +19,7 @@ void print_all(t_stack **stack_a)
     tmp_stack = *stack_a;
     while(tmp_stack != NULL)
     {
-        //printf("number %d   r_moves %d      rr_moves %d     bf %d       move_together %d\n", tmp_stack->number, tmp_stack->r_move, tmp_stack->rr_move, tmp_stack->bf, tmp_stack->move_together);
+        printf("number %d   r_moves %d      rr_moves %d     bf %d       move_together %d\n", tmp_stack->number, tmp_stack->r_move, tmp_stack->rr_move, tmp_stack->bf, tmp_stack->move_together);
         tmp_stack = tmp_stack->next;
     }
 }

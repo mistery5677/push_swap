@@ -66,12 +66,12 @@ static int move_together(int ra, int rra, int rb, int rrb)
     if (rarrb < rr + ra + rb && rarrb < rrr + rra + rrb && rarrb < rrarb)
     {
         //ft_printf("entrou 1\n");
-        return rarrb;
+        return rarrb + 1;
     }
     else if (rrarb < rr + ra + rb && rrarb < rrr + rra + rrb && rrarb < rarrb)
     {
         //ft_printf("entrou 2\n");
-        return rrarb;
+        return rrarb + 1;
     }
     else if (rr <= rrr)
     {
@@ -85,6 +85,22 @@ static int move_together(int ra, int rra, int rb, int rrb)
     }
 }
 
+/* static int find_minimum(t_stack *stack)
+{
+    t_stack *tmp_stacka;
+    int minimum;
+
+    tmp_stacka = stack;
+    minimum = tmp_stacka->number;
+    while(tmp_stacka != NULL)
+    {
+        if(minimum > tmp_stacka->number)
+            minimum = tmp_stacka->number;
+        tmp_stacka = tmp_stacka->next;
+    }
+    return minimum;
+} */
+
 static void first_bf(t_stack *tmp_stacka, t_stack *stack_b)
 {
     t_stack *tmp_stackb;
@@ -92,7 +108,7 @@ static void first_bf(t_stack *tmp_stacka, t_stack *stack_b)
     tmp_stackb = stack_b;
     while(tmp_stackb != NULL)
     {
-        if(tmp_stackb->number < tmp_stacka->number)
+        if((tmp_stackb->number < tmp_stacka->number && (tmp_stacka->move_together == 0 || tmp_stacka->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move))))
         {
             tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
             tmp_stacka->bf = tmp_stackb->number;
@@ -108,11 +124,11 @@ void find_bf(t_stack *stack_a, t_stack *stack_b)
     t_stack *lowest_node;
     int last_nbr;
 
-    lowest_node = stack_a;
     tmp_stacka = stack_a;
     tmp_stackb = stack_b;
     last_nbr = tmp_stacka->number;
     first_bf(tmp_stacka, stack_b);
+    lowest_node = stack_a;x
     tmp_stacka = tmp_stacka->next;
     while(tmp_stacka != NULL)
     {
@@ -135,18 +151,40 @@ void find_bf(t_stack *stack_a, t_stack *stack_b)
     }
 }
 
-static t_stack *find_best(t_stack *stack_a)
+static int highest_number(t_stack *stack)
+{
+    t_stack *tmp_stack;
+    int highest;
+
+    tmp_stack = stack;
+    highest = stack->number;
+    while(tmp_stack != NULL)
+    {
+        if(tmp_stack->number > highest)
+            highest = tmp_stack->number;
+        tmp_stack = tmp_stack->next;
+    }
+    return highest;
+}
+
+static t_stack *find_best_utils(t_stack *stack_a, t_stack *stack_b)
+{
+    stack_a->bf = highest_number(stack_b);
+    return stack_a;
+}
+
+static t_stack *find_best(t_stack *stack_a, t_stack *stack_b)
 {
     t_stack *tmp_stacka;
 
     tmp_stacka = stack_a;
     while(tmp_stacka != NULL && tmp_stacka->move_together == 0)
         tmp_stacka = tmp_stacka->next;
-    if(tmp_stacka > 0)
+    //printf("tmp_stacka number %d", stack_a->number);
+    if(tmp_stacka != NULL && tmp_stacka->move_together > 0)
         return tmp_stacka;
     else
-        return stack_a;
-
+        return find_best_utils(stack_a, stack_b);
 }
 
 static t_stack *target_b (int target, t_stack *stack_b)
@@ -168,6 +206,7 @@ static int many_rr(t_stack  *stack_a, t_stack *stack_b)
     rr = 0;
     ra = stack_a->r_move;
     rb = stack_b->r_move;
+    //printf("stack_b number %d\n", stack_b->number);
     while(ra > 0 && rb > 0)
     {
         ra--;
@@ -284,12 +323,16 @@ void ft_move(t_stack **stack_a, t_stack **stack_b)
     t_stack *b_target;
     int option;
 
-    best_movea =  find_best(*stack_a); //Target para o node mais barato
+    best_movea =  find_best(*stack_a, *stack_b); //Target para o node mais barato
+    print_all(stack_a);
+    printf("stack b\n");
+    print_all(stack_b);
     b_target = target_b(best_movea->bf, *stack_b); // Target para o node de b correspondente
 /*     print_all(stack_a);
     printf("stack b\n");
     print_all(stack_b); */
     //printf("b nbr %d a number %d\n", b_target->number, best_movea->number);
+    //printf("best_movea number %d\n",(*stack_a)->number);
     option = what_move(best_movea, b_target);
     //printf("option %d\n", option);
     if(option == 1)

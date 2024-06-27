@@ -22,19 +22,6 @@ pa
 pa
 pa
 rra
-sa
-rrr
-rra
-rra
-pa
-rrr
-rra
-pa
-rrr
-rrb
-pa
-rr
-rr
 rr
 rb
 rb
@@ -44,98 +31,561 @@ rb
 rb
 rb
 rb
+rb
+rb
 pa
-rrr
-rra
-rra
-rra
-rra
-rra
-rra
-pa
-rrr
-rrb
-rrb
-rrb
-rrb
-rrb
-rrb
-rrb
-rrb
-rrb
+ra
 rrb
 pa
+number 2   r_moves 0      rr_moves 3     bf 1       move_together 0
+number 8   r_moves 1      rr_moves 2     bf 3       move_together 12
+number 9   r_moves 2      rr_moves 1     bf 0       move_together 0
+stack b
+number 7   r_moves 0      rr_moves 17     bf 0       move_together 0
+number 16   r_moves 1      rr_moves 16     bf 0       move_together 0
+number 13   r_moves 2      rr_moves 15     bf 0       move_together 0
+number 5   r_moves 3      rr_moves 14     bf 0       move_together 0
+number 18   r_moves 4      rr_moves 13     bf 0       move_together 0
+number 4   r_moves 5      rr_moves 12     bf 0       move_together 0
+number 10   r_moves 6      rr_moves 11     bf 0       move_together 0
+number 12   r_moves 7      rr_moves 10     bf 0       move_together 0
+number 11   r_moves 8      rr_moves 9     bf 0       move_together 0
+number 17   r_moves 9      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 10      rr_moves 7     bf 0       move_together 0
+number 3   r_moves 11      rr_moves 6     bf 0       move_together 0
+number 20   r_moves 12      rr_moves 5     bf 0       move_together 0
+number 14   r_moves 13      rr_moves 4     bf 0       move_together 0
+number 1   r_moves 14      rr_moves 3     bf 0       move_together 0
+number 19   r_moves 15      rr_moves 2     bf 0       move_together 0
+number 15   r_moves 16      rr_moves 1     bf 0       move_together 0
+number 3   r_moves 0      rr_moves 4     bf 0       move_together 0
+number 8   r_moves 1      rr_moves 3     bf 6       move_together 3
+number 9   r_moves 2      rr_moves 2     bf 0       move_together 0
+number 2   r_moves 3      rr_moves 1     bf 0       move_together 0
+stack b
+number 20   r_moves 0      rr_moves 16     bf 0       move_together 0
+number 14   r_moves 1      rr_moves 15     bf 0       move_together 0
+number 1   r_moves 2      rr_moves 14     bf 0       move_together 0
+number 19   r_moves 3      rr_moves 13     bf 0       move_together 0
+number 15   r_moves 4      rr_moves 12     bf 0       move_together 0
+number 7   r_moves 5      rr_moves 11     bf 0       move_together 0
+number 16   r_moves 6      rr_moves 10     bf 0       move_together 0
+number 13   r_moves 7      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 8      rr_moves 8     bf 0       move_together 0
+number 18   r_moves 9      rr_moves 7     bf 0       move_together 0
+number 4   r_moves 10      rr_moves 6     bf 0       move_together 0
+number 10   r_moves 11      rr_moves 5     bf 0       move_together 0
+number 12   r_moves 12      rr_moves 4     bf 0       move_together 0
+number 11   r_moves 13      rr_moves 3     bf 0       move_together 0
+number 17   r_moves 14      rr_moves 2     bf 0       move_together 0
+number 6   r_moves 15      rr_moves 1     bf 0       move_together 0
+number 6   r_moves 0      rr_moves 5     bf 0       move_together 0
+number 8   r_moves 1      rr_moves 4     bf 7       move_together 6
+number 9   r_moves 2      rr_moves 3     bf 0       move_together 0
+number 2   r_moves 3      rr_moves 2     bf 0       move_together 0
+number 3   r_moves 4      rr_moves 1     bf 0       move_together 0
+stack b
+number 20   r_moves 0      rr_moves 15     bf 0       move_together 0
+number 14   r_moves 1      rr_moves 14     bf 0       move_together 0
+number 1   r_moves 2      rr_moves 13     bf 0       move_together 0
+number 19   r_moves 3      rr_moves 12     bf 0       move_together 0
+number 15   r_moves 4      rr_moves 11     bf 0       move_together 0
+number 7   r_moves 5      rr_moves 10     bf 0       move_together 0
+number 16   r_moves 6      rr_moves 9     bf 0       move_together 0
+number 13   r_moves 7      rr_moves 8     bf 0       move_together 0
+number 5   r_moves 8      rr_moves 7     bf 0       move_together 0
+number 18   r_moves 9      rr_moves 6     bf 0       move_together 0
+number 4   r_moves 10      rr_moves 5     bf 0       move_together 0
+number 10   r_moves 11      rr_moves 4     bf 0       move_together 0
+number 12   r_moves 12      rr_moves 3     bf 0       move_together 0
+number 11   r_moves 13      rr_moves 2     bf 0       move_rr
+rb
+rb
+rb
+rb
+pa
 rrr
 rrb
 rrb
-pa
-rrr
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-pa
-rrr
 rrb
 rrb
-pa
-rrr
-rra
-rra
-rra
-pa
-rrr
-rrr
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-pa
-rrr
-rrr
-pa
-rrr
-rrr
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-pa
-rrr
-rra
-pa
-rrr
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-pa
+rrb
+rrb
+rrb
+rrb
 rrb
 pa
 ra
-ra
+rrb
+rrb
 pa
+together 0
+number 17   r_moves 14      rr_moves 1     bf 0       move_together 0
+number 7   r_moves 0      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 1      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 2      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 3      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 4      rr_moves 2     bf 0       move_together 0
+number 6   r_moves 5      rr_moves 1     bf 4       move_together 11
+stack b
+number 16   r_moves 0      rr_moves 14     bf 0       move_together 0
+number 13   r_moves 1      rr_moves 13     bf 0       move_together 0
+number 5   r_moves 2      rr_moves 12     bf 0       move_together 0
+number 18   r_moves 3      rr_moves 11     bf 0       move_together 0
+number 4   r_moves 4      rr_moves 10     bf 0       move_together 0
+number 10   r_moves 5      rr_moves 9     bf 0       move_together 0
+number 12   r_moves 6      rr_moves 8     bf 0       move_together 0
+number 11   r_moves 7      rr_moves 7     bf 0       move_together 0
+number 17   r_moves 8      rr_moves 6     bf 0       move_together 0
+number 20   r_moves 9      rr_moves 5     bf 0       move_together 0
+number 14   r_moves 10      rr_moves 4     bf 0       move_together 0
+number 1   r_moves 11      rr_moves 3     bf 0       move_together 0
+number 19   r_moves 12      rr_moves 2     bf 0       move_together 0
+number 15   r_moves 13      rr_moves 1     bf 0       move_together 0
+number 4   r_moves 0      rr_moves 7     bf 0       move_together 0
+number 6   r_moves 1      rr_moves 6     bf 5       move_together 4
+number 7   r_moves 2      rr_moves 5     bf 0       move_together 0
+number 8   r_moves 3      rr_moves 4     bf 0       move_together 0
+number 9   r_moves 4      rr_moves 3     bf 0       move_together 0
+number 2   r_moves 5      rr_moves 2     bf 0       move_together 0
+number 3   r_moves 6      rr_moves 1     bf 0       move_together 0
+stack b
+number 10   r_moves 0      rr_moves 13     bf 0       move_together 0
+number 12   r_moves 1      rr_moves 12     bf 0       move_together 0
+number 11   r_moves 2      rr_moves 11     bf 0       move_together 0
+number 17   r_moves 3      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 4      rr_moves 9     bf 0       move_together 0
+number 14   r_moves 5      rr_moves 8     bf 0       move_together 0
+number 1   r_moves 6      rr_moves 7     bf 0       move_together 0
+number 19   r_moves 7      rr_moves 6     bf 0       move_together 0
+number 15   r_moves 8      rr_moves 5     bf 0       move_together 0
+number 16   r_moves 9      rr_moves 4     bf 0       move_together 0
+number 13   r_moves 10      rr_moves 3     bf 0       move_together 0
+number 5   r_moves 11      rr_moves 2     bf 0       move_together 0
+number 18   r_moves 12      rr_moves 1     bf 0       move_together 0
+number 5   r_moves 0      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 1      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 2      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 3      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 4      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 5      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 6      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 7      rr_moves 1     bf 0       move_together 0
+stack b
+number 18   r_moves 0      rr_moves 12     bf 0       move_together 0
+number 10   r_moves 1      rr_moves 11     bf 0       move_together 0
+number 12   r_moves 2      rr_moves 10     bf 0       move_together 0
+number 11   r_moves 3      rr_moves 9     bf 0       move_together 0
+number 17   r_moves 4      rr_moves 8     bf 0       move_together 0
+number 20   r_moves 5      rr_moves 7     bf 0       move_together 0
+number 14   r_moves 6      rr_moves 6     bf 0       move_together 0
+number 1   r_moves 7      rr_moves 5     bf 0       move_together 0
+number 19   r_moves 8      rr_moves 4     bf 0       move_together 0
+number 15   r_moves 9      rr_moves 3     bf 0       move_togetherrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rra
+pa
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+pa
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rra
+rra
+rra
+pa
+r 0
+number 16   r_moves 10      rr_moves 2     bf 0       move_together 0
+number 13   r_moves 11      rr_moves 1     bf 0       move_together 0
+number 20   r_moves 0      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 1      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 2      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 3      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 4      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 5      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 6      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 7      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 8      rr_moves 1     bf 0       move_together 0
+stack b
+number 14   r_moves 0      rr_moves 11     bf 0       move_together 0
+number 1   r_moves 1      rr_moves 10     bf 0       move_together 0
+number 19   r_moves 2      rr_moves 9     bf 0       move_together 0
+number 15   r_moves 3      rr_moves 8     bf 0       move_together 0
+number 16   r_moves 4      rr_moves 7     bf 0       move_together 0
+number 13   r_moves 5      rr_moves 6     bf 0       move_together 0
+number 18   r_moves 6      rr_moves 5     bf 0       move_together 0
+number 10   r_moves 7      rr_moves 4     bf 0       move_together 0
+number 12   r_moves 8      rr_moves 3     bf 0       move_together 0
+number 11   r_moves 9      rr_moves 2     bf 0       move_together 0
+number 17   r_moves 10      rr_moves 1     bf 0       move_together 0
+number 19   r_moves 0      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 1      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 2      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 3      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 4      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 5      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 6      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 7      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 8      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 9      rr_moves 1     bf 0       move_together 0
+stack b
+number 15   r_moves 0      rr_moves 10     bf 0       move_together 0
+number 16   r_moves 1      rr_moves 9     bf 0       move_together 0
+number 13   r_moves 2      rr_moves 8     bf 0       move_together 0
+number 18   r_moves 3      rr_moves 7     bf 0       move_together 0
+number 10   r_moves 4      rr_moves 6     bf 0       move_together 0
+number 12   r_moves 5      rr_moves 5     bf 0       move_together 0
+number 11   r_moves 6      rr_moves 4     bf 0       move_together 0
+number 17   r_moves 7      rr_moves 3     bf 0       move_together 0
+number 14   r_moves 8      rr_moves 2     bf 0       move_together 0
+number 1   r_moves 9      rr_moves 1     bf 0       move_together 0
+number 18   r_moves 0      rr_moves 11     bf 0       move_together 0
+number 19   r_moves 1      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 2      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 3      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 4      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 5      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 6      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 7      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 8      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 9      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 10      rr_moves 1     bf 0       move_together 0
+stack b
+number 10   r_moves 0      rr_moves 9     bf 0       move_together 0
+number 12   r_moves 1      rr_moves 8     bf 0       move_together 0
+number 11   r_moves 2      rr_moves 7     bf 0       move_together 0
+number 17   r_moves 3      rr_moves 6     bf 0       move_together 0
+number 14   r_moves 4      rr_moves 5     bf 0       move_together 0
+number 1   r_moves 5      rr_moves 4     bf 0       move_together 0
+number 15   r_rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rra
+rra
+rra
+rra
+rra
+pa
+rrr
+rrr
+rrr
+rrr
+rrr
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+rrr
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+moves 6      rr_moves 3     bf 0       move_together 0
+number 16   r_moves 7      rr_moves 2     bf 0       move_together 0
+number 13   r_moves 8      rr_moves 1     bf 0       move_together 0
+number 17   r_moves 0      rr_moves 12     bf 0       move_together 0
+number 18   r_moves 1      rr_moves 11     bf 0       move_together 0
+number 19   r_moves 2      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 3      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 4      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 5      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 6      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 7      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 8      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 9      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 10      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 11      rr_moves 1     bf 0       move_together 0
+stack b
+number 14   r_moves 0      rr_moves 8     bf 0       move_together 0
+number 1   r_moves 1      rr_moves 7     bf 0       move_together 0
+number 15   r_moves 2      rr_moves 6     bf 0       move_together 0
+number 16   r_moves 3      rr_moves 5     bf 0       move_together 0
+number 13   r_moves 4      rr_moves 4     bf 0       move_together 0
+number 10   r_moves 5      rr_moves 3     bf 0       move_together 0
+number 12   r_moves 6      rr_moves 2     bf 0       move_together 0
+number 11   r_moves 7      rr_moves 1     bf 0       move_together 0
+number 16   r_moves 0      rr_moves 13     bf 0       move_together 0
+number 17   r_moves 1      rr_moves 12     bf 0       move_together 0
+number 18   r_moves 2      rr_moves 11     bf 0       move_together 0
+number 19   r_moves 3      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 4      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 5      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 6      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 7      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 8      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 9      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 10      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 11      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 12      rr_moves 1     bf 0       move_together 0
+stack b
+number 13   r_moves 0      rr_moves 7     bf 0       move_together 0
+number 10   r_moves 1      rr_moves 6     bf 0       move_together 0
+number 12   r_moves 2      rr_moves 5     bf 0       move_together 0
+number 11   r_moves 3      rr_moves 4     bf 0       move_together 0
+number 14   r_moves 4      rr_moves 3     bf 0       move_together 0
+number 1   r_moves 5      rr_moves 2     bf 0       move_together 0
+number 15   r_moves 6      rr_moves 1     bf 0       move_together 0
+number 15   r_moves 0      rr_moves 14     bf 0       move_together 0
+number 16   r_moves 1      rr_moves 13     bf 0       move_together 0
+number 17   r_moves 2      rr_moves 12     bf 0       move_together 0
+number 18   r_moves 3      rr_moves 11     bf 0       move_together 0
+number 19   r_moves 4      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 5      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 6      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 7      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 8      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 9      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 10      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 11      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 12      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 13      rr_moves 1     bf 0       move_together 0
+stack b
+number 13   r_moves 0      rr_moves 6     bf 0       move_together 0
+number 10   r_moves 1      rr_moves 5     bf 0       move_together 0
+number 12   r_moves rrr
+rrr
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+rrr
+rrr
+rrr
+rrr
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+rrr
+rrr
+rrr
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+2      rr_moves 4     bf 0       move_together 0
+number 11   r_moves 3      rr_moves 3     bf 0       move_together 0
+number 14   r_moves 4      rr_moves 2     bf 0       move_together 0
+number 1   r_moves 5      rr_moves 1     bf 0       move_together 0
+number 14   r_moves 0      rr_moves 15     bf 0       move_together 0
+number 15   r_moves 1      rr_moves 14     bf 0       move_together 0
+number 16   r_moves 2      rr_moves 13     bf 0       move_together 0
+number 17   r_moves 3      rr_moves 12     bf 0       move_together 0
+number 18   r_moves 4      rr_moves 11     bf 0       move_together 0
+number 19   r_moves 5      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 6      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 7      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 8      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 9      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 10      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 11      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 12      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 13      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 14      rr_moves 1     bf 0       move_together 0
+stack b
+number 1   r_moves 0      rr_moves 5     bf 0       move_together 0
+number 13   r_moves 1      rr_moves 4     bf 0       move_together 0
+number 10   r_moves 2      rr_moves 3     bf 0       move_together 0
+number 12   r_moves 3      rr_moves 2     bf 0       move_together 0
+number 11   r_moves 4      rr_moves 1     bf 0       move_together 0
+number 13   r_moves 0      rr_moves 16     bf 0       move_together 0
+number 14   r_moves 1      rr_moves 15     bf 0       move_together 0
+number 15   r_moves 2      rr_moves 14     bf 0       move_together 0
+number 16   r_moves 3      rr_moves 13     bf 0       move_together 0
+number 17   r_moves 4      rr_moves 12     bf 0       move_together 0
+number 18   r_moves 5      rr_moves 11     bf 0       move_together 0
+number 19   r_moves 6      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 7      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 8      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 9      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 10      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 11      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 12      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 13      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 14      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 15      rr_moves 1     bf 0       move_together 0
+stack b
+number 10   r_moves 0      rr_moves 4     bf 0       move_together 0
+number 12   r_moves 1      rr_moves 3     bf 0       move_together 0
+number 11   r_moves 2      rr_moves 2     bf 0       move_together 0
+number 1   r_moves 3      rr_moves 1     bf 0       move_together 0
+number 12   r_moves 0      rr_moves 17     bf 0       move_together 0
+number 13   r_moves 1      rr_moves 16     bf 0       move_together 0
+number 14   r_moves 2      rr_moves 15     bf 0       move_together 0
+number 15   r_moves 3      rr_moves 14     bf 0       move_together 0
+number 16   r_moves 4      rr_moves 13     bf 0       move_together 0
+number 17   r_moves 5      rr_moves 12     bf 0       move_together 0
+number 18   r_moves 6      rr_moves 11     bf 0       move_together 0
+number 19   r_moves 7      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 8      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 9      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 10      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 11      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 12      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 13      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 14      rr_moves 3     bf 0       move_together 0
+number 3   r_moverrr
+rrr
+rrr
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+rrr
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+rrr
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+s 15      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 16      rr_moves 1     bf 0       move_together 0
+stack b
+number 11   r_moves 0      rr_moves 3     bf 0       move_together 0
+number 1   r_moves 1      rr_moves 2     bf 0       move_together 0
+number 10   r_moves 2      rr_moves 1     bf 0       move_together 0
+number 11   r_moves 0      rr_moves 18     bf 0       move_together 0
+number 12   r_moves 1      rr_moves 17     bf 0       move_together 0
+number 13   r_moves 2      rr_moves 16     bf 0       move_together 0
+number 14   r_moves 3      rr_moves 15     bf 0       move_together 0
+number 15   r_moves 4      rr_moves 14     bf 0       move_together 0
+number 16   r_moves 5      rr_moves 13     bf 0       move_together 0
+number 17   r_moves 6      rr_moves 12     bf 0       move_together 0
+number 18   r_moves 7      rr_moves 11     bf 0       move_together 0
+number 19   r_moves 8      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 9      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 10      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 11      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 12      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 13      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 14      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 15      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 16      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 17      rr_moves 1     bf 0       move_together 0
+stack b
+number 1   r_moves 0      rr_moves 2     bf 0       move_together 0
+number 10   r_moves 1      rr_moves 1     bf 0       move_together 0
+number 10   r_moves 0      rr_moves 19     bf 0       move_together 0
+number 11   r_moves 1      rr_moves 18     bf 0       move_together 0
+number 12   r_moves 2      rr_moves 17     bf 0       move_together 0
+number 13   r_moves 3      rr_moves 16     bf 0       move_together 0
+number 14   r_moves 4      rr_moves 15     bf 0       move_together 0
+number 15   r_moves 5      rr_moves 14     bf 0       move_together 0
+number 16   r_moves 6      rr_moves 13     bf 0       move_together 0
+number 17   r_moves 7      rr_moves 12     bf 0       move_together 0
+number 18   r_moves 8      rr_moves 11     bf 0       move_together 0
+number 19   r_moves 9      rr_moves 10     bf 0       move_together 0
+number 20   r_moves 10      rr_moves 9     bf 0       move_together 0
+number 5   r_moves 11      rr_moves 8     bf 0       move_together 0
+number 6   r_moves 12      rr_moves 7     bf 0       move_together 0
+number 7   r_moves 13      rr_moves 6     bf 0       move_together 0
+number 8   r_moves 14      rr_moves 5     bf 0       move_together 0
+number 9   r_moves 15      rr_moves 4     bf 0       move_together 0
+number 2   r_moves 16      rr_moves 3     bf 0       move_together 0
+number 3   r_moves 17      rr_moves 2     bf 0       move_together 0
+number 4   r_moves 18      rr_moves 1     bf 0       move_together 0
+stack b
+number 1   r_moves 0      rr_moves 1     bf 0       move_together 0
