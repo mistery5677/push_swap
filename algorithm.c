@@ -73,14 +73,14 @@ static int move_together(int ra, int rra, int rb, int rrb)
         //ft_printf("entrou 2\n");
         return rrarb + 1;
     }
-    else if (rr <= rrr)
+    else if (rr + ra + rb <= rrr + rra + rrb)
     {
         //ft_printf("entrou 3\n");
         return rr + ra + rb + 1;
     }
     else
     {
-        //ft_printf("entrou 4\n");   
+        //ft_printf("entrou 4\n");
         return rrr + rra + rrb + 1;
     }
 }
@@ -101,23 +101,33 @@ static int move_together(int ra, int rra, int rb, int rrb)
     return minimum;
 } */
 
-static void first_bf(t_stack *tmp_stacka, t_stack *stack_b)
+static void first_bf(t_stack *tmp_stacka, t_stack *stack_b, int minimum, int max)
 {
     t_stack *tmp_stackb;
+    int nbra;
+    int nbrb;
 
     tmp_stackb = stack_b;
+    nbra = tmp_stacka->number;
     while(tmp_stackb != NULL)
     {
-        if((tmp_stackb->number < tmp_stacka->number && (tmp_stacka->move_together == 0 || tmp_stacka->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move))))
+        nbrb = tmp_stackb->number;
+        if(nbra == minimum && nbrb == max)
+        {
+            tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
+            tmp_stacka->bf = tmp_stackb->number;
+        }
+        else if(nbra > nbrb && nbrb > node_number(&tmp_stacka, ft_stacksize(tmp_stacka) - 1))
         {
             tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
             tmp_stacka->bf = tmp_stackb->number;
         }
         tmp_stackb = tmp_stackb->next;
     }
+    //ft_printf("stack_a bf %d\n", tmp_stacka->bf);
 }
 
-void find_bf(t_stack *stack_a, t_stack *stack_b)
+void find_bf(t_stack *stack_a, t_stack *stack_b, int minimum, int max)
 {
     t_stack *tmp_stacka;
     t_stack *tmp_stackb;
@@ -127,8 +137,8 @@ void find_bf(t_stack *stack_a, t_stack *stack_b)
     tmp_stacka = stack_a;
     tmp_stackb = stack_b;
     last_nbr = tmp_stacka->number;
-    first_bf(tmp_stacka, stack_b);
-    lowest_node = stack_a;x
+    first_bf(tmp_stacka, stack_b, minimum, max);
+    lowest_node = stack_a;
     tmp_stacka = tmp_stacka->next;
     while(tmp_stacka != NULL)
     {
@@ -136,7 +146,15 @@ void find_bf(t_stack *stack_a, t_stack *stack_b)
         while(tmp_stackb != NULL)
         {
             //printf("number_b %d     number_a %d     //      last nbr %d  number_b %d    //      move_toghether_a %d     move_together %d\n", tmp_stackb->number, tmp_stacka->number, last_nbr, tmp_stackb->number, tmp_stacka->move_together, move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move));
-            if(tmp_stackb->number < tmp_stacka->number && tmp_stackb->number >= last_nbr && (stack_a->move_together == 0 || stack_a->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
+            if(tmp_stackb->number < tmp_stacka->number && tmp_stackb->number >= last_nbr && (lowest_node->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
+            {
+                lowest_node->move_together = 0;
+                lowest_node = tmp_stacka;
+                tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
+                //printf("stack_a move %d tmp_stacka move %d\n", stack_a->move_together, tmp_stacka->move_together);
+                tmp_stacka->bf = tmp_stackb->number;
+            }
+            else if (last_nbr > tmp_stacka->number && tmp_stackb->number < tmp_stacka->number && (lowest_node->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
             {
                 lowest_node->move_together = 0;
                 lowest_node = tmp_stacka;
@@ -170,6 +188,7 @@ static int highest_number(t_stack *stack)
 static t_stack *find_best_utils(t_stack *stack_a, t_stack *stack_b)
 {
     stack_a->bf = highest_number(stack_b);
+    stack_a->move_together = move_together(stack_a->r_move, stack_a->rr_move, stack_b->r_move, stack_b->rr_move);
     return stack_a;
 }
 
@@ -180,11 +199,13 @@ static t_stack *find_best(t_stack *stack_a, t_stack *stack_b)
     tmp_stacka = stack_a;
     while(tmp_stacka != NULL && tmp_stacka->move_together == 0)
         tmp_stacka = tmp_stacka->next;
-    //printf("tmp_stacka number %d", stack_a->number);
     if(tmp_stacka != NULL && tmp_stacka->move_together > 0)
+    {
         return tmp_stacka;
+    }
     else
-        return find_best_utils(stack_a, stack_b);
+        return find_best_utils(stack_a,stack_b);
+    //printf("tmp_stacka number %d", stack_a->number);
 }
 
 static t_stack *target_b (int target, t_stack *stack_b)
