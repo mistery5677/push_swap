@@ -62,25 +62,25 @@ static int move_together(int ra, int rra, int rb, int rrb)
         rrr++;
     }
     //printf("rr %d rrr %d\n", rr, rrr);
-    //ft_printf("rarrb %d rrarb %d rr %d rrr %d ra %d rb %d\n", rarrb, rrarb, rr, rrr, ra, rb);
+    ft_printf("rarrb %d rrarb %d rr %d rrr %d ra %d rb %d\n", rarrb, rrarb, rr, rrr, ra, rb);
     if (rarrb < rr + ra + rb && rarrb < rrr + rra + rrb && rarrb < rrarb)
     {
-        //ft_printf("entrou 1\n");
+        ft_printf("entrou 1  rarrb + 1 = %d\n\n", rarrb + 1);
         return rarrb + 1;
     }
     else if (rrarb < rr + ra + rb && rrarb < rrr + rra + rrb && rrarb < rarrb)
     {
-        //ft_printf("entrou 2\n");
+        ft_printf("entrou 2 rrarb + 1 = %d\n\n",rrarb + 1);
         return rrarb + 1;
     }
     else if (rr + ra + rb <= rrr + rra + rrb)
     {
-        //ft_printf("entrou 3\n");
+        ft_printf("entrou 3  rr + ra + rb + 1 = %d\n\n", rr + ra + rb + 1);
         return rr + ra + rb + 1;
     }
     else
     {
-        //ft_printf("entrou 4\n");
+        ft_printf("entrou 4 rrr + rra + rrb + 1 = %d\n\n", rrr + rra + rrb + 1);
         return rrr + rra + rrb + 1;
     }
 }
@@ -114,11 +114,13 @@ static void first_bf(t_stack *tmp_stacka, t_stack *stack_b, int minimum, int max
         nbrb = tmp_stackb->number;
         if(nbra == minimum && nbrb == max)
         {
+            ft_printf("entrou first number %d\n", tmp_stacka->number);
             tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
             tmp_stacka->bf = tmp_stackb->number;
         }
         else if(nbra > nbrb && nbrb > node_number(&tmp_stacka, ft_stacksize(tmp_stacka) - 1))
         {
+             ft_printf("entrou first number %d second option\n", tmp_stacka->number);
             tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
             tmp_stacka->bf = tmp_stackb->number;
         }
@@ -148,6 +150,7 @@ void find_bf(t_stack *stack_a, t_stack *stack_b, int minimum, int max)
             //printf("number_b %d     number_a %d     //      last nbr %d  number_b %d    //      move_toghether_a %d     move_together %d\n", tmp_stackb->number, tmp_stacka->number, last_nbr, tmp_stackb->number, tmp_stacka->move_together, move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move));
             if(tmp_stackb->number < tmp_stacka->number && tmp_stackb->number >= last_nbr && (lowest_node->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
             {
+                 ft_printf("entrou second number %d\n", tmp_stacka->number);
                 lowest_node->move_together = 0;
                 lowest_node = tmp_stacka;
                 tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
@@ -156,6 +159,7 @@ void find_bf(t_stack *stack_a, t_stack *stack_b, int minimum, int max)
             }
             else if (last_nbr > tmp_stacka->number && tmp_stackb->number < tmp_stacka->number && (lowest_node->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
             {
+                 ft_printf("entrou second number %d secont option\n", tmp_stacka->number);
                 lowest_node->move_together = 0;
                 lowest_node = tmp_stacka;
                 tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
@@ -167,6 +171,7 @@ void find_bf(t_stack *stack_a, t_stack *stack_b, int minimum, int max)
         last_nbr = tmp_stacka->number;
         tmp_stacka = tmp_stacka->next;
     }
+    //print_all(&stack_a);
 }
 
 static int highest_number(t_stack *stack)
@@ -344,10 +349,10 @@ void ft_move(t_stack **stack_a, t_stack **stack_b)
     t_stack *b_target;
     int option;
 
-    best_movea =  find_best(*stack_a, *stack_b); //Target para o node mais barato
-    print_all(stack_a);
+/*     print_all(stack_a);
     printf("stack b\n");
-    print_all(stack_b);
+    print_all(stack_b); */
+    best_movea =  find_best(*stack_a, *stack_b); //Target para o node mais barato
     b_target = target_b(best_movea->bf, *stack_b); // Target para o node de b correspondente
 /*     print_all(stack_a);
     printf("stack b\n");
