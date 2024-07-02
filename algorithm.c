@@ -168,7 +168,16 @@ void find_bf(t_stack *stack_a, t_stack *stack_b, int minimum, int max)
         {
             printf("(find_bf) number b %d\n", tmp_stackb->number);
             //printf("number_b %d     number_a %d     //      last nbr %d  number_b %d    //      move_toghether_a %d     move_together %d\n", tmp_stackb->number, tmp_stacka->number, last_nbr, tmp_stackb->number, tmp_stacka->move_together, move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move));
-            if(tmp_stackb->number < tmp_stacka->number && tmp_stackb->number >= last_nbr && (lowest_node->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
+            if(tmp_stacka->number == minimum && tmp_stackb->number == max && (lowest_node->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
+            {
+                printf("(find_bf) entrou second number %d Lowest option\n", tmp_stacka->number);
+                lowest_node->move_together = 0;
+                lowest_node = tmp_stacka;
+                tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
+                //printf("stack_a move %d tmp_stacka move %d\n", stack_a->move_together, tmp_stacka->move_together);
+                tmp_stacka->bf = tmp_stackb->number;
+            }
+            else if(tmp_stackb->number < tmp_stacka->number && tmp_stackb->number >= last_nbr && (lowest_node->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
             {
                 printf("(find_bf) entrou second number %d\n", tmp_stacka->number);
                 lowest_node->move_together = 0;
