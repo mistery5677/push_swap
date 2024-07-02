@@ -62,25 +62,25 @@ static int move_together(int ra, int rra, int rb, int rrb)
         rrr++;
     }
     //printf("rr %d rrr %d\n", rr, rrr);
-    ft_printf("(move_together) rarrb %d rrarb %d rr %d rrr %d ra %d rb %d rra %d rrb %d\n", rarrb, rrarb, rr, rrr, ra, rb, rra, rrb);
+    printf("(move_together) rarrb %d rrarb %d rr %d rrr %d ra %d rb %d rra %d rrb %d\n", rarrb, rrarb, rr, rrr, ra, rb, rra, rrb);
     if (rarrb < rr + ra + rb && rarrb < rrr + rra + rrb && rarrb < rrarb)
     {
-        ft_printf("entrou 1  rarrb + 1 = %d\n\n", rarrb + 1);
+        printf("(move_together) entrou 1  rarrb + 1 = %d\n\n", rarrb + 1);
         return rarrb + 1;
     }
     else if (rrarb < rr + ra + rb && rrarb < rrr + rra + rrb && rrarb < rarrb)
     {
-        ft_printf("entrou 2 rrarb + 1 = %d\n\n",rrarb + 1);
+        printf("(move_together) entrou 2 rrarb + 1 = %d\n\n",rrarb + 1);
         return rrarb + 1;
     }
     else if (rr + ra + rb <= rrr + rra + rrb)
     {
-        ft_printf("entrou 3  rr + ra + rb + 1 = %d\n\n", rr + ra + rb + 1);
+        printf("(move_together) entrou 3  rr + ra + rb + 1 = %d\n\n", rr + ra + rb + 1);
         return rr + ra + rb + 1;
     }
     else
     {
-        ft_printf("entrou 4 rrr + rra + rrb + 1 = %d\n\n", rrr + rra + rrb + 1);
+        printf("(move_together) entrou 4 rrr + rra + rrb + 1 = %d\n\n", rrr + rra + rrb + 1);
         return rrr + rra + rrb + 1;
     }
 }
@@ -114,13 +114,13 @@ static void first_bf(t_stack *tmp_stacka, t_stack **stack_b, int minimum, int ma
         nbrb = tmp_stackb->number;
         if(nbra == minimum && nbrb == max)
         {
-            ft_printf("(first_bf) entrou first number %d\n", tmp_stacka->number);
+            printf("(first_bf) entrou first number %d\n", tmp_stacka->number);
             tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
             tmp_stacka->bf = tmp_stackb->number;
         }
         else if(nbra > nbrb && nbrb > node_number(&tmp_stacka, ft_stacksize(tmp_stacka) - 1))
         {
-             ft_printf("(first_bf) entrou first number %d second option\n", tmp_stacka->number);
+            printf("(first_bf) entrou first number %d second option\n", tmp_stacka->number);
             tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
             tmp_stacka->bf = tmp_stackb->number;
         }
@@ -142,28 +142,35 @@ void find_bf(t_stack **stack_a, t_stack **stack_b, int minimum, int max)
     first_bf(tmp_stacka, stack_b, minimum, max);
     lowest_node = *stack_a;
     tmp_stacka = tmp_stacka->next;
+    printf("(find_bf) information: Stack a\n");
+    print_all(stack_a);
+    printf("(find_bf) information: Stack b\n");
+    print_all(stack_b);
     while(tmp_stacka != NULL)
     {
         tmp_stackb = *stack_b;
-        ft_printf("number a %d\n", tmp_stacka->number);
+        printf("(find_bf) number a %d\n", tmp_stacka->number);
         while(tmp_stackb != NULL)
         {
+            printf("(find_bf) number b %d\n", tmp_stackb->number);
             //printf("number_b %d     number_a %d     //      last nbr %d  number_b %d    //      move_toghether_a %d     move_together %d\n", tmp_stackb->number, tmp_stacka->number, last_nbr, tmp_stackb->number, tmp_stacka->move_together, move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move));
             if(tmp_stackb->number < tmp_stacka->number && tmp_stackb->number >= last_nbr && (lowest_node->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
             {
-                ft_printf("(find_bf) entrou second number %d\n", tmp_stacka->number);
+                printf("(find_bf) entrou second number %d\n", tmp_stacka->number);
                 lowest_node->move_together = 0;
+                *stack_a = tmp_stacka;
                 lowest_node = tmp_stacka;
-                tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
+                (*stack_a)->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
                 //printf("stack_a move %d tmp_stacka move %d\n", stack_a->move_together, tmp_stacka->move_together);
                 tmp_stacka->bf = tmp_stackb->number;
             }
             else if (last_nbr > tmp_stacka->number && tmp_stackb->number < tmp_stacka->number && (lowest_node->move_together > move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move)))
             {
-                ft_printf("(find_bf) entrou second number %d secont option\n", tmp_stacka->number);
+                printf("(find_bf) entrou second number %d secont option\n", tmp_stacka->number);
                 lowest_node->move_together = 0;
+                *stack_a = tmp_stacka;
                 lowest_node = tmp_stacka;
-                tmp_stacka->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
+                (*stack_a)->move_together = move_together(tmp_stacka->r_move, tmp_stacka->rr_move, tmp_stackb->r_move, tmp_stackb->rr_move);
                 //printf("stack_a move %d tmp_stacka move %d\n", stack_a->move_together, tmp_stacka->move_together);
                 tmp_stacka->bf = tmp_stackb->number;
             }
@@ -172,7 +179,6 @@ void find_bf(t_stack **stack_a, t_stack **stack_b, int minimum, int max)
         last_nbr = tmp_stacka->number;
         tmp_stacka = tmp_stacka->next;
     }
-
     print_all(stack_a);
     //print_all(&stack_a);
 }
@@ -367,6 +373,8 @@ void ft_move(t_stack **stack_a, t_stack **stack_b)
     //printf("best_movea number %d\n",(*stack_a)->number);
     option = what_move(best_movea, b_target);
     //printf("option %d\n", option);
+    printf("(ft_move) option %d\n", option);
+    print_all(stack_a);
     if(option == 1)
         option_1(stack_a, stack_b, best_movea->r_move, b_target->rr_move);
     else if(option == 2)
