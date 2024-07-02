@@ -8,254 +8,596 @@ pb
 pb
 pb
 pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
 pa
 pa
 pa
 ra
-rarrb 4 rrarb 6 rr 1 rrr 2 ra 0 rb 3
-entrou 4 rrr + rra + rrb + 1 = 4
-
-rarrb 2 rrarb 8 rr 1 rrr 1 ra 0 rb 5
-entrou 4 rrr + rra + rrb + 1 = 3
-
-rarrb 8 rrarb 2 rr 1 rrr 1 ra 1 rb 0
-entrou 3  rr + ra + rb + 1 = 3
-
-rarrb 7 rrarb 3 rr 0 rrr 3 ra 0 rb 0
-entrou 3  rr + ra + rb + 1 = 1
-
-2 
-5 
-7 
+sa
+rra
+pa
+ra
+pa
+ra
+rrb
+pa
+rra
+pa
+rrb
+pa
+ra
+pa
+rr
+ra
+pa
+rr
+pa
+rr
+rb
+rb
+pa
+rra
+rb
+rb
+pa
+ra
+ra
+rrb
+rrb
+pa
+rra
+rra
+rb
+pa
 rrr
 rrr
+rra
+rra
+pa
+rrr
+pa
+rr
+pa
+ra
+ra
+pa
+rrb
+pa
+rra
+rra
+pa
+rr
+pa
+rr
+rb
+pa
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+ra
+ra
+pa
+rrr
+rrr
+pa
+rrr
+rrr
+rrr
+rrr
+rrr
+rra
+rra
+pa
+rrr
+rra
+rra
+rra
+rra
+pa
+rr
+ra
+pa
+rr
+rr
+pa
+ra
+ra
+pa
+rr
+pa
+rr
+rr
+rr
+pa
+ra
+ra
+rrb
+rrb
+rrb
+pa
+rrr
+rrr
+pa
+ra
+pa
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pa
+ra
+pa
+rr
+rb
+rb
+pa
+ra
+ra
+ra
+rrb
+rrb
+rrb
+pa
+rrr
+rrr
+rrr
+rra
+pa
+rrr
+pa
+rrb
+pa
+ra
+ra
+ra
+ra
+rrb
+pa
+ra
+rrb
+pa
+rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rra
+pa
+rra
+rra
+rra
+rra
+pa
+rrr
+rrr
+rrr
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+rr
+pa
+rra
+rra
+pa
+rr
+ra
+ra
+pa
+rra
+rra
+rb
+rb
+rb
+pa
+rrr
+rrr
+rrr
+rrr
+rrr
+rra
+rra
+rra
+pa
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+ra
+pa
+rra
+rra
+pa
+rrb
+pa
+rrr
+rrb
+pa
+rr
+rr
+pa
+rrr
+rra
+pa
+rrr
+rrr
+rra
+rra
+rra
+rra
+pa
+rrr
+rrr
+rra
+pa
 rrr
 rrb
 rrb
 pa
-depois dos moves
-10 
-2 
-5 
-7 
-entrou first number 10 second option
-rarrb 6 rrarb 4 rr 0 rrr 4 ra 0 rb 0
-entrou 3  rr + ra + rb + 1 = 1
-
-entrou first number 10 second option
-rarrb 2 rrarb 8 rr 0 rrr 2 ra 0 rb 4
-entrou 1  rarrb + 1 = 3
-
-rarrb 5 rrarb 5 rr 1 rrr 3 ra 0 rb 1
-entrou 3  rr + ra + rb + 1 = 3
-
-rarrb 7 rrarb 3 rr 1 rrr 2 ra 1 rb 0
-entrou 3  rr + ra + rb + 1 = 3
-
-rarrb 5 rrarb 5 rr 2 rrr 2 ra 0 rb 1
-entrou 3  rr + ra + rb + 1 = 4
-
-rarrb 4 rrarb 6 rr 3 rrr 1 ra 0 rb 2
-entrou 4 rrr + rra + rrb + 1 = 2
-
-entrou second number 7
-rarrb 4 rrarb 6 rr 3 rrr 1 ra 0 rb 2
-entrou 4 rrr + rra + rrb + 1 = 2
-
-10 
-2 
-5 
-7 
 rrr
-pa
-depois dos moves
-6 
-7 
-10 
-2 
-5 
-rarrb 7 rrarb 3 rr 0 rrr 3 ra 2 rb 0
-entrou 3  rr + ra + rb + 1 = 3
-
-rarrb 3 rrarb 7 rr 2 rrr 1 ra 0 rb 2
-entrou 4 rrr + rra + rrb + 1 = 4
-
-rarrb 6 rrarb 4 rr 2 rrr 2 ra 1 rb 0
-entrou 3  rr + ra + rb + 1 = 4
-
-rarrb 8 rrarb 2 rr 1 rrr 1 ra 3 rb 0
-entrou 2 rrarb + 1 = 3
-
-rarrb 6 rrarb 4 rr 3 rrr 1 ra 1 rb 0
-entrou 4 rrr + rra + rrb + 1 = 3
-
-rarrb 5 rrarb 5 rr 0 rrr 5 ra 0 rb 0
-entrou 3  rr + ra + rb + 1 = 1
-
-6 
-7 
-10 
-2 
-5 
+rrr
 rrr
 rra
-rra
-rra
+pa
 rra
 pa
-depois dos moves
-9 
-6 
-7 
-10 
-2 
-5 
-entrou first number 9 second option
-rarrb 4 rrarb 6 rr 0 rrr 4 ra 0 rb 0
-entrou 3  rr + ra + rb + 1 = 1
-
-rarrb 4 rrarb 6 rr 1 rrr 3 ra 0 rb 0
-entrou 3  rr + ra + rb + 1 = 2
-
-rarrb 3 rrarb 7 rr 1 rrr 2 ra 0 rb 1
-entrou 3  rr + ra + rb + 1 = 3
-
-rarrb 2 rrarb 8 rr 1 rrr 1 ra 0 rb 2
-entrou 1  rarrb + 1 = 3
-
-rarrb 7 rrarb 3 rr 0 rrr 3 ra 3 rb 0
-entrou 3  rr + ra + rb + 1 = 4
-
-rarrb 6 rrarb 4 rr 2 rrr 2 ra 2 rb 0
-entrou 4 rrr + rra + rrb + 1 = 3
-
-rarrb 8 rrarb 2 rr 1 rrr 1 ra 4 rb 0
-entrou 2 rrarb + 1 = 3
-
-rarrb 6 rrarb 4 rr 3 rrr 1 ra 2 rb 0
-entrou 4 rrr + rra + rrb + 1 = 2
-
-9 
-6 
-7 
-10 
-2 
-5 
+ra
+ra
+rrb
+rrb
 pa
-depois dos moves
-8 
-9 
-6 
-7 
-10 
-2 
-5 
-rarrb 5 rrarb 5 rr 0 rrr 3 ra 2 rb 0
-entrou 3  rr + ra + rb + 1 = 3
-
-rarrb 4 rrarb 6 rr 1 rrr 2 ra 1 rb 0
-entrou 3  rr + ra + rb + 1 = 3
-
-rarrb 3 rrarb 7 rr 2 rrr 1 ra 0 rb 0
-entrou 3  rr + ra + rb + 1 = 3
-
-rarrb 7 rrarb 3 rr 1 rrr 2 ra 4 rb 0
-entrou 4 rrr + rra + rrb + 1 = 3
-
-rarrb 9 rrarb 1 rr 0 rrr 1 ra 6 rb 0
-entrou 2 rrarb + 1 = 2
-
-rarrb 7 rrarb 3 rr 2 rrr 1 ra 4 rb 0
-entrou 4 rrr + rra + rrb + 1 = 2
-
-rarrb 3 rrarb 7 rr 0 rrr 3 ra 0 rb 0
-entrou 3  rr + ra + rb + 1 = 1
-
-8 
-9 
-6 
-7 
-10 
-2 
-5 
+ra
+ra
+ra
+ra
+ra
+rrb
+rrb
+rrb
+pa
+ra
+ra
+ra
+ra
+ra
+rrb
+rrb
+rrb
+rrb
+pa
+rr
+rr
+rr
+ra
+ra
+ra
+ra
+ra
+ra
+pa
+rr
+rr
+rr
+rr
+rr
+rr
+rr
+rr
+ra
+ra
+ra
+ra
+ra
+ra
+pa
+ra
+ra
+ra
+ra
+pa
+rrb
+pa
+rr
+rb
+pa
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+rrb
+rrb
+pa
+rr
+rr
+rr
+rr
+pa
+rr
+ra
+pa
 rrr
+rrr
+rrr
+rrr
+rrr
+rrr
+rrb
+pa
+rrr
+rrb
+pa
+ra
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rrr
+rrb
+rrb
+rrb
+pa
 rra
+rra
+rra
+rra
+pa
+rr
+pa
+rrr
+rrr
+rrr
+rrr
+pa
 rra
 rra
 rra
 rra
 rra
 pa
-depois dos moves
-4 
-8 
-9 
-6 
-7 
-10 
-2 
-5 
-rarrb 5 rrarb 5 rr 0 rrr 2 ra 3 rb 0
-entrou 3  rr + ra + rb + 1 = 4
-
-rarrb 4 rrarb 6 rr 1 rrr 1 ra 2 rb 0
-entrou 3  rr + ra + rb + 1 = 4
-
-rarrb 7 rrarb 3 rr 1 rrr 1 ra 5 rb 0
-entrou 4 rrr + rra + rrb + 1 = 3
-
-rarrb 9 rrarb 1 rr 0 rrr 1 ra 7 rb 0
-entrou 2 rrarb + 1 = 2
-
-rarrb 2 rrarb 8 rr 0 rrr 2 ra 0 rb 0
-entrou 3  rr + ra + rb + 1 = 1
-
-4 
-8 
-9 
-6 
-7 
-10 
-2 
-5 
+rr
+rr
+rr
+rr
+rr
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
 pa
-depois dos moves
-3 
-4 
-8 
-9 
-6 
-7 
-10 
-2 
-5 
-rarrb 5 rrarb 5 rr 0 rrr 1 ra 4 rb 0
-entrou 3  rr + ra + rb + 1 = 5
-
-rarrb 8 rrarb 2 rr 0 rrr 1 ra 7 rb 0
-entrou 4 rrr + rra + rrb + 1 = 3
-
-rarrb 1 rrarb 9 rr 0 rrr 1 ra 0 rb 0
-entrou 3  rr + ra + rb + 1 = 1
-
-3 
-4 
-8 
-9 
-6 
-7 
-10 
-2 
-5 
+rr
+rr
+rr
+rr
+rr
+rr
+rr
+rr
+ra
+ra
+ra
+ra
 pa
-depois dos moves
-1 
-3 
-4 
-8 
-9 
-6 
-7 
-10 
-2 
-5 
+ra
+ra
+ra
+ra
+ra
+rrb
+rrb
+pa
+rr
+rr
+rr
+rr
+pa
+ra
+ra
+pa
+ra
+pa
+ra
+pa
+rrr
+rrb
+pa
+rra
+rb
+rb
+pa
+rra
+rra
+pa
+rr
+rr
+ra
+ra
+ra
+pa
+rr
+rr
+rr
+ra
+ra
+ra
+pa
+rr
+rr
+rr
+ra
+ra
+pa
+rr
+ra
+ra
+ra
+pa
+rr
+ra
+pa
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pa
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
