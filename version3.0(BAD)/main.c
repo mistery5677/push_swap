@@ -11,18 +11,6 @@ void print_stack(t_stack **stack)
         temp_stack = temp_stack->next;
     }
 }
-
-void print_all(t_stack **stack_a)
-{
-    t_stack *tmp_stack;
-
-    tmp_stack = *stack_a;
-    while(tmp_stack != NULL)
-    {
-        printf("number %d   r_moves %d      rr_moves %d     bf %d       move_together %d\n", tmp_stack->number, tmp_stack->r_move, tmp_stack->rr_move, tmp_stack->bf, tmp_stack->move_together);
-        tmp_stack = tmp_stack->next;
-    }
-}
 //Este teste serve para imprimir a lista com os dados que recebeu
 /* int main(int argc, char **argv)
 {
@@ -219,7 +207,5 @@ int main(int argc, char **argv)
     create_stack(&stack_a, argc, argv);
     //printf("worth %d\n", worth_down(stack_a, stack_b));
     push_swap(stack_a, stack_b);
+    print_stack(&stack_b);
 }
-
-/* test case */
-//  4 3 0 6 7 1 2 8

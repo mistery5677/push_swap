@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/11 17:30:00 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/07/02 00:24:46 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,59 @@ typedef struct s_stack
 {
 	int				number;
 	int				temp;
+	int 			r_move;
+	int 			rr_move;
+	int				bf;
+	int move_together;
 	struct s_stack	*next;
 }					t_stack;
 
+//Print stack
+void print_stack(t_stack **stack);
+
+//Main functions
 void				push_swap(t_stack *stack_a, t_stack *stack_b);
+
+//Stack funtions
 void				free_stack(t_stack *stack);
 t_stack				*ft_lstnew2(int content);
 int					ft_stacksize(t_stack *stack);
-void				create_node(t_stack **stack, const char *content);
 void				create_stack(t_stack **stack, int argc, char **argv);
+
+//Get values
 int					node_number(t_stack **stack, int n2);
 int					node_temp(t_stack **stack, int n2);
-void				move_swap(t_stack **stack);
-void				move_reverse(t_stack **stack);
-void				move_rreverse(t_stack **stack);
-void				move_push(t_stack **dest, t_stack **src);
+
+//Moves
+void				move_swap(t_stack **stack, char *move);
+void				move_reverse(t_stack **stack, char *move);
+void				move_rreverse(t_stack **stack, char *move);
+void				move_push(t_stack **dest, t_stack **src, char *move);
+
+// Verify if it is sorted
 int					sort(t_stack *stack);
-void				ft_sort_stacka(t_stack **stack_a, t_stack **stack_b,
-						int distance, int midium);
-void				ft_sort_stackb(t_stack **stack_b, t_stack **stack_a,
-						int distance);
-void				sort_stack(t_stack **stack_a, t_stack **stack_b, int midium);
-int first_lower(t_stack *stack);
-int					lower_number(t_stack *stack_a, t_stack *stack_b);
-int					find_stack(t_stack *stack_a, t_stack *stack_b, int minimum);
-int					ft_distance(t_stack *stack, int number);
-void				print_stack(t_stack **stack);
+
+//FULL ALGORITHM
+//Function that sort the stack
+void	sort_stack(t_stack **stack_a, t_stack **stack_b);
+
+//Sort only 3 numbers
+void ft_sort3(t_stack **stack_a, t_stack **stack_b);
+
+//Clear the stack_b, and sort stack_a
+void sort_to_a(t_stack **stack_a, t_stack **stack_b);
+
+//Put how many moves to put the number on top of stack
+void count_moves(t_stack *stack_a);
+
+//Calculate how many moves to move to the top of the stack;
+int	ft_distance(t_stack *stack, int number);
+
+// Finds the bf and the best moves to do 
+void find_bf(t_stack *stack_a, t_stack *stack_b, int minimum, int max);
+
+// Applys the best move
+void ft_move(t_stack **stack_a, t_stack **stack_b);
+
+void print_all(t_stack **stack_a);
 #endif

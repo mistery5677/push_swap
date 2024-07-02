@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:58:37 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/02 22:59:51 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/06/11 12:00:02 by miafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	sort(t_stack *stack)
 	return (1);
 }
 
-void	move_swap(t_stack **stack, char *move)
+void	move_swap(t_stack **stack)
 {
 	t_stack	*copy;
 
@@ -44,10 +44,10 @@ void	move_swap(t_stack **stack, char *move)
 	copy->number = node_number(stack, 1);
 	copy = copy->next;
 	copy->number = node_temp(stack, 0);
-	ft_printf("%s", move);
+	printf("number %d\n", copy->number);
 }
 
-void	move_reverse(t_stack **stack, char *move)
+void	move_reverse(t_stack **stack)
 {
 	t_stack	*copy;
 	int		first_temp;
@@ -63,10 +63,9 @@ void	move_reverse(t_stack **stack, char *move)
 		size--;
 	}
 	copy->number = first_temp;
-	ft_printf("%s", move);
 }
 
-void	move_rreverse(t_stack **stack, char *move)
+void	move_rreverse(t_stack **stack)
 {
 	t_stack	*copy;
 	int		i;
@@ -83,10 +82,9 @@ void	move_rreverse(t_stack **stack, char *move)
 		copy = copy->next;
 		i++;
 	}
-	ft_printf("%s", move);
 }
 
-void	move_push(t_stack **dest, t_stack **src, char *move)
+void	move_push(t_stack **dest, t_stack **src)
 {
 	t_stack	*new_node;
 	t_stack	*tmp_src;
@@ -98,6 +96,5 @@ void	move_push(t_stack **dest, t_stack **src, char *move)
 	*dest = new_node;
 	tmp_src = *src;
 	*src = (*src)->next;
-	ft_printf("%s", move);
 	free(tmp_src);
 }

@@ -6,148 +6,44 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/12 00:03:27 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/02 23:00:11 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_stacka(t_stack **stack_a, t_stack **stack_b, int minimum, int midium)
-{
-	t_stack	*tmp_stack;
-	int		distance;
-	
-	tmp_stack = *stack_a;
-	distance = 0;
-	while (tmp_stack->number != minimum)
-	{
-		distance++;
-		tmp_stack = tmp_stack->next;
-	}
-	while (distance > 0)
-	{
-		distance--;
-		move_push(stack_b, stack_a);
-		ft_printf("pb\n");
-		if((*stack_b)->number >= midium)
-		{
-			move_reverse(stack_b);	
-			ft_printf("rb\n");
-		}
-		else if((*stack_b)->next != NULL && (*stack_b)->number > (*stack_b)->next->number)
-		{
-			move_swap(stack_b);
-			ft_printf("sb\n");			
-		}	
-	}
-	distance = ft_distance(*stack_a, minimum);
-	move_reverse(stack_a);
-	ft_printf("ra\n");
-}
-
-void	ft_sort_stackb(t_stack **stack_b, t_stack **stack_a, int minimum)
-{
-	t_stack	*tmp_stack;
-	int		distance;
-	int		size;
-
-	size = ft_stacksize(*stack_b);
-	tmp_stack = *stack_b;
-	distance = 0;
-	while (tmp_stack->number != minimum)
-	{
-		distance++;
-		tmp_stack = tmp_stack->next;
-	}
-	if (distance > size / 2)
-	{
-		distance = size - distance;
-		while (distance > 0)
-		{
-			distance--;
-			move_rreverse(stack_b);
-			ft_printf("rrb\n");
-			if((*stack_b)->number > (*stack_b)->next->number && (*stack_b)->next != NULL && distance > 1)
-			{
-				move_swap(stack_b);
-				ft_printf("sb\n");
-			}
-		}
-		move_push(stack_a, stack_b);
-		move_reverse(stack_a);
-		ft_printf("pa\nra\n");
-	}
-	else
-	{
-		while (distance > 0)
-		{
-			distance--;
-			move_reverse(stack_b);
-			ft_printf("rb\n");
-			if((*stack_b)->number > (*stack_b)->next->number && (*stack_b)->next != NULL && distance > 1)
-			{
-				move_swap(stack_b);
-				ft_printf("sb\n");
-			}
-		}
-		move_push(stack_a, stack_b);
-		move_reverse(stack_a);
-		ft_printf("pa\nra\n");
-	}
-}
-
-void	sort_stack(t_stack **stack_a, t_stack **stack_b, int midium)
-{
-	int	minimum;
-	int	found;
-	static int flag;
-
-	minimum = lower_number(*stack_a, *stack_b);
-	if (flag == 0)
-	{
-		flag ++;
-		minimum = first_lower(*stack_a);
-	}
-	found = find_stack(*stack_a, *stack_b, minimum);
-	if (found == 1)
-		ft_sort_stacka(stack_a, stack_b, minimum, midium);
-	else if (found == 2)
-		ft_sort_stackb(stack_b, stack_a, minimum);
-}
-
-static int ft_midium(t_stack *stack)
-{
-	t_stack *tmp_stack;
-	int midium;
-
-	midium = 0;
-	tmp_stack = stack;
-	while(tmp_stack != NULL)
-	{
-		midium = midium + tmp_stack->number;
-		tmp_stack = tmp_stack->next;
-	}
-	midium = midium / ft_stacksize(stack);
-	return midium;
-}
-
 void	push_swap(t_stack *stack_a, t_stack *stack_b)
 {
-	int midium;
-
-	midium = ft_midium(stack_a); 
-	if (!sort(stack_a))
+	if (!sort(stack_a) )
 	{
-		while (!sort(stack_a) || stack_b != NULL)
-			sort_stack(&stack_a, &stack_b, midium);
+			sort_stack(&stack_a, &stack_b);
 	}
-	free_stack(stack_a);
+/* 	while(stack_a != NULL)
+	{
+		printf("number %d	r %d	rr %d 	together %d 	bf %d\n", stack_a->number, stack_a->r_move,  stack_a->rr_move, stack_a->move_together, stack_a->bf);
+		stack_a = stack_a->next;
+	}
+	while(stack_b != NULL)
+	{
+		printf("number %d	r %d	rr %d 	together %d 	bf %d\n", stack_b->number, stack_b->r_move,  stack_b->rr_move, stack_b->move_together, stack_b->bf);
+		stack_b = stack_b->next;
+	} */
+/* print_stack(&stack_a);
+print_stack(&stack_b); */
 }
+// Corrigir a parte de se já for o maior numero possivel e o menor numero possivel
 
-/* 4
-3
-2
-5
+/* 
+
+
 1
+5
+9
+	3
+	-1
+	0
+	4
+	8
+	2
 
-pb pb ra pa ra pa ra ra */
+*/
