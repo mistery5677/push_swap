@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/18 14:26:11 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/07/02 00:24:46 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void count_moves(t_stack *stack_a);
 int	ft_distance(t_stack *stack, int number);
 
 // Finds the bf and the best moves to do 
-void find_bf(t_stack *stack_a, t_stack *stack_b, int minimum, int max);
+void find_bf(t_stack **stack_a, t_stack **stack_b, int minimum, int max);
 
 // Applys the best move
 void ft_move(t_stack **stack_a, t_stack **stack_b);

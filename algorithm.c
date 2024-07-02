@@ -101,13 +101,13 @@ static int move_together(int ra, int rra, int rb, int rrb)
     return minimum;
 } */
 
-static void first_bf(t_stack *tmp_stacka, t_stack *stack_b, int minimum, int max)
+static void first_bf(t_stack *tmp_stacka, t_stack **stack_b, int minimum, int max)
 {
     t_stack *tmp_stackb;
     int nbra;
     int nbrb;
 
-    tmp_stackb = stack_b;
+    tmp_stackb = *stack_b;
     nbra = tmp_stacka->number;
     while(tmp_stackb != NULL)
     {
@@ -129,22 +129,22 @@ static void first_bf(t_stack *tmp_stacka, t_stack *stack_b, int minimum, int max
     //ft_printf("stack_a bf %d\n", tmp_stacka->bf);
 }
 
-void find_bf(t_stack *stack_a, t_stack *stack_b, int minimum, int max)
+void find_bf(t_stack **stack_a, t_stack **stack_b, int minimum, int max)
 {
     t_stack *tmp_stacka;
     t_stack *tmp_stackb;
     t_stack *lowest_node;
     int last_nbr;
 
-    tmp_stacka = stack_a;
-    tmp_stackb = stack_b;
+    tmp_stacka = *stack_a;
+    tmp_stackb = *stack_b;
     last_nbr = tmp_stacka->number;
     first_bf(tmp_stacka, stack_b, minimum, max);
-    lowest_node = stack_a;
+    lowest_node = *stack_a;
     tmp_stacka = tmp_stacka->next;
     while(tmp_stacka != NULL)
     {
-        tmp_stackb = stack_b;
+        tmp_stackb = *stack_b;
         ft_printf("number a %d\n", tmp_stacka->number);
         while(tmp_stackb != NULL)
         {
@@ -172,7 +172,8 @@ void find_bf(t_stack *stack_a, t_stack *stack_b, int minimum, int max)
         last_nbr = tmp_stacka->number;
         tmp_stacka = tmp_stacka->next;
     }
-    print_all(&stack_a);
+
+    print_all(stack_a);
     //print_all(&stack_a);
 }
 
