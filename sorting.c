@@ -93,7 +93,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	{
 		count_moves(*stack_a);
 		count_moves(*stack_b);
-		find_bf(stack_a, stack_b, minimum, max);
+		find_bf(*stack_a, *stack_b, minimum, max);
 		ft_move(stack_a, stack_b);
 	}
 	count_moves(*stack_a);
