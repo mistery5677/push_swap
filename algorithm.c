@@ -136,7 +136,7 @@ static void first_bf(t_stack *tmp_stacka, t_stack *stack_b, int minimum, int max
             tmp_stacka->bf = tmp_stackb->number;
         }
         else
-            tmp_stacka->move_together = 100;
+            tmp_stacka->move_together = 1001000;
         tmp_stackb = tmp_stackb->next;
     }
     //ft_printf("stack_a bf %d\n", tmp_stacka->bf);
