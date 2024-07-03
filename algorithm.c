@@ -7,7 +7,7 @@ int	ft_distance(t_stack *stack, int number)
 
 	tmp_stack = stack;
 	i = 0;
-	while (tmp_stack->number != number && tmp_stack != NULL)
+	while (tmp_stack != NULL && tmp_stack->number != number)
 	{
 		tmp_stack = tmp_stack->next;
 		i++;
@@ -24,6 +24,7 @@ void count_moves(t_stack *stack)
     tmp_stack = stack;
     while(tmp_stack != NULL)
     {
+        tmp_stack->move_together = 0;
         tmp_stack->r_move = moves;
         tmp_stack = tmp_stack->next;
         moves++;
@@ -109,8 +110,8 @@ static void first_bf(t_stack *tmp_stacka, t_stack *stack_b, int minimum, int max
     int last_nbra;
 
     //printf("(first bf) entrou\n");
-    last_nbra = node_number(&tmp_stacka, ft_stacksize(tmp_stacka) - 1);
     tmp_stackb = stack_b;
+    last_nbra = node_number(&tmp_stacka, ft_stacksize(tmp_stacka) - 1);
     nbra = tmp_stacka->number;
     //printf("(first_bf) nbr a %d\n",nbra);
     while(tmp_stackb != NULL)
