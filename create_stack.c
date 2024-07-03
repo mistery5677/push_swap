@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miafonso <miafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:51:33 by miafonso          #+#    #+#             */
-/*   Updated: 2024/06/11 11:52:18 by miafonso         ###   ########.fr       */
+/*   Updated: 2024/07/03 20:47:05 by miguelcosta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,18 @@ int	ft_stacksize(t_stack *stack)
 	return (count);
 }
 
-void	free_stack(t_stack *stack)
+t_stack	*ft_lstnew2(int content)
 {
-	t_stack	*temp;
+	t_stack	*new_node;
 
-	while (stack != NULL)
-	{
-		temp = stack;
-		stack = stack->next;
-		free(temp);
-	}
-	free(stack);
+	new_node = malloc(sizeof(t_stack));
+	if (!new_node)
+		return (NULL);
+	new_node->number = content;
+	new_node->next = NULL;
+	return (new_node);
 }
-	
+
 void	create_stack(t_stack **stack, int argc, char **argv)
 {
 	int	i;
@@ -71,14 +70,15 @@ void	create_stack(t_stack **stack, int argc, char **argv)
 	}
 }
 
-t_stack	*ft_lstnew2(int content)
+void	free_stack(t_stack *stack)
 {
-	t_stack	*new_node;
+	t_stack	*temp;
 
-	new_node = malloc(sizeof(t_stack));
-	if (!new_node)
-		return (NULL);
-	new_node->number = content;
-	new_node->next = NULL;
-	return (new_node);
+	while (stack != NULL)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+	free(stack);
 }

@@ -1,11 +1,11 @@
 #include "push_swap.h"
 
-void ft_sort3(t_stack **stack_a, t_stack **stack_b)
+static void ft_sort3(t_stack **stack_a, t_stack **stack_b)
 {
 	int i;
 
 	i = 0;
-	while (i < 3 && stack_b != NULL )
+	while (stack_b != NULL && i < 3 )
 	{
 		move_push(stack_a, stack_b, "pa\n");
 		i++;
@@ -53,14 +53,13 @@ static int find_max(t_stack *stack_a)
 	return max;
 }
 
-void final_sort(t_stack **stack_a, int minimum)
+static void final_sort(t_stack **stack_a, int minimum)
 {
 	t_stack *tmp_stack;
 	
 	tmp_stack = *stack_a;
 	while(tmp_stack != NULL && tmp_stack->number != minimum)
 		tmp_stack = tmp_stack->next;
-	//printf("number %d rmove %d rrmove %d\n", tmp_stack->number, tmp_stack->r_move, tmp_stack->rr_move);
 	if(tmp_stack->r_move < tmp_stack->rr_move)
 	{
 		while(tmp_stack->r_move > 0)
@@ -77,8 +76,8 @@ void final_sort(t_stack **stack_a, int minimum)
 			tmp_stack->rr_move--;
 		}
 	}
-	//print_stack(stack_a);
 }
+
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int minimum;
