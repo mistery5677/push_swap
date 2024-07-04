@@ -25,18 +25,10 @@ int move_together(int ra, int rra, int rb, int rrb)
     rrarb = rra + rb;
     rr = update_moves(ra, rb);
     rrr = update_moves(rra, rrb);
-    while(ra > 0 && rb > 0)
-    {
-        ra--;
-        rb--;
-        rr++;
-    }
-    while (rra > 0 && rrb > 0)
-    {
-        rra--;
-        rrb--;
-        rrr++;
-    }
+    ra = ra - rr;
+    rra = rra - rrr;
+    rb = rb - rr;
+    rrb = rrb - rrr;
     if (rarrb < rr + ra + rb && rarrb < rrr + rra + rrb && rarrb < rrarb)
         return rarrb + 1;
     else if (rrarb < rr + ra + rb && rrarb < rrr + rra + rrb && rrarb < rarrb)
