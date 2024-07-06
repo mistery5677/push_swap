@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/05 21:34:07 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/06 03:09:35 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ int					move_together(int ra, int rra, int rb, int rrb);
 int					sort(t_stack *stack);
 void				count_moves(t_stack *stack_a);
 int					ft_distance(t_stack *stack, int number);
+void	util_bf2(t_stack **lowest_node, t_stack *tmp_a, t_stack *tmp_b);
+int	valid1(t_stack *tmp_a, t_stack *tmp_b, int minimum, int max);
+int	valid2(t_stack *tmp_a, t_stack *tmp_b, t_stack *lowest_node, int last_nbr);
+void	update_info(t_stack **stack_a, t_stack **stack_b, t_stack *b, int *last_nbr);
 void				find_bf(t_stack *stack_a, t_stack *stack_b, int minimum,
 						int max);
 int					many_rr(t_stack *stack_a, t_stack *stack_b);
