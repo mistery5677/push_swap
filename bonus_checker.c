@@ -67,9 +67,12 @@ void verify_info(char *info, t_stack **stack_a, t_stack **stack_b)
                 s_move(info, stack_a, stack_b);
         else if(info[0] == 'r')
         {
-                printf("entrou\n");
-                if(ft_strlen(info) == 2)
+                
+                if(ft_strlen(info) == 3)
+                {
+                        printf("entrou\n");
                         r_move(info, stack_a, stack_b);
+                }
                 else
                         rr_move(info, stack_a, stack_b);
         }
@@ -102,7 +105,6 @@ void bonus_checker(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
                         verify_info(info, &stack_a, &stack_b);
                         free(info);
                         print_stack(stack_a);
-                        print_stack(stack_b);
                         info = get_next_line(0);
                 }
                 printf("stack size %d", ft_stacksize(stack_b));
