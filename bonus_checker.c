@@ -80,18 +80,6 @@ void verify_info(char *info, t_stack **stack_a, t_stack **stack_b)
                 p_move(info, stack_a, stack_b);
 }
 
-void print_stack(t_stack *stacka)
-{
-        t_stack *tmp_stack;
-
-        tmp_stack = stacka;
-        while(tmp_stack != NULL)
-        {
-                printf("stack number %d\n", tmp_stack->number);
-                tmp_stack = tmp_stack->next;
-        }
-}
-
 void bonus_checker(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 {
         char *info;
@@ -104,10 +92,8 @@ void bonus_checker(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
                 {
                         verify_info(info, &stack_a, &stack_b);
                         free(info);
-                        print_stack(stack_a);
                         info = get_next_line(0);
                 }
-                printf("stack size %d", ft_stacksize(stack_b));
                 if(sort(stack_a) && stack_a != NULL && ft_stacksize(stack_b) == 0)
                         ft_printf("OK\n");
                 else
