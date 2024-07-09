@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/06 03:09:35 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/08 12:54:35 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-void				push_swap(t_stack *stack_a, t_stack *stack_b);
+void				push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv);
+int 				check(int argc, char **argv);
 int					ft_stacksize(t_stack *stack);
 t_stack				*ft_lstnew2(int content);
 void				create_stack(t_stack **stack, int argc, char **argv);
