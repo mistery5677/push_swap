@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   find_bf.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:08:14 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/06 03:08:06 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/09 16:27:41 by miguelcosta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/* void print_all(t_stack *stack)
+{
+	t_stack *tmp;
+
+	tmp = stack;
+	while(tmp != NULL)
+	{
+		printf("number %d r %d rr %d\n", tmp->number, tmp->r_move, tmp->rr_move);
+		tmp = tmp->next;
+	}
+} */
 
 static void	util_first(t_stack *a, t_stack *b)
 {

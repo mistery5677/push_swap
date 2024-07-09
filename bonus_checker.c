@@ -20,7 +20,6 @@ void s_move(char *info, t_stack **stack_a, t_stack **stack_b)
 
 void r_move(char *info, t_stack **stack_a, t_stack **stack_b)
 {
-        printf("entrou\n"); 
         if(ft_stacksize(*stack_a) >= 2)
                 if(info[1] == 'a')
                         move_reverse(stack_a, "");
@@ -69,10 +68,7 @@ void verify_info(char *info, t_stack **stack_a, t_stack **stack_b)
         {
                 
                 if(ft_strlen(info) == 3)
-                {
-                        printf("entrou\n");
                         r_move(info, stack_a, stack_b);
-                }
                 else
                         rr_move(info, stack_a, stack_b);
         }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 02:36:21 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/08 12:55:14 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/09 16:04:35 by miguelcosta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int check_letters(char *argv)
         size_t i;
 
         i = 0;
-        if (argv[i] == '-')
+        if (argv[i] == '-' || argv[i] == '+')
                 i++;
         if (ft_strlen(argv) == i)
                 return 1;
