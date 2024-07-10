@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:14:45 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/10 12:46:08 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/10 15:39:16 by miguelcosta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 void	ft_sort3(t_stack **stack_a, t_stack **stack_b)
 {
-	int	i;
-
-	i = 0;
-	while (stack_b != NULL && i < 3)
-	{
+	
+	while (stack_b != NULL && ft_stacksize(*stack_a) > 4)
 		move_push(stack_a, stack_b, "pa\n");
-		i++;
-	}
 	while (!sort(*stack_a))
 	{
 		if (node_number(stack_a, 0) > node_number(stack_a, 1)
@@ -95,10 +90,10 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	minimum;
 	int	max;
-
+	
 	max = find_max(*stack_a);
 	minimum = find_minimum(*stack_a);
-	while (*stack_a != NULL && stack_a != NULL)
+	while (*stack_a != NULL && stack_a != NULL && ft_stacksize(*stack_a) > 3)
 		move_push(stack_b, stack_a, "pb\n");
 	ft_sort3(stack_a, stack_b);
 	while (stack_b != NULL && *stack_b != NULL)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/10 12:29:44 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/10 15:44:49 by miguelcosta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,7 @@ void				option_4(t_stack **stack_a, t_stack **stack_b, int rra,
 						int rrb);
 void				ft_move(t_stack **stack_a, t_stack **stack_b);
 void				sort_stack(t_stack **stack_a, t_stack **stack_b);
+
+void print_all(t_stack *stack);
 
 #endif

@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/10 12:30:45 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/10 15:44:21 by miguelcosta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void print_all(t_stack *stack)
+{
+	t_stack *tmp;
+
+	tmp = stack;
+	while(tmp != NULL)
+	{
+		printf("number %d r %d rr %d bf %d move_together %d\n", tmp->number, tmp->r_move, tmp->rr_move, tmp->bf, tmp->move_together);
+		tmp = tmp->next;
+	}
+}
 
 void	push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 {
