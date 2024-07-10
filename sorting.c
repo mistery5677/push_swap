@@ -6,13 +6,13 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:14:45 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/07 21:24:06 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/10 12:46:08 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_sort3(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort3(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:13:00 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/09 16:30:57 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/07/10 12:45:26 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ int	move_together(int ra, int rra, int rb, int rrb)
 	rra = rra - rrr;
 	rb = rb - rr;
 	rrb = rrb - rrr;
-	if (rr == 0)
-		return 1;
 	if (rarrb < rr + ra + rb && rarrb < rrr + rra + rrb && rarrb < rrarb)
 		return (rarrb + 1);
 	else if (rrarb < rr + ra + rb && rrarb < rrr + rra + rrb && rrarb < rarrb)
@@ -53,4 +51,3 @@ int	move_together(int ra, int rra, int rb, int rrb)
 	else
 		return (rrr + rra + rrb + 1);
 }
-
