@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/10 15:44:49 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/07/11 01:19:46 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-void				push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv);
-void ft_sort3(t_stack **stack_a, t_stack **stack_b);
-int 				check(t_stack *stack, int argc, char **argv);
+void				push_swap(t_stack *stack_a, t_stack *stack_b, int argc,
+						char **argv);
+void				ft_sort3(t_stack **stack_a, t_stack **stack_b);
+int					check(t_stack *stack, int argc, char **argv);
 int					ft_stacksize(t_stack *stack);
 t_stack				*ft_lstnew2(int content);
 void				create_stack(t_stack **stack, int argc, char **argv);
@@ -42,10 +43,14 @@ int					move_together(int ra, int rra, int rb, int rrb);
 int					sort(t_stack *stack);
 void				count_moves(t_stack *stack_a);
 int					ft_distance(t_stack *stack, int number);
-void	util_bf2(t_stack **lowest_node, t_stack *tmp_a, t_stack *tmp_b);
-int	valid1(t_stack *tmp_a, t_stack *tmp_b, int minimum, int max);
-int	valid2(t_stack *tmp_a, t_stack *tmp_b, t_stack *lowest_node, int last_nbr);
-void	update_info(t_stack **stack_a, t_stack **stack_b, t_stack *b, int *last_nbr);
+void				util_bf2(t_stack **lowest_node, t_stack *tmp_a,
+						t_stack *tmp_b);
+int					valid1(t_stack *tmp_a, t_stack *tmp_b, int minimum,
+						int max);
+int					valid2(t_stack *tmp_a, t_stack *tmp_b, t_stack *lowest_node,
+						int last_nbr);
+void				update_info(t_stack **stack_a, t_stack **stack_b,
+						t_stack *b, int *last_nbr);
 void				find_bf(t_stack *stack_a, t_stack *stack_b, int minimum,
 						int max);
 int					many_rr(t_stack *stack_a, t_stack *stack_b);
@@ -59,7 +64,4 @@ void				option_4(t_stack **stack_a, t_stack **stack_b, int rra,
 						int rrb);
 void				ft_move(t_stack **stack_a, t_stack **stack_b);
 void				sort_stack(t_stack **stack_a, t_stack **stack_b);
-
-void print_all(t_stack *stack);
-
 #endif

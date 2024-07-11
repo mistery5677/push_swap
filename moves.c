@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:13:00 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/10 16:57:41 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/07/11 00:46:24 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static int	update_moves(int a, int b)
 		b--;
 		a_b++;
 	}
-	//printf("ab %d\n", a_b);
 	return (a_b);
 }
 

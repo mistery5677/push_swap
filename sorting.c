@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:14:45 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/10 15:39:16 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/07/11 00:45:27 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_sort3(t_stack **stack_a, t_stack **stack_b)
 {
-	
 	while (stack_b != NULL && ft_stacksize(*stack_a) > 4)
 		move_push(stack_a, stack_b, "pa\n");
 	while (!sort(*stack_a))
@@ -90,7 +89,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	minimum;
 	int	max;
-	
+
 	max = find_max(*stack_a);
 	minimum = find_minimum(*stack_a);
 	while (*stack_a != NULL && stack_a != NULL && ft_stacksize(*stack_a) > 3)

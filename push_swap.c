@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/10 15:44:21 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/07/11 01:19:25 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_all(t_stack *stack)
+void	print_all(t_stack *stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = stack;
-	while(tmp != NULL)
+	while (tmp != NULL)
 	{
-		printf("number %d r %d rr %d bf %d move_together %d\n", tmp->number, tmp->r_move, tmp->rr_move, tmp->bf, tmp->move_together);
+		printf("number %d r %d rr %d bf %d move_together %d\n", tmp->number,
+			tmp->r_move, tmp->rr_move, tmp->bf, tmp->move_together);
 		tmp = tmp->next;
 	}
 }
@@ -27,16 +28,16 @@ void print_all(t_stack *stack)
 void	push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 {
 	create_stack(&stack_a, argc, argv);
-	if(check(stack_a, argc, argv) == 0 && argc > 2)
+	if (check(stack_a, argc, argv) == 0 && argc > 2)
 	{
-		if(sort(stack_a))
+		if (sort(stack_a))
 			ft_printf("Sorted\n");
-		else if(ft_stacksize(stack_a) == 2)
+		else if (ft_stacksize(stack_a) == 2)
 		{
-			if(stack_a->number > stack_a->next->number)
+			if (stack_a->number > stack_a->next->number)
 				move_swap(&stack_a, "sa\n");
 		}
-		else if(ft_stacksize(stack_a) == 3)
+		else if (ft_stacksize(stack_a) == 3)
 			ft_sort3(&stack_a, &stack_b);
 		else if (!sort(stack_a))
 			sort_stack(&stack_a, &stack_b);

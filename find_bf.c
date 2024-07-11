@@ -3,33 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   find_bf.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:08:14 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/10 17:36:39 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/07/11 00:47:10 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* void print_all(t_stack *stack)
-{
-	t_stack *tmp;
-
-	tmp = stack;
-	while(tmp != NULL)
-	{
-		printf("number %d r %d rr %d\n", tmp->number, tmp->r_move, tmp->rr_move);
-		tmp = tmp->next;
-	}
-} */
 
 static void	util_first(t_stack *a, t_stack *b)
 {
 	a->move_together = move_together(a->r_move, a->rr_move, b->r_move,
 			b->rr_move);
 	a->bf = b->number;
-	
 }
 
 static void	first_bf(t_stack *a, t_stack *b, int min, int max)
@@ -41,23 +28,22 @@ static void	first_bf(t_stack *a, t_stack *b, int min, int max)
 	last_a = node_number(&a, ft_stacksize(a) - 1);
 	while (tmp_b != NULL)
 	{
-		//printf("a = %d b = %d\n", a->number, tmp_b->number);
-		if (a->number == min && tmp_b->number == max && (a->move_together == 0 || move_together(a->r_move, a->rr_move,
-					tmp_b->r_move, tmp_b->rr_move) < a->move_together))
+		if (a->number == min && tmp_b->number == max && (a->move_together == 0
+				|| move_together(a->r_move, a->rr_move, tmp_b->r_move,
+					tmp_b->rr_move) < a->move_together))
 			util_first(a, tmp_b);
 		else if (a->number > tmp_b->number && tmp_b->number > last_a
 			&& (a->move_together == 0 || move_together(a->r_move, a->rr_move,
 					tmp_b->r_move, tmp_b->rr_move) < a->move_together))
 			util_first(a, tmp_b);
- 		else if (a->number > tmp_b->number && a->number < last_a
+		else if (a->number > tmp_b->number && a->number < last_a
 			&& (a->move_together == 0 || move_together(a->r_move, a->rr_move,
 					tmp_b->r_move, tmp_b->rr_move) < a->move_together))
 			util_first(a, tmp_b);
-		else if(a->move_together == 0)
+		else if (a->move_together == 0)
 			a->move_together = 1000000;
 		tmp_b = tmp_b->next;
 	}
-	//print_all(a);
 }
 
 void	find_bf(t_stack *a, t_stack *b, int minimum, int max)
@@ -86,10 +72,4 @@ void	find_bf(t_stack *a, t_stack *b, int minimum, int max)
 		}
 		update_info(&t_a, &t_b, b, &l_nb);
 	}
-	//print_all(a);
 }
-
-
-/* 3 6 1 2 5
-
-4 */

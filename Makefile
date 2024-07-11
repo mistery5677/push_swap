@@ -1,7 +1,7 @@
 NAME = push_swap
 BONUS = checker
 SRC = algorithm.c check.c create_stack.c find_bf_utils.c find_bf.c get_number.c moves_utils.c moves.c options.c sorting_utils.c sorting.c
-BONUS_SRC = algorithm.c check.c create_stack.c find_bf_utils.c find_bf.c get_number.c moves_utils.c moves.c options.c sorting_utils.c sorting.c
+BONUS_SRC = algorithm.c check.c create_stack.c find_bf_utils.c find_bf.c get_number.c moves_utils.c moves.c options.c sorting_utils.c sorting.c bonus_utils.c
 LIBFTDIR = ./libft
 LIBFT = $(LIBFTDIR)/libft.a
 OBJDIR = ./obj
