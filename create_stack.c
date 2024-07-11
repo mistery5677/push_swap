@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:51:33 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/03 20:47:05 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/07/12 00:56:41 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	create_stack(t_stack **stack, int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
+		
 		create_node(stack, argv[i]);
 		i++;
 	}

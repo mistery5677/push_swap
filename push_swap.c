@@ -6,23 +6,47 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/11 01:19:25 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/12 00:24:14 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_all(t_stack *stack)
+static void	sort_4_5(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*tmp;
+	int	max;
+	int	minimum;
 
-	tmp = stack;
-	while (tmp != NULL)
+	max = find_max(*stack_a);
+	minimum = find_minimum(*stack_a);
+	while (ft_stacksize(*stack_a) != 3)
+		move_push(stack_b, stack_a, "pb\n");
+	ft_sort3(stack_a, stack_b);
+	while (stack_b != NULL && *stack_b != NULL)
 	{
-		printf("number %d r %d rr %d bf %d move_together %d\n", tmp->number,
-			tmp->r_move, tmp->rr_move, tmp->bf, tmp->move_together);
-		tmp = tmp->next;
+		count_moves(*stack_a);
+		count_moves(*stack_b);
+		find_bf(*stack_a, *stack_b, minimum, max);
+		ft_move(stack_a, stack_b);
 	}
+	count_moves(*stack_a);
+	final_sort(stack_a, minimum);
+}
+
+static void	first_sort(t_stack **stack_a, t_stack **stack_b)
+{
+	int	size;
+
+	size = ft_stacksize(*stack_a);
+	if (size == 2)
+	{
+		if ((*stack_a)->number > (*stack_a)->next->number)
+			move_swap(stack_a, "sa\n");
+	}
+	else if (size == 3)
+		ft_sort3(stack_a, stack_b);
+	else
+		sort_4_5(stack_a, stack_b);
 }
 
 void	push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
@@ -32,13 +56,8 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 	{
 		if (sort(stack_a))
 			ft_printf("Sorted\n");
-		else if (ft_stacksize(stack_a) == 2)
-		{
-			if (stack_a->number > stack_a->next->number)
-				move_swap(&stack_a, "sa\n");
-		}
-		else if (ft_stacksize(stack_a) == 3)
-			ft_sort3(&stack_a, &stack_b);
+		else if (ft_stacksize(stack_a) <= 5)
+			first_sort(&stack_a, &stack_b);
 		else if (!sort(stack_a))
 			sort_stack(&stack_a, &stack_b);
 	}

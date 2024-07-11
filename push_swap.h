@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/11 01:19:46 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/12 00:43:55 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,9 @@ void				option_4(t_stack **stack_a, t_stack **stack_b, int rra,
 						int rrb);
 void				ft_move(t_stack **stack_a, t_stack **stack_b);
 void				sort_stack(t_stack **stack_a, t_stack **stack_b);
+int					find_minimum(t_stack *stack_a);
+int					find_max(t_stack *stack_a);
+void				final_sort(t_stack **stack_a, int minimum);
+long long int		find_average(t_stack *stack_a);
+void				push_b(t_stack **stack_a, t_stack **stack_b);
 #endif
