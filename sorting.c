@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:14:45 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/11 00:45:27 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/11 22:50:10 by miguelcosta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_sort3(t_stack **stack_a, t_stack **stack_b)
 {
-	while (stack_b != NULL && ft_stacksize(*stack_a) > 4)
+	while (stack_b != NULL && ft_stacksize(*stack_a) != 3)
 		move_push(stack_a, stack_b, "pa\n");
 	while (!sort(*stack_a))
 	{
@@ -85,6 +85,40 @@ static void	final_sort(t_stack **stack_a, int minimum)
 	}
 }
 
+static long long int find_average(t_stack *stack_a)
+{
+	t_stack *tmp;
+	long long int average;
+
+	tmp = stack_a;
+	average = 0;
+	while(tmp != NULL)
+	{
+		average = average + tmp->number;
+		tmp = tmp->next;
+	}
+	return average / ft_stacksize(stack_a);
+}
+
+static void push_b(t_stack **stack_a, t_stack **stack_b)
+{
+	long long int average;
+
+	average = 0;
+	while((*stack_a) != NULL)
+	{
+		average = find_average(*stack_a);
+		if((*stack_a)->number > average)
+			move_reverse(stack_a, "ra\n");
+		else	
+			move_push(stack_b, stack_a, "pb\n");
+		average = find_average(*stack_b);
+		if((*stack_b) != NULL && (*stack_b)->number < average)
+			move_reverse(stack_b, "rb\n");
+	}
+	ft_sort3(stack_a, stack_b);
+}
+
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	minimum;
@@ -92,9 +126,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 
 	max = find_max(*stack_a);
 	minimum = find_minimum(*stack_a);
-	while (*stack_a != NULL && stack_a != NULL && ft_stacksize(*stack_a) > 3)
-		move_push(stack_b, stack_a, "pb\n");
-	ft_sort3(stack_a, stack_b);
+	push_b(stack_a, stack_b);
 	while (stack_b != NULL && *stack_b != NULL)
 	{
 		count_moves(*stack_a);
