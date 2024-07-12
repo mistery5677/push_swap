@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 00:51:51 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/11 01:20:54 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/12 16:26:34 by miguelcosta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	s_move(char *info, t_stack **stack_a, t_stack **stack_b)
 	}
 	if (ft_stacksize(*stack_a) >= 2 && ft_stacksize(*stack_b) >= 2)
 	{
-		if (info[1] == 'r')
+		if (info[1] == 's')
 		{
 			move_swap(stack_a, "");
 			move_swap(stack_b, "");
