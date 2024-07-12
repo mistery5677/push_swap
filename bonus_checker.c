@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 00:47:20 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/11 01:18:52 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/12 02:59:34 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	bonus_checker(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 	char	*info;
 
 	create_stack(&stack_a, argc, argv);
-	if (check(stack_a, argc, argv) == 0 && argc > 2)
+	if (check(stack_a, argv) == 0 && argc > 2)
 	{
 		info = get_next_line(0);
 		while (info != NULL)
@@ -32,7 +32,7 @@ void	bonus_checker(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 			ft_printf("KO\n");
 	}
 	else
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 	free_stack(stack_a);
 	free_stack(stack_b);
 }

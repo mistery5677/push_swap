@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 02:36:21 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/11 01:15:05 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/12 02:49:47 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,22 +48,28 @@ static int	check_letters(char *argv)
 	while (argv[i])
 	{
 		if (argv[i] < '0' || argv[i] > '9')
-			return (1);
+		{
+			if(argv[i] != ' ')
+				return (1);
+		}
 		i++;
 	}
 	return (0);
 }
 
-int	check(t_stack *stack, int argc, char **argv)
+int	check(t_stack *stack, char **argv)
 {
 	t_stack	*tmp;
 	int		i;
 
 	tmp = stack;
 	i = 1;
+	if(ft_stacksize(stack) <= 1)
+		return (1);
 	while (argv[i] && stack != NULL)
 	{
-		if (argc < 2 || check_doubles(tmp) == 1 || check_limit(argv[i]) == 1
+		
+		if (check_doubles(tmp) == 1 || check_limit(argv[i]) == 1
 			|| check_letters(argv[i]))
 			return (1);
 		i++;

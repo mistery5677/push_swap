@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/12 00:24:14 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/12 03:13:26 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,15 @@ static void	first_sort(t_stack **stack_a, t_stack **stack_b)
 void	push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 {
 	create_stack(&stack_a, argc, argv);
-	if (check(stack_a, argc, argv) == 0 && argc > 2)
+	if (check(stack_a, argv) == 0)
 	{
-		if (sort(stack_a))
-			ft_printf("Sorted\n");
-		else if (ft_stacksize(stack_a) <= 5)
-			first_sort(&stack_a, &stack_b);
-		else if (!sort(stack_a))
-			sort_stack(&stack_a, &stack_b);
+		if (!sort(stack_a))
+		{	
+			if (ft_stacksize(stack_a) <= 5)
+				first_sort(&stack_a, &stack_b);
+			else
+				sort_stack(&stack_a, &stack_b);
+		}
 	}
 	else
 		ft_putstr_fd("Error\n", 2);
