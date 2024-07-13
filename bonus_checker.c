@@ -3,21 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 00:47:20 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/12 15:05:12 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/07/13 02:53:25 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bonus.h"
+
+static int	valid_arg(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 0;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 void	bonus_checker(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 {
 	char	*info;
 
 	create_stack(&stack_a, argc, argv);
-	if (check(stack_a, argv) == 0 && argc > 2)
+	if (check(stack_a, argv) == 0 && valid_arg(argv) == 0 && argc > 2)
 	{
 		info = get_next_line(0);
 		while (info != NULL)

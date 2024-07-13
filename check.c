@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 02:36:21 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/13 02:15:37 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/13 02:53:15 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,19 @@
 static int	check_doubles(t_stack *stack)
 {
 	t_stack	*tmp;
+	t_stack	*tmp2;
 
-	tmp = stack;
-	while (tmp != NULL)
+	tmp2 = stack;
+	while (tmp2 != NULL)
 	{
-		tmp = tmp->next;
-		if (tmp != NULL && tmp->number == stack->number)
-			return (1);
+		tmp = tmp2;
+		while (tmp->next != NULL)
+		{
+			tmp = tmp->next;
+			if (tmp != NULL && tmp2->number == tmp->number)
+				return (1);
+		}
+		tmp2 = tmp2->next;
 	}
 	return (0);
 }
