@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 02:36:21 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/12 16:21:40 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/07/13 02:15:37 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	check_letters(char *argv)
 	{
 		if (argv[i] < '0' || argv[i] > '9')
 		{
-			if(argv[i] != ' ')
+			if (argv[i] != ' ')
 				return (1);
 		}
 		i++;
@@ -64,7 +64,7 @@ int	check(t_stack *stack, char **argv)
 
 	tmp = stack;
 	i = 1;
-	if(ft_stacksize(stack) <= 1)
+	if (ft_stacksize(stack) <= 1)
 		return (1);
 	while (argv[i] && stack != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/12 03:13:26 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/07/13 02:19:42 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 	if (check(stack_a, argv) == 0)
 	{
 		if (!sort(stack_a))
-		{	
+		{
 			if (ft_stacksize(stack_a) <= 5)
 				first_sort(&stack_a, &stack_b);
 			else
