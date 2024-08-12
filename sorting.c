@@ -1,69 +1,75 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sorting.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/05 16:14:45 by mistery576        #+#    #+#             */
+/*   Updated: 2024/07/12 00:41:19 by mistery576       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void ft_sort3(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort3(t_stack **stack_a, t_stack **stack_b)
 {
-	int i;
-
-	i = 0;
-	while (i < 3 && stack_b != NULL )
-	{
+	while (stack_b != NULL && ft_stacksize(*stack_a) != 3)
 		move_push(stack_a, stack_b, "pa\n");
-		i++;
-	}
-	while(!sort(*stack_a))
+	while (!sort(*stack_a))
 	{
-		if(node_number(stack_a, 0) > node_number(stack_a, 1) && node_number(stack_a, 0) > node_number(stack_a, 2))
+		if (node_number(stack_a, 0) > node_number(stack_a, 1)
+			&& node_number(stack_a, 0) > node_number(stack_a, 2))
 			move_reverse(stack_a, "ra\n");
-		if(node_number(stack_a,0) > node_number(stack_a, 1))
+		if (node_number(stack_a, 0) > node_number(stack_a, 1))
 			move_swap(stack_a, "sa\n");
-		if(node_number(stack_a, 1) > node_number(stack_a, 2))
+		if (node_number(stack_a, 1) > node_number(stack_a, 2))
 			move_rreverse(stack_a, "rra\n");
 	}
 }
 
-static int find_minimum(t_stack *stack_a)
+int	find_minimum(t_stack *stack_a)
 {
-	t_stack *tmp_stacka;
-	int minimum;
+	t_stack	*tmp_stacka;
+	int		minimum;
 
 	tmp_stacka = stack_a;
 	minimum = stack_a->number;
-	while(tmp_stacka != NULL)
+	while (tmp_stacka != NULL)
 	{
-		if(minimum > tmp_stacka->number)
+		if (minimum > tmp_stacka->number)
 			minimum = tmp_stacka->number;
 		tmp_stacka = tmp_stacka->next;
 	}
-	return minimum;
+	return (minimum);
 }
 
-static int find_max(t_stack *stack_a)
+int	find_max(t_stack *stack_a)
 {
-	t_stack *tmp_stacka;
-	int max;
+	t_stack	*tmp_stacka;
+	int		max;
 
 	tmp_stacka = stack_a;
 	max = stack_a->number;
-	while(tmp_stacka != NULL)
+	while (tmp_stacka != NULL)
 	{
-		if(max < tmp_stacka->number)
+		if (max < tmp_stacka->number)
 			max = tmp_stacka->number;
 		tmp_stacka = tmp_stacka->next;
 	}
-	return max;
+	return (max);
 }
 
-void final_sort(t_stack **stack_a, int minimum)
+void	final_sort(t_stack **stack_a, int minimum)
 {
-	t_stack *tmp_stack;
-	
+	t_stack	*tmp_stack;
+
 	tmp_stack = *stack_a;
-	while(tmp_stack != NULL && tmp_stack->number != minimum)
+	while (tmp_stack != NULL && tmp_stack->number != minimum)
 		tmp_stack = tmp_stack->next;
-	//printf("number %d rmove %d rrmove %d\n", tmp_stack->number, tmp_stack->r_move, tmp_stack->rr_move);
-	if(tmp_stack->r_move < tmp_stack->rr_move)
+	if (tmp_stack->r_move < tmp_stack->rr_move)
 	{
-		while(tmp_stack->r_move > 0)
+		while (tmp_stack->r_move > 0)
 		{
 			move_reverse(stack_a, "ra\n");
 			tmp_stack->r_move--;
@@ -71,24 +77,22 @@ void final_sort(t_stack **stack_a, int minimum)
 	}
 	else
 	{
-		while(tmp_stack->rr_move > 0)
+		while (tmp_stack->rr_move > 0)
 		{
 			move_rreverse(stack_a, "rra\n");
 			tmp_stack->rr_move--;
 		}
 	}
-	//print_stack(stack_a);
 }
+
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	int minimum;
-	int max;
+	int	minimum;
+	int	max;
 
 	max = find_max(*stack_a);
 	minimum = find_minimum(*stack_a);
-	while(*stack_a != NULL && stack_a != NULL)
-		move_push(stack_b, stack_a, "pb\n");
-	ft_sort3(stack_a, stack_b);
+	push_b(stack_a, stack_b);
 	while (stack_b != NULL && *stack_b != NULL)
 	{
 		count_moves(*stack_a);
@@ -98,7 +102,4 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	}
 	count_moves(*stack_a);
 	final_sort(stack_a, minimum);
-	//print_stack(stack_a);
-	free_stack(*stack_a);
-	free_stack(*stack_b);
 }

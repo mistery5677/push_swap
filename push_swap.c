@@ -6,44 +6,74 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:30:26 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/02 23:00:11 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/08/12 22:33:57 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_stack *stack_a, t_stack *stack_b)
+static void	sort_4_5(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!sort(stack_a) )
+	int	max;
+	int	minimum;
+
+	max = find_max(*stack_a);
+	minimum = find_minimum(*stack_a);
+	while (ft_stacksize(*stack_a) != 3)
+		move_push(stack_b, stack_a, "pb\n");
+	ft_sort3(stack_a, stack_b);
+	while (stack_b != NULL && *stack_b != NULL)
 	{
-			sort_stack(&stack_a, &stack_b);
+		count_moves(*stack_a);
+		count_moves(*stack_b);
+		find_bf(*stack_a, *stack_b, minimum, max);
+		ft_move(stack_a, stack_b);
 	}
-/* 	while(stack_a != NULL)
-	{
-		printf("number %d	r %d	rr %d 	together %d 	bf %d\n", stack_a->number, stack_a->r_move,  stack_a->rr_move, stack_a->move_together, stack_a->bf);
-		stack_a = stack_a->next;
-	}
-	while(stack_b != NULL)
-	{
-		printf("number %d	r %d	rr %d 	together %d 	bf %d\n", stack_b->number, stack_b->r_move,  stack_b->rr_move, stack_b->move_together, stack_b->bf);
-		stack_b = stack_b->next;
-	} */
-/* print_stack(&stack_a);
-print_stack(&stack_b); */
+	count_moves(*stack_a);
+	final_sort(stack_a, minimum);
 }
-// Corrigir a parte de se já for o maior numero possivel e o menor numero possivel
 
-/* 
+static void	first_sort(t_stack **stack_a, t_stack **stack_b)
+{
+	int	size;
 
+	size = ft_stacksize(*stack_a);
+	if (size == 2)
+	{
+		if ((*stack_a)->number > (*stack_a)->next->number)
+			move_swap(stack_a, "sa\n");
+	}
+	else if (size == 3)
+		ft_sort3(stack_a, stack_b);
+	else
+		sort_4_5(stack_a, stack_b);
+}
 
-1
-5
-9
-	3
-	-1
-	0
-	4
-	8
-	2
+void	push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
+{
+	create_stack(&stack_a, argc, argv);
+	if (check(stack_a, argv) == 0)
+	{
+		if (!sort(stack_a))
+		{
+			if (ft_stacksize(stack_a) <= 5)
+				first_sort(&stack_a, &stack_b);
+			else
+				sort_stack(&stack_a, &stack_b);
+		}
+	}
+	else
+		ft_putstr_fd("Error\n", 2);
+	free_stack(stack_a);
+	free_stack(stack_b);
+}
 
-*/
+int	main(int argc, char **argv)
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	stack_a = NULL;
+	stack_b = NULL;
+	push_swap(stack_a, stack_b, argc, argv);
+}

@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   bonus.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 12:46:19 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/07 03:18:56 by mistery576       ###   ########.fr       */
+/*   Created: 2024/07/11 00:52:31 by mistery576        #+#    #+#             */
+/*   Updated: 2024/07/11 01:18:09 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
-{
-	size_t	i;
-	int		nbr;
-	int		signal;
-
-	signal = 1;
-	i = 0;
-	nbr = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
-	{
-		if (nptr[i] == '-')
-			signal *= -1;
-		i++;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		nbr = (nbr * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (nbr * signal);
-}
+void	s_move(char *info, t_stack **stack_a, t_stack **stack_b);
+void	r_move(char *info, t_stack **stack_a, t_stack **stack_b);
+void	rr_move(char *info, t_stack **stack_a, t_stack **stack_b);
+void	p_move(char *info, t_stack **stack_a, t_stack **stack_b);
+void	verify_info(char *info, t_stack **stack_a, t_stack **stack_b);
