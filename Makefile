@@ -6,7 +6,7 @@ LIBFTDIR = ./libft
 LIBFT = $(LIBFTDIR)/libft.a
 OBJDIR = ./obj
 OBJS = $(SRC:%.c=$(OBJDIR)/%.o) $(OBJDIR)/push_swap.o
-BONUS_OBJS = $(BONUS_SRC:%.c=$(OBJDIR)/%.o) $(OBJDIR)/bonus_checker.o
+BONUS_OBJS = $(BONUS_SRC:%.c=$(OBJDIR)/%.o) $(OBJDIR)/push_swap_bonus.o
 CC = gcc
 FLAGS = -Werror -Wall -Wextra
 
