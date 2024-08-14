@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:08:14 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/11 00:47:10 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/08/14 21:05:27 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	first_bf(t_stack *a, t_stack *b, int min, int max)
 					tmp_b->r_move, tmp_b->rr_move) < a->move_together))
 			util_first(a, tmp_b);
 		else if (a->move_together == 0)
-			a->move_together = 1000000;
+			a->move_together = 10000000;
 		tmp_b = tmp_b->next;
 	}
 }
