@@ -34,11 +34,15 @@ static int	check_doubles(t_stack *stack)
 
 static int	check_limit(char *argv)
 {
-	if (ft_strncmp(argv, "2147483647", 11) > 0 && ft_strlen(argv) == 10)
+	if ((ft_strncmp(argv, "2147483647", 12) > 0 && ft_strlen(argv) == 10)
+		|| ft_strlen(argv) > 10)
 		return (1);
 	else if (argv[0] == '-')
-		if (ft_strncmp(argv, "-2147483648", 11) > 0 && ft_strlen(argv) == 11)
+	{
+		if ((ft_strncmp(argv, "-2147483648", 13) > 0 && ft_strlen(argv) == 11)
+			|| ft_strlen(argv) > 11)
 			return (1);
+	}
 	return (0);
 }
 
@@ -53,7 +57,8 @@ static int	check_letters(char *argv)
 		return (1);
 	while (argv[i])
 	{
-		if (argv[i] < '0' || argv[i] > '9')
+		if ((argv[i] < '0' || argv[i] > '9')
+			&& argv[i] != '-' && argv[i] != '+')
 		{
 			if (argv[i] != ' ')
 				return (1);

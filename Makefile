@@ -7,7 +7,7 @@ LIBFT = $(LIBFTDIR)/libft.a
 OBJDIR = ./obj
 OBJS = $(SRC:%.c=$(OBJDIR)/%.o) $(OBJDIR)/push_swap.o
 BONUS_OBJS = $(BONUS_SRC:%.c=$(OBJDIR)/%.o) $(OBJDIR)/push_swap_bonus.o
-CC = gcc
+CC = cc
 FLAGS = -Werror -Wall -Wextra
 
 all: $(NAME)

@@ -24,7 +24,8 @@ static int	valid_arg(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
+			if ((argv[i][j] < '0' || argv[i][j] > '9')
+				&& argv[i][j] != '-' && argv[i][j] != '+')
 				return (1);
 			j++;
 		}
@@ -33,7 +34,14 @@ static int	valid_arg(char **argv)
 	return (0);
 }
 
-static int	check_info(char *info)
+void	free_all(char *info, t_stack *stack_a, t_stack *stack_b)
+{
+	free(info);
+	free_stack(stack_a);
+	free_stack(stack_b);
+}
+
+static int	check_info(char *info, t_stack *stack_a, t_stack *stack_b)
 {
 	char	*options[11];
 	int		i;
@@ -56,6 +64,7 @@ static int	check_info(char *info)
 			return (0);
 		i++;
 	}
+	free_all(info, stack_a, stack_b);
 	return (1);
 }
 
@@ -70,7 +79,7 @@ void	push_swap_bonus(t_stack *stack_a, t_stack *stack_b, int argc,
 		info = get_next_line(0);
 		while (info != NULL)
 		{
-			if (check_info(info) == 1)
+			if (check_info(info, stack_a, stack_b) == 1)
 				return (ft_putstr_fd("Error\n", 2));
 			verify_info(info, &stack_a, &stack_b);
 			free(info);
