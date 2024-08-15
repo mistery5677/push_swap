@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 02:36:21 by mistery576        #+#    #+#             */
-/*   Updated: 2024/08/15 16:29:31 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/08/15 17:31:58 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ static int	check_doubles(t_stack *stack)
 
 static int	check_limit(char *argv)
 {
-	if ((ft_strncmp(argv, "2147483647", 12) > 0 && ft_strlen(argv) == 10)
-		|| ft_strlen(argv) > 10)
-		return (1);
-	else if (argv[0] == '-')
+	if (argv[0] == '-')
 	{
-		if ((ft_strncmp(argv, "-2147483648", 13) > 0 && ft_strlen(argv) == 11)
+		if ((ft_strncmp(argv, "-2147483648", 11) > 0 && ft_strlen(argv) == 11)
 			|| ft_strlen(argv) > 11)
 			return (1);
 	}
+	else if ((ft_strncmp(argv, "2147483647", 10) > 0 && ft_strlen(argv) == 10)
+		|| ft_strlen(argv) > 10)
+		return (1);
 	return (0);
 }
 
