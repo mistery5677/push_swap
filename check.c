@@ -32,17 +32,17 @@ static int	check_doubles(t_stack *stack)
 	return (0);
 }
 
-static int	check_limit(char *argv)
+static int	check_limit(char *str)
 {
-	if (argv[0] == '-')
+	if (str[0] == '-')
 	{
-		if ((ft_strncmp(argv, "-2147483648", 11) > 0 && ft_strlen(argv) == 11)
-			|| ft_strlen(argv) > 11)
-			return (1);
+		if ((ft_strncmp(str, "-2147483648", 11) > 0 && ft_strlen(str) == 11)
+			|| ft_strlen(str) > 11)
+				return (1);
 	}
-	else if ((ft_strncmp(argv, "2147483647", 10) > 0 && ft_strlen(argv) == 10)
-		|| ft_strlen(argv) > 10)
-		return (1);
+	else if ((ft_strncmp(str, "2147483647", 10) > 0 && ft_strlen(str) == 10)
+		|| ft_strlen(str) > 10)
+			return (1);
 	return (0);
 }
 
@@ -57,12 +57,43 @@ static int	check_letters(char *argv)
 		return (1);
 	while (argv[i])
 	{
-		if (argv[i] < '0' || argv[i] > '9')
+		if ((argv[i] < '0' || argv[i] > '9') && argv[i] != ' ')
 			return (1);
 		i++;
 	}
 	return (0);
 }
+
+static int parse_check(char *argv)
+{
+	size_t i;
+	int x;
+	char *str;
+
+	str = NULL;
+	i = 0;
+	x = 0;
+	if (check_letters(argv) == 1)
+		return 1;
+	while(i < ft_strlen(argv))
+	{
+		if(argv[i] == '-')
+			i++;
+		while(argv[i] >= '0' && argv[i] <= '9' && argv[i] == ' ')
+			i++;
+		str = ft_substr(argv, x, i - x);
+		i++;
+		x = i;
+		if(check_limit(str) == 1)
+		{
+			free(str);
+			return 1;
+		}
+		free(str);
+	}
+	return (0);
+}
+
 
 int	check(t_stack *stack, char **argv)
 {
@@ -75,8 +106,7 @@ int	check(t_stack *stack, char **argv)
 		return (1);
 	while (argv[i] && stack != NULL)
 	{
-		if (check_doubles(tmp) == 1 || check_limit(argv[i]) == 1
-			|| check_letters(argv[i]))
+		if (check_doubles(tmp) == 1 || parse_check(argv[i]) == 1)
 			return (1);
 		i++;
 		tmp = tmp->next;
