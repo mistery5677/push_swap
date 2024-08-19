@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelcosta <miguelcosta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 15:09:08 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/10 15:41:22 by miguelcosta      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:59:16 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	clean_info(t_stack *stack_a)
 	}
 }
 
-void	ft_move(t_stack **stack_a, t_stack **stack_b)
+int	ft_move(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*best_movea;
 	t_stack	*b_target;
@@ -74,5 +74,8 @@ void	ft_move(t_stack **stack_a, t_stack **stack_b)
 		option_3(stack_a, stack_b, best_movea->r_move, b_target->r_move);
 	else if (option == 4)
 		option_4(stack_a, stack_b, best_movea->rr_move, b_target->rr_move);
+	if (move_push(stack_a, stack_b, "pa\n") == -1)
+		return (-1);
 	clean_info(*stack_a);
+	return (0);
 }

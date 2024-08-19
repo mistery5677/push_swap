@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:36:00 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/13 02:21:05 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/08/19 18:59:01 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void				ft_sort3(t_stack **stack_a, t_stack **stack_b);
 int					check(t_stack *stack, char **argv);
 int					ft_stacksize(t_stack *stack);
 t_stack				*ft_lstnew2(int content);
-void				create_stack(t_stack **stack, int argc, char **argv);
+int					create_stack(t_stack **stack, int argc, char **argv);
 void				free_stack(t_stack *stack);
 int					node_number(t_stack **stack, int n2);
 int					node_temp(t_stack **stack, int n2);
 void				move_swap(t_stack **stack, char *move);
 void				move_reverse(t_stack **stack, char *move);
 void				move_rreverse(t_stack **stack, char *move);
-void				move_push(t_stack **dest, t_stack **src, char *move);
+int					move_push(t_stack **dest, t_stack **src, char *move);
 int					move_together(int ra, int rra, int rb, int rrb);
 int					sort(t_stack *stack);
 void				count_moves(t_stack *stack_a);
@@ -62,15 +62,15 @@ void				option_3(t_stack **stack_a, t_stack **stack_b, int ra,
 						int rb);
 void				option_4(t_stack **stack_a, t_stack **stack_b, int rra,
 						int rrb);
-void				ft_move(t_stack **stack_a, t_stack **stack_b);
-void				sort_stack(t_stack **stack_a, t_stack **stack_b);
+int					ft_move(t_stack **stack_a, t_stack **stack_b);
+int					sort_stack(t_stack **stack_a, t_stack **stack_b);
 int					find_minimum(t_stack *stack_a);
 int					find_max(t_stack *stack_a);
 void				final_sort(t_stack **stack_a, int minimum);
 long long int		find_average(t_stack *stack_a);
-void				push_b(t_stack **stack_a, t_stack **stack_b);
-void				parse(char *str, t_stack **stack_a);
+int					push_b(t_stack **stack_a, t_stack **stack_b);
+int					parse(char *str, t_stack **stack_a);
 int					verify_space(char *str);
-void				create_node(t_stack **stack, const char *content);
+int					create_node(t_stack **stack, const char *content);
 
 #endif

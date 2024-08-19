@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:14:03 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/12 00:41:28 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/08/19 18:58:53 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ long long int	find_average(t_stack *stack_a)
 	return (0);
 }
 
-void	push_b(t_stack **stack_a, t_stack **stack_b)
+int	push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	long long int	average;
 
@@ -77,11 +77,12 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 		average = find_average(*stack_a);
 		if ((*stack_a)->number > average)
 			move_reverse(stack_a, "ra\n");
-		else
-			move_push(stack_b, stack_a, "pb\n");
+		else if (move_push(stack_b, stack_a, "pb\n") == -1)
+			return (-1);
 		average = find_average(*stack_b);
 		if ((*stack_b) != NULL && (*stack_b)->number < average)
 			move_reverse(stack_b, "rb\n");
 	}
 	ft_sort3(stack_a, stack_b);
+	return (0);
 }

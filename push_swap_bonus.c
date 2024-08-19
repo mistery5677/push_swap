@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 00:47:20 by mistery576        #+#    #+#             */
-/*   Updated: 2024/08/12 22:19:42 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/08/19 20:59:40 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static int	valid_arg(char **argv)
 	while (argv[i])
 	{
 		j = 0;
+		if(argv[i][j] == 0)
+			return (1);
 		while (argv[i][j])
 		{
 			if ((argv[i][j] < '0' || argv[i][j] > '9')
@@ -65,7 +67,7 @@ static int	check_info(char *info, t_stack *stack_a, t_stack *stack_b)
 		i++;
 	}
 	free_all(info, stack_a, stack_b);
-	return (1);
+	return (-1);
 }
 
 void	push_swap_bonus(t_stack *stack_a, t_stack *stack_b, int argc,
@@ -74,12 +76,14 @@ void	push_swap_bonus(t_stack *stack_a, t_stack *stack_b, int argc,
 	char	*info;
 
 	create_stack(&stack_a, argc, argv);
+	if(argc == 1)
+		return ;
 	if (check(stack_a, argv) == 0 && valid_arg(argv) == 0 && argc > 2)
 	{
 		info = get_next_line(0);
 		while (info != NULL)
 		{
-			if (check_info(info, stack_a, stack_b) == 1)
+			if (check_info(info, stack_a, stack_b) == -1)
 				return (ft_putstr_fd("Error\n", 2));
 			verify_info(info, &stack_a, &stack_b);
 			free(info);

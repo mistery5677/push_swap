@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:13:14 by mistery576        #+#    #+#             */
-/*   Updated: 2024/07/05 16:13:32 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/08/19 13:38:03 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	option_1(t_stack **stack_a, t_stack **stack_b, int ra, int rrb)
 		move_rreverse(stack_b, "rrb\n");
 		rrb--;
 	}
-	move_push(stack_a, stack_b, "pa\n");
 }
 
 void	option_2(t_stack **stack_a, t_stack **stack_b, int rra, int rb)
@@ -57,7 +56,6 @@ void	option_2(t_stack **stack_a, t_stack **stack_b, int rra, int rb)
 		move_reverse(stack_b, "rb\n");
 		rb--;
 	}
-	move_push(stack_a, stack_b, "pa\n");
 }
 
 void	option_3(t_stack **stack_a, t_stack **stack_b, int ra, int rb)
@@ -79,7 +77,6 @@ void	option_3(t_stack **stack_a, t_stack **stack_b, int ra, int rb)
 		move_reverse(stack_b, "rb\n");
 		rb--;
 	}
-	move_push(stack_a, stack_b, "pa\n");
 }
 
 void	option_4(t_stack **stack_a, t_stack **stack_b, int rra, int rrb)
@@ -101,5 +98,4 @@ void	option_4(t_stack **stack_a, t_stack **stack_b, int rra, int rrb)
 		move_rreverse(stack_b, "rrb\n");
 		rrb--;
 	}
-	move_push(stack_a, stack_b, "pa\n");
 }

@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:58:37 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/09 12:39:22 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/08/19 18:58:46 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,18 +86,21 @@ void	move_rreverse(t_stack **stack, char *move)
 	ft_printf("%s", move);
 }
 
-void	move_push(t_stack **dest, t_stack **src, char *move)
+int	move_push(t_stack **dest, t_stack **src, char *move)
 {
 	t_stack	*new_node;
 	t_stack	*tmp_src;
 
 	if (!src || !(*src))
-		return ;
+		return (-1);
 	new_node = ft_lstnew2((*src)->number);
+	if (!new_node)
+		return (-1);
 	new_node->next = *dest;
 	*dest = new_node;
 	tmp_src = *src;
 	*src = (*src)->next;
 	ft_printf("%s", move);
 	free(tmp_src);
+	return (0);
 }

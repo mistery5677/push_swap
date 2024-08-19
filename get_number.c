@@ -6,7 +6,7 @@
 /*   By: mistery576 <mistery576@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:53:38 by miafonso          #+#    #+#             */
-/*   Updated: 2024/07/13 02:19:53 by mistery576       ###   ########.fr       */
+/*   Updated: 2024/08/19 18:59:10 by mistery576       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	node_temp(t_stack **stack, int n2)
 	return (nbr2);
 }
 
-void	parse(char *str, t_stack **stack_a)
+int	parse(char *str, t_stack **stack_a)
 {
 	char	*tmp;
 	int		i;
@@ -66,12 +66,15 @@ void	parse(char *str, t_stack **stack_a)
 		if ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ' || str[i + 1] == 0)
 		{
 			tmp = ft_substr(str, x, i);
+			if (!tmp)
+				return (-1);
 			x = i + 1;
 			create_node(stack_a, tmp);
 			free(tmp);
 		}
 		i++;
 	}
+	return (1);
 }
 
 int	verify_space(char *str)
