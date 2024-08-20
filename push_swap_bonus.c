@@ -22,7 +22,7 @@ static int	valid_arg(char **argv)
 	while (argv[i])
 	{
 		j = 0;
-		if(argv[i][j] == 0)
+		if (argv[i][j] == 0)
 			return (1);
 		while (argv[i][j])
 		{
@@ -76,7 +76,7 @@ void	push_swap_bonus(t_stack *stack_a, t_stack *stack_b, int argc,
 	char	*info;
 
 	create_stack(&stack_a, argc, argv);
-	if(argc == 1)
+	if (argc == 1)
 		return ;
 	if (check(stack_a, argv) == 0 && valid_arg(argv) == 0 && argc > 2)
 	{

@@ -101,10 +101,6 @@ int	check(t_stack *stack, char **argv)
 
 	tmp = stack;
 	i = 1;
-	if (ft_stacksize(stack) <= 1)
-		return (1);
-	if (stack == NULL)
-		return (1);
 	while (argv[i] && stack != NULL)
 	{
 		if (check_doubles(tmp) == 1 || parse_check(argv[i]) == 1

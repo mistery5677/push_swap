@@ -82,7 +82,7 @@ void	push_swap(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 				return (free_error(stack_a, stack_b));
 		}
 	}
-	else
+	else if (check(stack_a, argv) == 1)
 		ft_putstr_fd("Error\n", 2);
 	free_stack(stack_a);
 	free_stack(stack_b);
