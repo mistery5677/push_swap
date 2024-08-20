@@ -12,30 +12,6 @@
 
 #include "bonus.h"
 
-static int	valid_arg(char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
-	while (argv[i])
-	{
-		j = 0;
-		if (argv[i][j] == 0)
-			return (1);
-		while (argv[i][j])
-		{
-			if ((argv[i][j] < '0' || argv[i][j] > '9')
-				&& argv[i][j] != '-' && argv[i][j] != '+')
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
 void	free_all(char *info, t_stack *stack_a, t_stack *stack_b)
 {
 	free(info);
@@ -78,7 +54,7 @@ void	push_swap_bonus(t_stack *stack_a, t_stack *stack_b, int argc,
 	create_stack(&stack_a, argc, argv);
 	if (argc == 1)
 		return ;
-	if (check(stack_a, argv) == 0 && valid_arg(argv) == 0 && argc > 2)
+	if (check(stack_a, argv) == 0)
 	{
 		info = get_next_line(0);
 		while (info != NULL)
